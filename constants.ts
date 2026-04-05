@@ -8,7 +8,7 @@ export const FULL_TERMS_URL = '#';
 export const FAQS: { question: string; answer: string }[] = [
   { question: "What exactly is JobLeo?", answer: "JobLeo is a premium job referral and placement service based in Nsukka. We act as a bridge between high-quality local talent and businesses, making hiring faster and safer for everyone through direct WhatsApp communication." },
   { question: "How do I register as a job seeker?", answer: "Click on 'Register as Seeker' to fill our registration form. There is a one-time ₦2,000 registration fee. Once paid, we add you to our vetted database and start referring you to relevant job interviews." },
-  { question: "What is the 40% referral fee for employees?", answer: "Upon successful employment, JobLeo is entitled to 40% of your first month's salary as a referral fee. This is a one-time payment. After the first month, you keep 100% of your earnings." },
+  { question: "What is the 30% referral fee for employees?", answer: "Upon successful employment, JobLeo is entitled to 30% of your first month's salary as a referral fee. This is a one-time payment. After the first month, you keep 100% of your earnings." },
   { question: "How does the ₦5,000 employer subscription work?", answer: "For employers, a ₦5,000 fee covers a yearly service subscription. This grants you access to our recruitment services for an entire year, allowing you to hire multiple staff as needed without paying per referral." },
   { question: "How fast is the placement process?", answer: "Most placements happen within 2–7 days. We prioritize speed and quality, ensuring that employers get vetted candidates and job seekers get legitimate interviews almost instantly." }
 ];
@@ -88,8 +88,8 @@ export const TERMS_JOB_SEEKERS = {
   title: "TERMS FOR JOB SEEKERS (EMPLOYEES) – JOBLEO",
   points: [
     "₦2,000 registration fee required before being referred for interviews.",
-    "JobLeo is entitled to 40% of the first month’s salary upon employment.",
-    "This 40% referral fee is non-negotiable and non-refundable.",
+    "JobLeo is entitled to 30% of the first month’s salary upon employment.",
+    "This 30% referral fee is non-negotiable and non-refundable.",
     "Failure to honor the agreement results in blacklisting and legal recovery."
   ],
   fullText: `1. Role of JobLeo
@@ -108,8 +108,8 @@ By registering with JobLeo, you agree that:
 
 4. Placement Fees (If Applicable)
 ● Job seekers are required to register with a ₦2,000 registration fee before being referred for interviews
-● Upon successful employment, JobLeo is entitled to 40% of the first month’s salary
-● This 40% referral fee is non-negotiable and non-refundable
+● Upon successful employment, JobLeo is entitled to 30% of the first month’s salary
+● This 30% referral fee is non-negotiable and non-refundable
 ● Failure to honor this agreement may result in:
     ○ Disqualification from JobLeo services
     ○ Blacklisting from future job referrals
