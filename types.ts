@@ -6,7 +6,8 @@ export type JobCategory =
   | 'Office & Digital'
   | 'Logistics & Security'
   | 'Domestic & Care'
-  | 'Education & Beauty'
+  | 'Education'
+  | 'Beauty & Fashion'
   | 'Professional Roles';
 
 export interface JobListing {

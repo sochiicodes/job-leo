@@ -35,13 +35,13 @@ export function Hero({ scrollToSection }: HeroProps) {
             onClick={() => scrollToSection('jobs')}
             className="w-full sm:w-auto px-12 py-6 bg-brand-500 text-white rounded-[1.5rem] font-bold text-xl hover:bg-brand-600 transition-all shadow-xl shadow-brand-100 border-none"
           >
-            Explore Jobs
+            See All Jobs
           </button>
           <button
             onClick={() => scrollToSection('register')}
             className="w-full sm:w-auto px-12 py-6 bg-white border-2 border-slate-200 text-slate-900 rounded-[1.5rem] font-bold text-xl hover:border-brand-500 transition-all flex items-center justify-center gap-2"
           >
-            Join Network <ArrowUpRight className="w-5 h-5" />
+            Join the Network <ArrowUpRight className="w-5 h-5" />
           </button>
         </div>
       </div>
