@@ -39,6 +39,15 @@ export const JOB_LISTINGS: JobListing[] = [
     postedAt: '2 months ago'
   },
   {
+    id: 'j23',
+    title: 'Office Assistant',
+    category: 'Office & Digital',
+    location: 'Total Roundabout',
+    type: 'Full-time',
+    salary: '₦40,000',
+    postedAt: 'Just now'
+  },
+  {
     id: 'j2',
     title: 'Bar Man/Woman',
     category: 'Hospitality & Events',
