@@ -23,64 +23,209 @@ export const CATEGORIES: JobCategory[] = [
   'Office & Digital',
   'Logistics & Security',
   'Domestic & Care',
-  'Education & Beauty',
+  'Education',
+  'Beauty & Fashion',
   'Professional Roles'
 ];
 
 export const JOB_LISTINGS: JobListing[] = [
   {
-    id: 's1',
-    title: 'Sales Girl/Boy',
-    category: 'Sales & Retail',
-    location: 'Ogige Market, Nsukka',
+    id: 'j1',
+    title: 'Waitress',
+    category: 'Hospitality & Events',
+    location: 'Nsukka Town',
     type: 'Full-time',
-    salary: '₦35,000 - ₦45,000',
+    salary: '₦25,000',
+    postedAt: '2 months ago'
+  },
+  {
+    id: 'j2',
+    title: 'Bar Man/Woman',
+    category: 'Hospitality & Events',
+    location: 'Nsukka Town',
+    type: 'Full-time',
+    salary: '₦35,000',
+    postedAt: '2 months ago'
+  },
+  {
+    id: 'j3',
+    title: 'Snooker Attendant',
+    category: 'Hospitality & Events',
+    location: 'Nsukka Town',
+    type: 'Full-time',
+    salary: '₦35,000',
+    postedAt: '2 months ago'
+  },
+  {
+    id: 'j4',
+    title: 'In-House Help',
+    category: 'Domestic & Care',
+    location: 'Onuiyi, Nsukka',
+    type: 'Full-time',
+    salary: 'Not specified',
+    postedAt: '2 months ago'
+  },
+  {
+    id: 'j5',
+    title: 'POS Attendant',
+    category: 'Sales & Retail',
+    location: 'Nsukka Town',
+    type: 'Full-time',
+    salary: '₦30,000 + Feeding',
+    postedAt: '2 months ago'
+  },
+  {
+    id: 'j6',
+    title: 'Out-House Help',
+    category: 'Domestic & Care',
+    location: 'Baracks',
+    type: 'Full-time',
+    salary: 'Not specified',
+    postedAt: '2 months ago'
+  },
+  {
+    id: 'j7',
+    title: 'Computer Operator',
+    category: 'Office & Digital',
+    location: 'UNN First Gate',
+    type: 'Full-time',
+    salary: '₦30,000+',
+    postedAt: '3 months ago'
+  },
+  {
+    id: 'j8',
+    title: 'Cyber Assistant',
+    category: 'Office & Digital',
+    location: 'UNN First Gate',
+    type: 'Full-time',
+    salary: '₦30,000+',
+    postedAt: '3 months ago'
+  },
+  {
+    id: 'j9',
+    title: 'Basic Computer Tutor',
+    category: 'Education',
+    location: 'UNN First Gate',
+    type: 'Full-time',
+    salary: '₦30,000+',
+    postedAt: '3 months ago'
+  },
+  {
+    id: 'j10',
+    title: 'Nail Technician',
+    category: 'Beauty & Fashion',
+    location: 'UNN Malima',
+    type: 'Full-time',
+    salary: '₦40,000',
+    postedAt: '3 months ago'
+  },
+  {
+    id: 'j11',
+    title: 'Barber',
+    category: 'Beauty & Fashion',
+    location: 'UNN Malima',
+    type: 'Full-time',
+    salary: '₦45,000',
+    postedAt: '3 months ago'
+  },
+  {
+    id: 'j12',
+    title: 'Shawarma Sales Rep',
+    category: 'Sales & Retail',
+    location: 'Orba Road',
+    type: 'Full-time',
+    salary: '₦25,000',
+    postedAt: '1 month ago'
+  },
+  {
+    id: 'j13',
+    title: 'Shawarma Sales Rep',
+    category: 'Sales & Retail',
+    location: 'Total Roundabout',
+    type: 'Full-time',
+    salary: '₦25,000',
+    postedAt: '1 month ago'
+  },
+  {
+    id: 'j14',
+    title: 'Bank Marketer',
+    category: 'Professional Roles',
+    location: 'Nsukka Town',
+    type: 'Full-time',
+    salary: 'Commission-based',
+    postedAt: '1 month ago'
+  },
+  {
+    id: 'j15',
+    title: 'Nurse / Primary School Tutor',
+    category: 'Education',
+    location: 'Fen Park',
+    type: 'Contract',
+    salary: '₦30,000',
+    postedAt: '1 month ago'
+  },
+  {
+    id: 'j16',
+    title: 'Sales Representative',
+    category: 'Sales & Retail',
+    location: 'Opp Shanaha',
+    type: 'Full-time',
+    salary: '₦30,000',
+    postedAt: '1 month ago'
+  },
+  {
+    id: 'j17',
+    title: 'Sales Rep / Cashier',
+    category: 'Sales & Retail',
+    location: 'Aku Road',
+    type: 'Full-time',
+    salary: '₦40,000',
     postedAt: 'Just now'
   },
   {
-    id: 's2',
-    title: 'Cashier',
+    id: 'j18',
+    title: 'Electronics Sales Rep',
     category: 'Sales & Retail',
-    location: 'Enugu Road',
+    location: 'Opp Shanaha',
     type: 'Full-time',
-    salary: '₦50,000',
-    postedAt: '2 hours ago'
+    salary: '₦35,000 - ₦50,000',
+    postedAt: 'Just now'
   },
   {
-    id: 's3',
-    title: 'POS Operator',
-    category: 'Sales & Retail',
-    location: 'UNN Gate Area',
+    id: 'j19',
+    title: 'Live-in House Help',
+    category: 'Domestic & Care',
+    location: 'Ofulonu',
     type: 'Full-time',
-    salary: '₦30,000 + Commission',
-    postedAt: '1 day ago'
+    salary: '₦30,000',
+    postedAt: 'Just now'
   },
   {
-    id: 'h1',
-    title: 'Waiter/Waitress',
+    id: 'j20',
+    title: 'Restaurant Chef',
     category: 'Hospitality & Events',
-    location: 'Beach Junction',
+    location: 'Aku Road',
     type: 'Full-time',
-    salary: '₦40,000',
-    postedAt: '5 hours ago'
+    salary: '₦30,000 - ₦35,000',
+    postedAt: 'Just now'
   },
   {
-    id: 'o1',
-    title: 'Personal Assistant (PA)',
-    category: 'Office & Digital',
-    location: 'Odim Gate Area',
+    id: 'j21',
+    title: 'Restaurant Waitress',
+    category: 'Hospitality & Events',
+    location: 'Aku Road',
     type: 'Full-time',
-    salary: '₦70,000',
-    postedAt: '1 day ago'
+    salary: '₦25,000',
+    postedAt: 'Just now'
   },
   {
-    id: 'l1',
-    title: 'Professional Driver',
-    category: 'Logistics & Security',
-    location: 'Orba Road',
+    id: 'j22',
+    title: 'Primary School Maths Teacher',
+    category: 'Education',
+    location: 'Onuiyi, Nsukka',
     type: 'Full-time',
-    salary: '₦80,000',
-    postedAt: '2 days ago'
+    salary: '₦40,000 - ₦50,000',
+    postedAt: 'Just now'
   }
 ];
 
