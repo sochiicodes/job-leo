@@ -57,7 +57,7 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
                   {job.type}
                 </div>
                 {job.salary && (
-                  <div className="font-black text-xl text-brand-600 mt-4 tracking-tight">{job.salary}</div>
+                  <div className="font-black text-xl text-brand-600 mt-4 tracking-tight">{job.salary} <span className="text-sm">/mo</span> </div>
                 )}
               </div>
               <a
