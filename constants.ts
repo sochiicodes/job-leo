@@ -57,30 +57,12 @@ export const JOB_LISTINGS: JobListing[] = [
     postedAt: '2 months ago'
   },
   {
-    id: 'j4',
-    title: 'In-House Help',
-    category: 'Domestic & Care',
-    location: 'Onuiyi, Nsukka',
-    type: 'Full-time',
-    salary: 'Not specified',
-    postedAt: '2 months ago'
-  },
-  {
     id: 'j5',
     title: 'POS Attendant',
     category: 'Sales & Retail',
     location: 'Nsukka Town',
     type: 'Full-time',
     salary: '₦30,000 + Feeding',
-    postedAt: '2 months ago'
-  },
-  {
-    id: 'j6',
-    title: 'Out-House Help',
-    category: 'Domestic & Care',
-    location: 'Baracks',
-    type: 'Full-time',
-    salary: 'Not specified',
     postedAt: '2 months ago'
   },
   {
