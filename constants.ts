@@ -220,7 +220,7 @@ export const JOB_LISTINGS: JobListing[] = [
   },
   {
     id: "j23",
-    title: "Receptionist",
+    title: "Hotel Receptionist",
     category: "Hospitality & Events",
     location: "Orba Road",
     type: "Full-time",
@@ -229,7 +229,7 @@ export const JOB_LISTINGS: JobListing[] = [
   },
   {
     id: "j24",
-    title: "Waitress",
+    title: "Hotel Waitress",
     category: "Hospitality & Events",
     location: "Orba Road",
     type: "Full-time",
