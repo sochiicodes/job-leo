@@ -10,7 +10,7 @@ export const FAQS: { question: string; answer: string }[] = [
   { question: "How do I register as a job seeker?", answer: "Click on 'Register as Seeker' to fill our registration form. There is a one-time ₦2,000 registration fee. Once paid, we add you to our vetted database and start referring you to relevant job interviews." },
   { question: "What is the 30% referral fee for employees?", answer: "Upon successful employment, JobLeo is entitled to 30% of your first month's salary as a referral fee. This is a one-time payment. After the first month, you keep 100% of your earnings." },
   { question: "How does the ₦5,000 employer subscription work?", answer: "For employers, a ₦5,000 fee covers a yearly service subscription. This grants you access to our recruitment services for an entire year, allowing you to hire multiple staff as needed without paying per referral." },
-  { question: "How fast is the placement process?", answer: "Most placements happen within 2–7 days. We prioritize speed and quality, ensuring that employers get vetted candidates and job seekers get legitimate interviews almost instantly." }
+  { question: "How fast is the placement process?", answer: "Most placements happen within 2–7 days depending on the availability of the candidate and the nature of the job. Some placements may take longer depending on the employer's requirements. We prioritize speed and quality, ensuring that employers get vetted candidates and job seekers get legitimate interviews almost instantly." }
 ];
 
 export const SEEKER_FORM_URL = 'https://forms.gle/mRQMzqV6XpdJT1qi8';
@@ -217,6 +217,24 @@ export const JOB_LISTINGS: JobListing[] = [
     type: 'Full-time',
     salary: '₦40,000 - ₦50,000',
     postedAt: 'Just now'
+  },
+  {
+    id: "j23",
+    title: "Receptionist",
+    category: "Hospitality & Events",
+    location: "Orba Road",
+    type: "Full-time",
+    salary: "₦45,000 + daily lunch",
+    postedAt: "Just now"
+  },
+  {
+    id: "j24",
+    title: "Waitress",
+    category: "Hospitality & Events",
+    location: "Orba Road",
+    type: "Full-time",
+    salary: "₦45,000 + daily lunch",
+    postedAt: "Just now"
   }
 ];
 
@@ -300,7 +318,7 @@ By using JobLeo’s services, both job seekers and employers agree to these term
 export const TERMS_EMPLOYERS = {
   title: "TERMS FOR JOB GIVERS (EMPLOYERS) – JOBLEO",
   points: [
-    "₦5,000 placement fee applies once a candidate is successfully hired.",
+    "A ₦5,000 registration fee is required before the candidate is referred for interviews.",
     "The fee operates as a yearly service subscription.",
     "Fees are non-refundable once employment begins.",
     "7–14 days replacement policy if an employee resigns or is terminated."
@@ -322,7 +340,7 @@ Any misleading or false job information may result in refusal of service.
 ● Final hiring decisions remain the sole responsibility of the employer
 
 4. Placement Fees
-● A ₦5,000 placement fee applies once a candidate is successfully hired
+● A ₦5,000 registration fee is required before the candidate is referred for interviews.
 ● This fee operates as a yearly service subscription, granting employers access to JobLeo’s recruitment services within the period
 ● All fees will be communicated before candidate referral
 ● Fees are non-refundable once employment begins
