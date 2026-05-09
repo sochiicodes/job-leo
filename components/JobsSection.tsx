@@ -87,7 +87,9 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
                 {job.salary && (
                   <div className="font-black text-xl text-brand-600 mt-4 tracking-tight">{job.salary}<span className="text-xs font-medium text-slate-400">/mo</span> </div>
                 )}
+                <p className="text-slate-400 text-sm">{job.postedAt}</p>
               </div>
+              
               <a
                 href={getWhatsAppLink(job.title)}
                 target="_blank"

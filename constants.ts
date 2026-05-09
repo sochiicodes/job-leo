@@ -4,6 +4,12 @@ import { JobCategory, JobListing } from './types';
 export const WHATSAPP_NUMBER = '2349128131343';
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const FULL_TERMS_URL = '#';
+export const DATE = new Date().toLocaleDateString("en-GB", {
+  weekday: "long",
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
 
 export const FAQS: { question: string; answer: string }[] = [
   { question: "What exactly is JobLeo?", answer: "JobLeo is a premium job referral and placement service based in Nsukka. We act as a bridge between high-quality local talent and businesses, making hiring faster and safer for everyone through direct WhatsApp communication." },
@@ -36,7 +42,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Total Roundabout',
     type: 'Full-time',
     salary: '₦25,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -46,7 +52,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Total Roundabout',
     type: 'Full-time',
     salary: '₦35,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -56,7 +62,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Total Roundabout',
     type: 'Full-time',
     salary: '₦35,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -66,7 +72,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Nsukka Town',
     type: 'Full-time',
     salary: '₦30,000 + Feeding',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -76,7 +82,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'UNN First Gate',
     type: 'Full-time',
     salary: '₦30,000+',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -86,7 +92,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'UNN First Gate',
     type: 'Full-time',
     salary: '₦30,000+',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -96,7 +102,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'UNN First Gate',
     type: 'Full-time',
     salary: '₦30,000+',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -106,7 +112,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'UNN Malima',
     type: 'Full-time',
     salary: '₦40,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -116,7 +122,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'UNN Malima',
     type: 'Full-time',
     salary: '₦45,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -126,7 +132,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Orba Road',
     type: 'Full-time',
     salary: '₦25,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -136,7 +142,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Total Roundabout',
     type: 'Full-time',
     salary: '₦25,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -146,7 +152,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Nsukka Town',
     type: 'Full-time',
     salary: 'Commission-based',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -156,7 +162,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Fen Park',
     type: 'Contract',
     salary: '₦30,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -166,7 +172,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Opp Shanaha',
     type: 'Full-time',
     salary: '₦30,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -176,7 +182,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Aku Road',
     type: 'Full-time',
     salary: '₦40,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -186,7 +192,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Opp Shanaha',
     type: 'Full-time',
     salary: '₦35,000 - ₦50,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -196,7 +202,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Ofulonu',
     type: 'Full-time',
     salary: '₦30,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -206,7 +212,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Aku Road',
     type: 'Full-time',
     salary: '₦30,000 - ₦35,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -216,7 +222,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Aku Road',
     type: 'Full-time',
     salary: '₦25,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -226,7 +232,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Onuiyi, Nsukka',
     type: 'Full-time',
     salary: '₦40,000 - ₦50,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -236,7 +242,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Orba Road",
     type: "Full-time",
     salary: "₦45,000 + daily lunch",
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -246,7 +252,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Orba Road",
     type: "Full-time",
     salary: "₦45,000 + daily lunch",
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -256,7 +262,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Nsukka",
     type: "Full-time",
     salary: "₦60,000",
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -266,7 +272,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Nsukka",
     type: "Full-time",
     salary: "₦55,000",
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -276,7 +282,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Nsukka",
     type: "Full-time",
     salary: "₦75,000 - ₦100,000",
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
   {
@@ -286,7 +292,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Total Roundabout',
     type: 'Full-time',
     salary: '₦40,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Not Available'
   },
   {
@@ -296,7 +302,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: 'Nru Nsukka',
     type: 'Full-time',
     salary: '₦40,000',
-    postedAt: new Date().toISOString().split("T")[0],
+    postedAt: DATE,
     status: 'Available'
   },
 ];
