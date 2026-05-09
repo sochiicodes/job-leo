@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Briefcase, MapPin, ChevronRight } from 'lucide-react';
 import { CATEGORIES, JOB_LISTINGS } from '../constants';
 import { JobCategory, JobListing } from '../types';
+import { ToggleSwitch } from './ToggleSwitch';
 
 interface JobsSectionProps {
   selectedCategory: JobCategory;
@@ -10,9 +11,17 @@ interface JobsSectionProps {
 }
 
 export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLink }: JobsSectionProps) {
-  const filteredJobs = JOB_LISTINGS.filter(
-    (job) => selectedCategory === 'All' || job.category === selectedCategory
-  );
+  const [showAvailableOnly, setShowAvailableOnly] = useState(false);
+
+  const filteredJobs = JOB_LISTINGS.filter((job) => {
+    const matchesCategory =
+      selectedCategory === 'All' || job.category === selectedCategory;
+  
+    const matchesAvailability =
+      !showAvailableOnly || job.status === 'Available';
+  
+    return matchesCategory && matchesAvailability;
+  });
 
   return (
     <section id="jobs" className="py-24 px-4 bg-slate-50/50">
@@ -34,6 +43,11 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
               </button>
             ))}
           </div>
+          <ToggleSwitch
+            checked={showAvailableOnly}
+            onChange={() => setShowAvailableOnly(!showAvailableOnly)}
+            label="Show only available jobs"
+          />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredJobs.map((job: JobListing) => (
@@ -41,9 +55,23 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
               key={job.id}
               className="bg-white rounded-[2rem] border border-slate-100 p-8 flex flex-col shadow-sm hover:shadow-2xl hover:border-brand-200 transition-all group"
             >
-              <span className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black rounded-xl uppercase tracking-widest border border-slate-100 self-start mb-6">
-                {job.category}
-              </span>
+              <div className="flex flex-wrap justify-between">
+                <section className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black rounded-xl uppercase tracking-widest border border-slate-100 self-start mb-6">
+                  {job.category}
+                </section>
+                <section className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black rounded-xl uppercase tracking-widest border border-slate-100 self-start mb-6">
+                  {job.status === 'Available' && (
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                  )}
+
+                  {job.status}
+
+                </section>
+
+              </div>
               <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-brand-600 transition-colors tracking-tight">
                 {job.title}
               </h3>

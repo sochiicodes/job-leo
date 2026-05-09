@@ -18,6 +18,7 @@ export interface JobListing {
   type: 'Full-time' | 'Part-time' | 'Contract' | 'Remote';
   salary?: string;
   postedAt: string;
+  status: "Available" | "Not Available"
 }
 
 export interface TermsContent {
