@@ -289,6 +289,16 @@ export const JOB_LISTINGS: JobListing[] = [
     postedAt: new Date().toISOString().split("T")[0],
     status: 'Not Available'
   },
+  {
+    id: 'j29',
+    title: 'Live-in House Help',
+    category: 'Domestic & Care',
+    location: 'Nru Nsukka',
+    type: 'Full-time',
+    salary: '₦40,000',
+    postedAt: new Date().toISOString().split("T")[0],
+    status: 'Available'
+  },
 ];
 
 export const TERMS_JOB_SEEKERS = {

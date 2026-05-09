@@ -9,6 +9,7 @@ export type JobCategory =
   | 'Education'
   | 'Beauty & Fashion'
   | 'Professional Roles';
+  
 
 export interface JobListing {
   id: string;
