@@ -305,6 +305,16 @@ export const JOB_LISTINGS: JobListing[] = [
     postedAt: DATE,
     status: 'Available'
   },
+  {
+    id: crypto.randomUUID(),
+    title: 'Live-in Security',
+    category: 'Sales & Retail',
+    location: 'Ugwuoye Nsukka',
+    type: 'Full-time',
+    salary: '₦60,000 + 247 light & Wi-Fi',
+    postedAt: "Tuesday, 26 May 2026",
+    status: 'Available'
+  },
 ];
 
 export const TERMS_JOB_SEEKERS = {
