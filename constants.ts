@@ -36,7 +36,7 @@ export const CATEGORIES: JobCategory[] = [
 
 export const JOB_LISTINGS: JobListing[] = [
   {
-    id: 'j1',
+    id: crypto.randomUUID(),
     title: 'Waitress',
     category: 'Hospitality & Events',
     location: 'Total Roundabout',
@@ -46,17 +46,17 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j2',
+    id: crypto.randomUUID(),
     title: 'Bar Man/Woman',
     category: 'Hospitality & Events',
     location: 'Total Roundabout',
     type: 'Full-time',
     salary: '₦35,000',
     postedAt: DATE,
-    status: 'Not Available'
+    status: 'Available'
   },
   {
-    id: 'j3',
+    id: crypto.randomUUID(),
     title: 'Snooker Attendant',
     category: 'Hospitality & Events',
     location: 'Total Roundabout',
@@ -66,7 +66,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j5',
+    id: crypto.randomUUID(),
     title: 'POS Attendant',
     category: 'Sales & Retail',
     location: 'Nsukka Town',
@@ -76,7 +76,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j7',
+    id: crypto.randomUUID(),
     title: 'Computer Operator',
     category: 'Office & Digital',
     location: 'UNN First Gate',
@@ -86,7 +86,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j8',
+    id: crypto.randomUUID(),
     title: 'Cyber Assistant',
     category: 'Office & Digital',
     location: 'UNN First Gate',
@@ -96,7 +96,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j9',
+    id: crypto.randomUUID(),
     title: 'Basic Computer Tutor',
     category: 'Education',
     location: 'UNN First Gate',
@@ -106,7 +106,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j10',
+    id: crypto.randomUUID(),
     title: 'Nail Technician',
     category: 'Beauty & Fashion',
     location: 'UNN Malima',
@@ -116,7 +116,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j11',
+    id: crypto.randomUUID(),
     title: 'Barber',
     category: 'Beauty & Fashion',
     location: 'UNN Malima',
@@ -126,7 +126,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j12',
+    id: crypto.randomUUID(),
     title: 'Shawarma Sales Rep',
     category: 'Sales & Retail',
     location: 'Orba Road',
@@ -136,27 +136,17 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j13',
-    title: 'Shawarma Sales Rep',
-    category: 'Sales & Retail',
-    location: 'Total Roundabout',
-    type: 'Full-time',
-    salary: '₦25,000',
+    id: crypto.randomUUID(),
+    title: "Kitchen Chef",
+    category: "Hospitality & Events",
+    location: "UNN Nsukka",
+    type: "Full-time",
+    salary: "₦40,000",
     postedAt: DATE,
     status: 'Available'
   },
   {
-    id: 'j14',
-    title: 'Bank Marketer',
-    category: 'Professional Roles',
-    location: 'Nsukka Town',
-    type: 'Full-time',
-    salary: 'Commission-based',
-    postedAt: DATE,
-    status: 'Available'
-  },
-  {
-    id: 'j15',
+    id: crypto.randomUUID(),
     title: 'Nurse / Primary School Tutor',
     category: 'Education',
     location: 'Fen Park',
@@ -166,7 +156,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j16',
+    id: crypto.randomUUID(),
     title: 'Sales Representative',
     category: 'Sales & Retail',
     location: 'Opp Shanaha',
@@ -176,7 +166,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j17',
+    id: crypto.randomUUID(),
     title: 'Sales Rep / Cashier',
     category: 'Sales & Retail',
     location: 'Aku Road',
@@ -186,17 +176,17 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j18',
-    title: 'Electronics Sales Rep',
+    id: crypto.randomUUID(),
+    title: 'Sales Rep',
     category: 'Sales & Retail',
-    location: 'Opp Shanaha',
+    location: 'UNN',
     type: 'Full-time',
-    salary: '₦35,000 - ₦50,000',
+    salary: '₦30,000 - ₦35,000+',
     postedAt: DATE,
-    status: 'Not Available'
+    status: 'Available'
   },
   {
-    id: 'j19',
+    id: crypto.randomUUID(),
     title: 'Live-in House Help',
     category: 'Domestic & Care',
     location: 'Ofulonu',
@@ -206,27 +196,27 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j20',
+    id: crypto.randomUUID(),
     title: 'Restaurant Chef',
     category: 'Hospitality & Events',
     location: 'Aku Road',
     type: 'Full-time',
-    salary: '₦30,000 - ₦35,000',
+    salary: '₦30-35k + feeding & Accom',
     postedAt: DATE,
     status: 'Available'
   },
   {
-    id: 'j21',
+    id: crypto.randomUUID(),
     title: 'Restaurant Waitress',
     category: 'Hospitality & Events',
     location: 'Aku Road',
     type: 'Full-time',
-    salary: '₦25,000',
+    salary: '₦25k + feeding & Accom',
     postedAt: DATE,
     status: 'Available'
   },
   {
-    id: 'j22',
+    id: crypto.randomUUID(),
     title: 'Primary School Maths Teacher',
     category: 'Education',
     location: 'Onuiyi, Nsukka',
@@ -236,7 +226,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: "j23",
+    id: crypto.randomUUID(),
     title: "Hotel Receptionist",
     category: "Hospitality & Events",
     location: "Orba Road",
@@ -246,7 +236,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: "j24",
+    id: crypto.randomUUID(),
     title: "Hotel Waitress",
     category: "Hospitality & Events",
     location: "Orba Road",
@@ -256,7 +246,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: "j25",
+    id: crypto.randomUUID(),
     title: "Kitchen Chef",
     category: "Hospitality & Events",
     location: "Nsukka",
@@ -266,7 +256,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: "j26",
+    id: crypto.randomUUID(),
     title: "Cashier",
     category: "Hospitality & Events",
     location: "Nsukka",
@@ -276,7 +266,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: "j27",
+    id: crypto.randomUUID(),
     title: "Supervisor",
     category: "Hospitality & Events",
     location: "Nsukka",
@@ -286,7 +276,7 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Available'
   },
   {
-    id: 'j28',
+    id: crypto.randomUUID(),
     title: 'Office Assistant',
     category: 'Office & Digital',
     location: 'Total Roundabout',
@@ -296,12 +286,22 @@ export const JOB_LISTINGS: JobListing[] = [
     status: 'Not Available'
   },
   {
-    id: 'j29',
+    id: crypto.randomUUID(),
     title: 'Live-in House Help',
     category: 'Domestic & Care',
     location: 'Nru Nsukka',
     type: 'Full-time',
     salary: '₦40,000',
+    postedAt: DATE,
+    status: 'Available'
+  },
+  {
+    id: crypto.randomUUID(),
+    title: 'Sales Rep',
+    category: 'Sales & Retail',
+    location: 'UNN',
+    type: 'Full-time',
+    salary: '₦40,000 - ₦45,000',
     postedAt: DATE,
     status: 'Available'
   },
