@@ -252,7 +252,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Nsukka",
     type: "Full-time",
     salary: "₦60,000",
-    postedAt: DATE,
+    postedAt: "Tuesday, 19 May 2026",
     status: 'Available'
   },
   {
@@ -262,8 +262,8 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Nsukka",
     type: "Full-time",
     salary: "₦55,000",
-    postedAt: DATE,
-    status: 'Available'
+    postedAt: "Tuesday, 19 May 2026",
+    status: 'Not Available'
   },
   {
     id: crypto.randomUUID(),
@@ -272,7 +272,7 @@ export const JOB_LISTINGS: JobListing[] = [
     location: "Nsukka",
     type: "Full-time",
     salary: "₦75,000 - ₦100,000",
-    postedAt: DATE,
+    postedAt: "Tuesday, 19 May 2026",
     status: 'Available'
   },
   {
