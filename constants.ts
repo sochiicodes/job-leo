@@ -1,5 +1,5 @@
 
-import { JobCategory, JobListing } from './types';
+import { JobCategory, JobListing } from './types/types';
 
 export const WHATSAPP_NUMBER = '2349128131343';
 export const WHATSAPP_BASE_URL = `https://wa.me/${WHATSAPP_NUMBER}`;

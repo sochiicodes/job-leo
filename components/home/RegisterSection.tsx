@@ -1,6 +1,6 @@
 import React from 'react';
 import { UserPlus, Building2, CheckCircle } from 'lucide-react';
-import { SEEKER_FORM_URL, EMPLOYER_FORM_URL } from '../constants';
+import { SEEKER_FORM_URL, EMPLOYER_FORM_URL } from '../../constants';
 
 export function RegisterSection() {
   return (

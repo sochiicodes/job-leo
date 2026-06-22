@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { WHATSAPP_BASE_URL } from './constants';
-import { JobCategory } from './types';
+import { JobCategory } from './types/types';
 import {
   FullTermsOverlay,
   Header,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Briefcase, Users, CheckCircle, ExternalLink } from 'lucide-react';
-import { TERMS_JOB_SEEKERS, TERMS_EMPLOYERS } from '../constants';
+import { TERMS_JOB_SEEKERS, TERMS_EMPLOYERS } from '../../constants';
 
 interface TermsSectionProps {
   activeTab: 'seeker' | 'employer';

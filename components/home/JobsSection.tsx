@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Briefcase, MapPin, ChevronRight } from 'lucide-react';
-import { CATEGORIES, JOB_LISTINGS } from '../constants';
-import { JobCategory, JobListing } from '../types';
-import { ToggleSwitch } from './ToggleSwitch';
+import { CATEGORIES, JOB_LISTINGS } from '../../constants';
+import { JobCategory, JobListing } from '../../types/types';
+import { ToggleSwitch } from '../ui/ToggleSwitch';
 
 interface JobsSectionProps {
   selectedCategory: JobCategory;
