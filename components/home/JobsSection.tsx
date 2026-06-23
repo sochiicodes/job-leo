@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Briefcase, MapPin, ChevronRight } from 'lucide-react';
-import { JobCategory, JobListing } from '../../types/types';
+import { JobCategory, JobFilter, JobListing } from '../../types/types';
 import { ToggleSwitch } from '../ui/ToggleSwitch';
 import { JOB_LISTINGS } from '../../data/jobs';
 import { JOB_CATEGORIES } from '../../data/constants';
 
-type JobFilter = "All" | JobCategory
+
 
 interface JobsSectionProps {
   selectedCategory: JobFilter;

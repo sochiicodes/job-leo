@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeroProps {
   scrollToSection: (id: string) => void;
@@ -31,12 +32,12 @@ export function Hero({ scrollToSection }: HeroProps) {
           Connecting Nsukka's best candidates with top local businesses directly through WhatsApp.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-          <button
-            onClick={() => scrollToSection('jobs')}
+          <Link
+            to="/jobs"
             className="w-full sm:w-auto px-12 py-6 bg-brand-500 text-white rounded-[1.5rem] font-bold text-xl hover:bg-brand-600 transition-all shadow-xl shadow-brand-100 border-none"
           >
             See All Jobs
-          </button>
+          </Link>
           <button
             onClick={() => scrollToSection('register')}
             className="w-full sm:w-auto px-12 py-6 bg-white border-2 border-slate-200 text-slate-900 rounded-[1.5rem] font-bold text-xl hover:border-brand-500 transition-all flex items-center justify-center gap-2"

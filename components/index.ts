@@ -8,4 +8,4 @@ export { FAQSection } from './home/FAQSection';
 export { TermsSection } from './home/TermsSection';
 export { ContactSection } from './home/ContactSection';
 export { Footer } from './layout/Footer';
-export { ScrollToTop } from './home/ScrollToTop';
+export { ScrollToTop } from './layout/ScrollToTop';

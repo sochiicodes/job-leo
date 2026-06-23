@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu, X, PlusCircle } from 'lucide-react';
 import { EMPLOYER_FORM_URL } from '../../data/constants';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   isScrolled: boolean;
@@ -26,24 +27,24 @@ export function Header({
             : 'mt-0 rounded-none bg-white border-b border-slate-100 py-4'
         }`}
       >
-        <div
-          className="flex items-center gap-2 cursor-pointer group"
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
-          <img
-            src="/logo.png"
-            alt="JobLeo"
-            className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
-          />
-          <span className="text-xl font-bold text-slate-900 tracking-tight">JobLeo</span>
-        </div>
+        <Link to="/">
+          <div
+            className="flex items-center gap-2 cursor-pointer group"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <img
+              src="/logo.png"
+              alt="JobLeo"
+              className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
+            />
+            <span className="text-xl font-bold text-slate-900 tracking-tight">JobLeo</span>
+          </div>
+        </Link>
 
         <div className="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
-          <button onClick={() => scrollToSection('how-it-works')} className="hover:text-brand-600 transition-colors font-semibold">Process</button>
-          <button onClick={() => scrollToSection('jobs')} className="hover:text-brand-600 transition-colors font-semibold">Jobs</button>
-          <button onClick={() => scrollToSection('register')} className="hover:text-brand-600 transition-colors font-semibold">Join Network</button>
-          <button onClick={() => scrollToSection('faq')} className="hover:text-brand-600 transition-colors font-semibold">FAQ</button>
-          <button onClick={() => scrollToSection('terms')} className="hover:text-brand-600 transition-colors font-semibold">Terms</button>
+          <Link to="/jobs" className="hover:text-brand-600 transition-colors font-semibold">Explore Jobs</Link>
+          <button onClick={() => scrollToSection('/#faq')} className="hover:text-brand-600 transition-colors font-semibold">FAQ</button>
+          <button onClick={() => scrollToSection('/#terms')} className="hover:text-brand-600 transition-colors font-semibold">Terms</button>
           <div className="flex items-center gap-3 pl-4 border-l border-slate-100">
             <a
               href={getWhatsAppLink()}

@@ -45,6 +45,8 @@ export type JobStatus = 'available' | 'unavailable'
 
 export type ViewMode = 'list' | 'grid'
 
+export type JobFilter = "All" | JobCategory
+
 
 
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { JobCategory } from '../types/types';
-import { WHATSAPP_BASE_URL } from '../data/constants';
 import { 
     ContactSection, 
     FAQSection, 
@@ -14,12 +13,12 @@ import {
     ScrollToTop, 
     TermsSection 
 } from '../components';
+import { WHATSAPP_BASE_URL } from '../data/constants';
 
 
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<JobCategory>('All');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'seeker' | 'employer'>('seeker');
   const [showFullTerms, setShowFullTerms] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -35,7 +34,7 @@ export default function HomePage() {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: 'smooth' });
     if (tab) setActiveTab(tab);
-    setIsMenuOpen(false);
+    
   };
 
   const getWhatsAppLink = (jobTitle?: string, type?: 'seeker' | 'employer') => {
@@ -51,14 +50,6 @@ export default function HomePage() {
       {showFullTerms && (
         <FullTermsOverlay activeTab={activeTab} onClose={() => setShowFullTerms(false)} />
       )}
-
-      <Header
-        isScrolled={isScrolled}
-        isMenuOpen={isMenuOpen}
-        onMenuToggle={() => setIsMenuOpen(!isMenuOpen)}
-        scrollToSection={scrollToSection}
-        getWhatsAppLink={getWhatsAppLink}
-      />
 
       <main className="pt-16">
         <Hero scrollToSection={scrollToSection} />
@@ -77,20 +68,6 @@ export default function HomePage() {
         />
         <ContactSection getWhatsAppLink={getWhatsAppLink} />
       </main>
-
-      <Footer
-        scrollToSection={scrollToSection}
-        onOpenSeekerTerms={() => {
-          scrollToSection('terms', 'seeker');
-          setShowFullTerms(true);
-        }}
-        onOpenEmployerTerms={() => {
-          scrollToSection('terms', 'employer');
-          setShowFullTerms(true);
-        }}
-      />
-
-      <ScrollToTop />
     </div>
   );
 }
