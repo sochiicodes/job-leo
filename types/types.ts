@@ -1,27 +1,62 @@
-
-export type JobCategory = 
-  | 'All'
-  | 'Sales & Retail'
-  | 'Hospitality & Events'
-  | 'Office & Digital'
-  | 'Logistics & Security'
-  | 'Domestic & Care'
-  | 'Education'
-  | 'Beauty & Fashion'
-  | 'Professional Roles';
-  
-
 export interface JobListing {
   id: string;
   title: string;
-  category: JobCategory;
+  category: 'All' | JobCategory;
+  type: JobType;
+  level: ExperienceLevel
   location: string;
-  type: 'Full-time' | 'Part-time' | 'Contract' | 'Remote';
+  state: string;
   salary?: string;
   postedAt: string;
-  status: "Available" | "Not Available"
+  status: JobStatus;
+  tags: string
+  feature?: boolean
 }
 
+export type JobCategory = 
+  | 'Technology'
+  | 'Design'
+  | 'Marketing'
+  | 'Finance'
+  | 'Healthcare'
+  | 'Education'
+  | 'Sales'
+  | 'Operations'
+  | 'Engineering'
+  | 'Legal'; 
+
+export type JobType =
+  | 'Full-time'
+  | 'Part-time'
+  | 'Contract'
+  | 'Internship'
+  | 'Freelance';
+
+ export type ExperienceLevel = 
+  | 'Internship'
+  | 'Junior'
+  | 'Mid'
+  | 'Senior'
+  | 'Lead'
+  | 'Director';
+
+  export type SortOption = 
+    | 'relevance'
+    | 'date'
+    | 'salary_high'
+    | 'salary_low'
+    | 'available' 
+    | 'unavailable'
+
+
+export type JobStatus = 'available' | 'unavailable'
+
+export type ViewMode = 'list' | 'grid'
+
+
+
+
+//Legal - Terms and Conditions
 export interface TermsContent {
   title: string;
   points: string[];
