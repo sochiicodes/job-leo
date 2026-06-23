@@ -10,6 +10,25 @@ export const DATE = new Date().toLocaleDateString("en-GB", {
   year: "numeric",
 });
 
+export const JOB_CATEGORIES = [
+  'Technology',
+  'Design',
+  'Marketing',
+  'Finance',
+  'Healthcare',
+  'Education',
+  'Sales',
+  'Operations',
+  'Engineering',
+  'Legal',
+  'Hospitality',
+  'Domestic & Care',
+  'Office',
+  'Events',
+  'Beauty & Fashion',
+] as const
+
+
 export const FAQS: { question: string; answer: string }[] = [
   { question: "What exactly is JobLeo?", answer: "JobLeo is a premium job referral and placement service based in Nsukka. We act as a bridge between high-quality local talent and businesses, making hiring faster and safer for everyone through direct WhatsApp communication." },
   { question: "How do I register as a job seeker?", answer: "Click on 'Register as Seeker' to fill our registration form. There is a one-time ₦2,000 registration fee. Once paid, we add you to our vetted database and start referring you to relevant job interviews." },

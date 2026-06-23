@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Briefcase, MapPin, ChevronRight } from 'lucide-react';
-import { CATEGORIES, JOB_LISTINGS } from '../../data/constants';
 import { JobCategory, JobListing } from '../../types/types';
 import { ToggleSwitch } from '../ui/ToggleSwitch';
+import { JOB_LISTINGS } from '../../data/jobs';
+import { JOB_CATEGORIES } from '../../data/constants';
+
+type JobFilter = "All" | JobCategory
 
 interface JobsSectionProps {
-  selectedCategory: JobCategory;
+  selectedCategory: JobFilter;
   onCategoryChange: (cat: JobCategory) => void;
   getWhatsAppLink: (jobTitle?: string) => string;
 }
@@ -18,7 +21,7 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
       selectedCategory === 'All' || job.category === selectedCategory;
   
     const matchesAvailability =
-      !showAvailableOnly || job.status === 'Available';
+      !showAvailableOnly || job.status === 'available';
   
     return matchesCategory && matchesAvailability;
   });
@@ -29,7 +32,7 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-16">
           <h2 className="text-4xl font-black text-slate-900 tracking-tight">Openings in Nsukka</h2>
           <div className="flex flex-wrap gap-2">
-            {CATEGORIES.map((cat) => (
+            {JOB_CATEGORIES.map((cat) => (
               <button
                 key={cat}
                 onClick={() => onCategoryChange(cat)}
@@ -60,7 +63,7 @@ export function JobsSection({ selectedCategory, onCategoryChange, getWhatsAppLin
                   {job.category}
                 </section>
                 <section className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black rounded-xl uppercase tracking-widest border border-slate-100 self-start mb-6">
-                  {job.status === 'Available' && (
+                  {job.status === 'available' && (
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>

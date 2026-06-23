@@ -1,7 +1,9 @@
+import { JOB_CATEGORIES } from "../data/constants";
+
 export interface JobListing {
   id: string;
   title: string;
-  category: 'All' | JobCategory;
+  category: JobCategory;
   type: JobType;
   level: ExperienceLevel
   location: string;
@@ -13,22 +15,7 @@ export interface JobListing {
   feature?: boolean
 }
 
-export type JobCategory = 
-  | 'Technology'
-  | 'Design'
-  | 'Marketing'
-  | 'Finance'
-  | 'Healthcare'
-  | 'Education'
-  | 'Sales'
-  | 'Operations'
-  | 'Engineering'
-  | 'Legal'
-  | 'Hospitality'
-  | 'Domestic & Care'
-  | 'Office'
-  | 'Events'
-  | 'Beauty & Fashion'
+export type JobCategory = (typeof JOB_CATEGORIES)[number]
 
 export type JobType =
   | 'Full-time'
