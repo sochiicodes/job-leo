@@ -6,10 +6,10 @@ export interface JobListing {
   level: ExperienceLevel
   location: string;
   state: string;
-  salary?: string;
+  salary?: number;
   postedAt: string;
   status: JobStatus;
-  tags: string
+  tags: string[]
   feature?: boolean
 }
 
@@ -23,7 +23,12 @@ export type JobCategory =
   | 'Sales'
   | 'Operations'
   | 'Engineering'
-  | 'Legal'; 
+  | 'Legal'
+  | 'Hospitality'
+  | 'Domestic & Care'
+  | 'Office'
+  | 'Events'
+  | 'Beauty & Fashion'
 
 export type JobType =
   | 'Full-time'

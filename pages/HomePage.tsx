@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { JobCategory } from '../types/types';
-import { WHATSAPP_BASE_URL } from '../constants';
+import { WHATSAPP_BASE_URL } from '../data/constants';
 import { 
     ContactSection, 
     FAQSection, 

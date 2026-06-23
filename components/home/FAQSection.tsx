@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
-import { FAQS } from '../../constants';
+import { FAQS } from '../../data/constants';
 
 interface FAQSectionProps {
   openFaqIndex: number | null;

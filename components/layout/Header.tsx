@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, X, PlusCircle } from 'lucide-react';
-import { EMPLOYER_FORM_URL } from '../../constants';
+import { EMPLOYER_FORM_URL } from '../../data/constants';
 
 interface HeaderProps {
   isScrolled: boolean;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { FileText, X } from 'lucide-react';
-import { TERMS_JOB_SEEKERS, TERMS_EMPLOYERS } from '../../constants';
+import { TERMS_JOB_SEEKERS, TERMS_EMPLOYERS } from '../../data/constants';
 
 interface FullTermsOverlayProps {
   activeTab: 'seeker' | 'employer';
