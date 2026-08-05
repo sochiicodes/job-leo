@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { EMPLOYER_FORM_URL } from "../../../constants/urls"
 import { PlusCircle } from "lucide-react"
 
-export const PostJobButton = () =>{
+const PostJobButton = () =>{
     return(
         <Link
             to={EMPLOYER_FORM_URL}
@@ -15,3 +15,5 @@ export const PostJobButton = () =>{
         </Link>
     )
 }
+
+export default PostJobButton;
