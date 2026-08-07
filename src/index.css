@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0fdf1;
+  --color-brand-100: #dbfce1;
+  --color-brand-200: #bdf7c7;
+  --color-brand-300: #8ef0a0;
+  --color-brand-400: #54e26e;
+  --color-brand-500: #36e838;
+  --color-brand-600: #22c324;
+  --color-brand-700: #1e9a21;
+  --color-brand-800: #1d791f;
+  --color-brand-900: #1a641c;
+  --color-brand-950: #09370b;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.bg-pattern {
+  background-image: radial-gradient(#36e83815 1px, transparent 1px);
+  background-size: 20px 20px;
+}
