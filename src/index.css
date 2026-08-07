@@ -18,8 +18,3 @@ body {
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
 }
-
-.bg-pattern {
-  background-image: radial-gradient(#36e83815 1px, transparent 1px);
-  background-size: 20px 20px;
-}
