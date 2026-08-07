@@ -26,7 +26,7 @@ export function Header({
   return (
     <div className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none">
       <nav
-        className={`pointer-events-auto transition-all duration-100 ease-out w-full max-w-7xl flex items-center justify-between px-6 ${
+        className={`pointer-events-auto transition-all duration-300 ease-out w-full flex items-center justify-between px-6 ${
           isScrolled
             ? 'mt-4 mx-4 rounded-full bg-white/80 backdrop-blur-xl shadow-lg border border-slate-100 py-2.5'
             : 'mt-0 rounded-none bg-white  border-slate-100 py-3.5'

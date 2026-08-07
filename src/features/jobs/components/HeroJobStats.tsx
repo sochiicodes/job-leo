@@ -2,18 +2,15 @@ import { SearchIcon } from "lucide-react"
 
 const HeroJobStats = () =>{
     return(
-        <section>
-            <p>
-                <span>63 </span>
-                jobs found
+        <section className="flex gap-10">
+            <p className="text-xs text-white font-bold">
+                63 <span className="text-xs text-gray-200 font-normal">jobs found</span>
             </p>
-            <p>
-                <span>380+ </span>
-                companies hiring
+            <p className="text-xs text-white font-bold">
+                380+ <span className="text-xs text-gray-200 font-normal">companies hiring</span>
             </p>
-            <p>
-                <span>63 </span>
-                New jobs added today
+            <p className="text-xs text-white font-bold">
+                63 <span className="text-xs text-gray-200 font-normal">New jobs added today</span>
             </p>
         </section>
     )
