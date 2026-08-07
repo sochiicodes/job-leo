@@ -1,0 +1,1 @@
+// export {defualt as CategoryPill} from "./components/common CategoryPill"
