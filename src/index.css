@@ -14,7 +14,17 @@
   --color-brand-950: #09370b;
 }
 
+
+
+
 body {
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
+}
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

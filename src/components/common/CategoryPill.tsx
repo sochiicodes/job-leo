@@ -13,7 +13,7 @@ const CategoryPill = ({cat}: CategoryPillProp) =>{
                 : 'bg-white text-slate-500 border-slate-200 hover:border-brand-400'
             }`}
         >
-            <span className="flex rounded-full h-2 w-2 bg-slate-500 group-hover:bg-brand-400"></span>
+            {/* <span className="flex rounded-full h-2 w-2 bg-slate-500 group-hover:bg-brand-400"></span> */}
             {cat}
         </button>
     )
