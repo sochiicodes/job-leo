@@ -1,4 +1,3 @@
-import { SearchIcon } from "lucide-react"
 
 const HeroJobStats = () =>{
     return(

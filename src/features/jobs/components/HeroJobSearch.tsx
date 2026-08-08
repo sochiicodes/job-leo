@@ -1,23 +1,24 @@
-import { SearchIcon } from "lucide-react"
+import { MapIcon, MapPin, Search, SearchIcon } from "lucide-react"
 
 const HeroJobSearch = () =>{
     return(
-        <form className="max-w-[860px] flex bg-white rounded overflow-hidden align-center shadow-md">
-            <input 
-                name="" 
-                id="" 
-                placeholder="Job title or keyword..."
-                className="py-4  px-5 flex-1 border-r border-gray-200 outline-none"
-            />
-            <input 
-                name="" 
-                id="" 
-                placeholder="City or State.."
-                className="py-4 px-5 outline-none"
-               
-            />
-            <button className="flex h-[56px] w-[200px] bg-orange-600 text-black">  
-                <p className="flex align-center justify-center   px-8 py-0 text-m gap-4"><SearchIcon size="16"/> Search Jobs</p>
+        <form className="flex rounded-2xl overflow-hidden shadow-md bg-white text-gray-900">
+            <div className="flex flex-1 gap-2 items-center px-4 border-r border-gray-200">
+                <Search size="18" className="text-brand-400 shrink-0"/>
+                <input
+                    placeholder="Job title or keyword..."
+                    className="flex-1 min-w-0 py-4 outline-none placeholder:text-gray-400"
+                />
+            </div>
+            <div className="flex flex-1 gap-2 items-center px-4">
+                <MapPin size="18" className="text-brand-400 shrink-0"/>
+                <input  
+                    placeholder="City or State.."
+                    className="flex-1 min-w-0 py-4 outline-none placeholder:text-gray-400"
+                />
+            </div>
+            <button className="flex items-center bg-orange-600 text-black px-4 gap-2 font-bold">  
+                <SearchIcon size="16"/> Search Jobs
             </button>
         </form>
     )
