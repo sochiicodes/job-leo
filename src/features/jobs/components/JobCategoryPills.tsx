@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from "react"
 import CategoryPill from "../../../components/common/CategoryPill"
-import { JOB_CATEGORIES } from "../../../constants/jobs"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
 interface categoryPillsProp{
-    categories: string[]
+    categories: readonly string[]
 }
 
 const JobCategoryPills = ({categories}: categoryPillsProp) =>{
@@ -57,7 +56,7 @@ const JobCategoryPills = ({categories}: categoryPillsProp) =>{
                 onScroll={checkOverflow}
             >
                 {
-                    categories.map((cat) =>(
+                    ["All", ...categories].map((cat) =>(
                         <CategoryPill cat={cat} key={cat}/>
                     ))
                 }

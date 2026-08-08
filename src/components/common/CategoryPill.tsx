@@ -3,7 +3,7 @@ interface CategoryPillProp{
 }
 
 const CategoryPill = ({cat}: CategoryPillProp) =>{
-    const selectedCategory = 'Design'
+    const selectedCategory = 'All'
     return(
         <button
             key={cat}
