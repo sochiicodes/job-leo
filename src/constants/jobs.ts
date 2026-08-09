@@ -43,11 +43,6 @@ export const SORT_OPTIONS = [
   "salary_low",
 ] as const;
 
-export const AVAILABILITY = [
-  "available",
-  "unavailable",
-]
-
 export const JOB_STATUS = [
   'available', 
   'unavailable'

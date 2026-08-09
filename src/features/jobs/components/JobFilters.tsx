@@ -1,7 +1,15 @@
 import { useState } from "react"
 import CheckItem from "../../../components/common/CheckItem"
-import { DATE_POSTED, EXPERIENCE_LEVELS, JOB_CATEGORIES, JOB_TYPES, LOCATION } from "../../../constants/jobs"
 import JobFilterSection from "./JobFilterSection"
+
+import { 
+    DATE_POSTED, 
+    EXPERIENCE_LEVELS, 
+    JOB_CATEGORIES, 
+    JOB_TYPES, 
+    LOCATION 
+} from "../../../constants/jobs"
+
 
 
 const JobFilters = () =>{
@@ -78,7 +86,7 @@ const JobFilters = () =>{
             </JobFilterSection>
             <JobFilterSection title="Category">
                 {
-                    JOB_CATEGORIES.map((cat) =>(
+                    ["All", ...JOB_CATEGORIES].map((cat) =>(
                         <CheckItem
                             type="radio"
                             label={cat} 

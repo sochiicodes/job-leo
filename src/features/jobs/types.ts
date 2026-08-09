@@ -1,6 +1,5 @@
 
 import { 
-    AVAILABILITY, 
     DATE_POSTED, 
     EXPERIENCE_LEVELS, 
     JOB_CATEGORIES, 
@@ -35,9 +34,7 @@ import {
   export type ExperienceLevel = (typeof EXPERIENCE_LEVELS)[number]
   
   export type SortOption =  (typeof SORT_OPTIONS)[number]
-  
-  export type Availability = (typeof AVAILABILITY)[number]
-  
+ 
   export type JobStatus = (typeof JOB_STATUS)[number]
   
   export type Location = (typeof LOCATION)[number]

@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { JobCategory } from '../types/types';
-import { WHATSAPP_BASE_URL } from '../constants/urls';
 
 
 import { 
@@ -13,6 +11,8 @@ import {
   ProcessSection
 } from '../features/home';
 import { FullTermsOverlay } from '../features/legal';
+import { JobCategory } from '../features/jobs/types';
+import { getWhatsAppLink } from '../utils/whatsappLink';
 
 
 
@@ -35,14 +35,6 @@ export default function HomePage() {
     if (element) element.scrollIntoView({ behavior: 'smooth' });
     if (tab) setActiveTab(tab);
     
-  };
-
-  const getWhatsAppLink = (jobTitle?: string, type?: 'seeker' | 'employer') => {
-    let message = "Hello JobLeo, I'd like to inquire about a job role.";
-    if (jobTitle) message = `Hello JobLeo, I am interested in the ${jobTitle} role.`;
-    else if (type === 'seeker') message = "Hello JobLeo, I want to register as a Job Seeker.";
-    else if (type === 'employer') message = "Hello JobLeo, I am looking to hire staff for my business.";
-    return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
   };
 
   return (
