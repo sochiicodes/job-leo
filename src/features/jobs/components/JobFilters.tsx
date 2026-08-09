@@ -1,9 +1,11 @@
+import { useState } from "react"
 import CheckItem from "../../../components/common/CheckItem"
 import { DATE_POSTED, EXPERIENCE_LEVELS, JOB_CATEGORIES, JOB_TYPES, LOCATION } from "../../../constants/jobs"
 import JobFilterSection from "./JobFilterSection"
 
 
 const JobFilters = () =>{
+    const [salary, setSalary] = useState(200)
 
     return(
         <aside className="w-1/4 bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
@@ -36,12 +38,15 @@ const JobFilters = () =>{
                     <section className="flex flex-col gap-4 items-center">
                         <input
                             type="range"
-                            className="w-full h-3 accent-brand outline-none"
+                            className="salary-range w-full h-3 accent-brand outline-none"
                             min={0}
-                            max={500000}
+                            max={500}
+                            step={10}
+                            value={salary}
+                            onChange={(e) => setSalary(Number(e.target.value))}
                         />
                         
-                        <p className="text-brand-500 font-bold text-lg">Up to<span> {300}</span>/yr</p>
+                        <p className="text-brand-500 font-bold text-lg">Up to<span> {salary}k</span>/yr</p>
                     </section>
                     <section className="flex items-center justify-between text-gray-400 text-xs">
                         <p>0</p>

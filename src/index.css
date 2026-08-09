@@ -28,3 +28,41 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Salary Range */
+.salary-range {
+  @apply w-full cursor-pointer appearance-none bg-transparent;
+}
+.salary-range::-webkit-slider-runnable-track {
+  @apply h-1.5 rounded-full bg-slate-200;
+}
+.salary-range:active::-webkit-slider-runnable-track {
+  animation: range-wobble 0.35s ease-in-out infinite alternate;
+}
+
+.salary-range::-webkit-slider-thumb {
+  @apply mt-[-5px] h-4 w-4 appearance-none rounded-full bg-brand-500 transition-all;
+}
+
+.salary-range:hover::-webkit-slider-thumb {
+  @apply scale-125 shadow-md;
+}
+.salary-range::-moz-range-track {
+  @apply h-1.5 rounded-full bg-slate-200;
+}
+.salary-range::-moz-range-thumb {
+  @apply h-4 w-4 rounded-full border-0 bg-brand-500 transition-all;
+}
+.salary-range:hover::-moz-range-thumb {
+  @apply scale-125 shadow-md;
+}
+@keyframes range-wobble {
+  from {
+    transform: scaleY(1);
+  }
+
+  to {
+    transform: scaleY(1.3);
+  }
+}
+/* ------------------------------ */

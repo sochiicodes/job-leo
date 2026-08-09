@@ -4,9 +4,6 @@ interface CheckItemProps{
     type: string
     label: string
     value?: string
-    min?: number
-    max?: number
-    step?: number
 }
 
 const CheckItem = ({label}: CheckItemProps) =>{
