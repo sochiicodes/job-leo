@@ -1,4 +1,4 @@
-import { JobListing } from "../types/types";
+import { JobCategory, JobListing, JobType } from "../types/types";
 
 export const JOB_CATEGORIES = [
     'Technology',
@@ -18,8 +18,61 @@ export const JOB_CATEGORIES = [
     'Beauty & Fashion',
   ] as const
   
+export const JOB_TYPES = [
+  "Full-time", 
+  "Part-time", 
+  "Contract", 
+  "Internship", 
+  "Freelance"
+] as const
 
+export const EXPERIENCE_LEVELS = [
+  "Internship",
+  "Junior",
+  "Mid",
+  "Senior",
+  "Lead",
+  "Director",
+] as const;
 
+export const SORT_OPTIONS = [
+  "relevance",
+  "date",
+  "salary_high",
+  "salary_low",
+] as const;
+
+export const AVAILABILITY = [
+  "available",
+  "unavailable",
+]
+
+export const JOB_STATUS = [
+  'available', 
+  'unavailable'
+] as const
+
+export const LOCATION = [
+  "Remote Only", 
+  "Lagos", 
+  "Abuja", 
+  "London", 
+  "USA", 
+  "Nigeria"
+] as const
+
+export const DATE_POSTED = [
+  ['Any time', 'any'], 
+  ['Last 24 hours', '1'],
+  ['Last 3 days', '3'], 
+  ['Last week', '7'], 
+  ['Last month', '30'],
+] as const
+
+export const VIEW_MODE = [
+  'list',
+  'grid'
+] as const
 
 export const JOB_LISTINGS: JobListing[] = [
     {
@@ -387,3 +440,5 @@ export const JOB_LISTINGS: JobListing[] = [
       tags: ['Security', 'Guard', 'Live-in']
     },
 ];
+
+

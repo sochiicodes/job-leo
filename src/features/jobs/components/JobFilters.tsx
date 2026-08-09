@@ -1,5 +1,5 @@
 import CheckItem from "../../../components/common/CheckItem"
-import { JOB_CATEGORIES } from "../../../constants/jobs"
+import { DATE_POSTED, EXPERIENCE_LEVELS, JOB_CATEGORIES, JOB_TYPES, LOCATION } from "../../../constants/jobs"
 import JobFilterSection from "./JobFilterSection"
 
 
@@ -13,7 +13,7 @@ const JobFilters = () =>{
             </header>
             <JobFilterSection title="Job Type">
                 {
-                    ["Part-Time", "Full-Time", "Remote", "Contract"].map((jobType) =>(
+                    JOB_TYPES.map((jobType) =>(
                         <CheckItem
                             type="checkbox"
                             label={jobType}
@@ -23,7 +23,7 @@ const JobFilters = () =>{
             </JobFilterSection>
             <JobFilterSection title="Experience">
                 {
-                    ["Junior", "Senior", "Intermediate", "Expert"].map((exp) =>(
+                    EXPERIENCE_LEVELS.map((exp) =>(
                         <CheckItem
                             type="checkbox"
                             label={exp}
@@ -51,7 +51,7 @@ const JobFilters = () =>{
             </JobFilterSection>
             <JobFilterSection title="Location">
                 {
-                    ["Remote Only", "Lagos", "Abuja", "London", "USA", "Nigeria"].map((loc) =>(
+                    LOCATION.map((loc) =>(
                         <CheckItem
                             type="checkbox"
                             label={loc}
@@ -61,23 +61,13 @@ const JobFilters = () =>{
             </JobFilterSection>
             <JobFilterSection title="Date Posted">
                 {
-                    [
-                        ['Any time', 'any'], 
-                        ['Last 24 hours', '1'],
-                        ['Last 3 days', '3'], 
-                        ['Last week', '7'], 
-                        ['Last month', '30'],
-                    ].map(([label, value]) =>(
-                        <label className="flex items-center justify-between" key={value}>
-                            <section className="flex gap-2 items-center">
-                                <CheckItem
-                                    type="radio"
-                                    value={value}
-                                    label={label}
-                                />
-                            </section>
-                            <p className="bg-slate-200 rounded-full px-2 py-0.5 text-xs">{4}</p>
-                        </label>
+                    DATE_POSTED.map(([label, value]) =>(
+                        <CheckItem
+                            type="radio"
+                            value={value}
+                            label={label}
+                            key={value}
+                        />
                     ))
                 }
             </JobFilterSection>

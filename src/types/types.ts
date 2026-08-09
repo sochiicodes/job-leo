@@ -1,4 +1,14 @@
-import { JOB_CATEGORIES } from "../constants/jobs";
+import { 
+  AVAILABILITY, 
+  DATE_POSTED, 
+  EXPERIENCE_LEVELS, 
+  JOB_CATEGORIES, 
+  JOB_STATUS, 
+  JOB_TYPES, 
+  LOCATION, 
+  SORT_OPTIONS, 
+  VIEW_MODE 
+} from "../constants/jobs";
 
 
 export interface JobListing {
@@ -18,35 +28,24 @@ export interface JobListing {
 
 export type JobCategory = "All" | (typeof JOB_CATEGORIES)[number]
 
-export type JobType =
-  | 'Full-time'
-  | 'Part-time'
-  | 'Contract'
-  | 'Internship'
-  | 'Freelance';
+export type JobType = (typeof JOB_TYPES) [number]
 
- export type ExperienceLevel = 
-  | 'Internship'
-  | 'Junior'
-  | 'Mid'
-  | 'Senior'
-  | 'Lead'
-  | 'Director';
+export type ExperienceLevel = (typeof EXPERIENCE_LEVELS)[number]
 
-  export type SortOption = 
-    | 'relevance'
-    | 'date'
-    | 'salary_high'
-    | 'salary_low'
-    | 'available' 
-    | 'unavailable'
+export type SortOption =  (typeof SORT_OPTIONS)[number]
+
+export type Availability = (typeof AVAILABILITY)[number]
+
+export type JobStatus = (typeof JOB_STATUS)[number]
+
+export type Location = (typeof LOCATION)[number]
+
+export type DatePosted = (typeof DATE_POSTED)[number]
+
+export type ViewMode =  (typeof VIEW_MODE)[number]
 
 
-export type JobStatus = 'available' | 'unavailable'
-
-export type ViewMode = 'list' | 'grid'
-
-export type JobFilter = "All" | JobCategory
+// export type JobFilter = "All" | JobCategory
 
 
 
