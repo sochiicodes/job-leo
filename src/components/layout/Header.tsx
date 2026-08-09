@@ -12,11 +12,11 @@ interface HeaderProps {
   getWhatsAppLink: (jobTitle?: string, type?: 'seeker' | 'employer') => string;
 }
 
-export function Header({
+const Header = ({
   isScrolled,
   scrollToSection,
   getWhatsAppLink,
-}: HeaderProps) {
+}: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   //know current page
@@ -94,3 +94,5 @@ export function Header({
     </div>
   );
 }
+
+export default Header

@@ -3,7 +3,7 @@ import { ChevronUp } from 'lucide-react';
 
 const SCROLL_THRESHOLD = 400;
 
-export function ScrollToTop() {
+const ScrollToTop =()=> {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -38,3 +38,5 @@ export function ScrollToTop() {
     </button>
   );
 }
+
+export default ScrollToTop

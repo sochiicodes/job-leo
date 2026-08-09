@@ -1,4 +1,5 @@
-import { JobCategory, JobListing, JobType } from "../types/types";
+import { JobListing } from "../features/jobs/types";
+
 
 export const JOB_CATEGORIES = [
     'Technology',

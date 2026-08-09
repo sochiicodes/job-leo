@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Briefcase, MapPin, ChevronRight } from 'lucide-react';
-import { JobCategory, JobFilter, JobListing } from '../../../types/types';
-import { ToggleSwitch } from '../../../components/ui/ToggleSwitch';
 import { JOB_CATEGORIES, JOB_LISTINGS } from '../../../constants/jobs';
+import { JobCategory, JobFilter, JobListing } from '../../jobs/types';
+import { ToggleSwitch } from '../../../components';
 
 
 
@@ -56,7 +56,7 @@ export default function JobsSection({ selectedCategory, onCategoryChange, getWha
           {filteredJobs.map((job: JobListing) => (
             <div
               key={job.id}
-              className="bg-white rounded-[2rem] border border-slate-100 p-8 flex flex-col shadow-sm hover:shadow-2xl hover:border-brand-200 transition-all group"
+              className="bg-white rounded-4xl border border-slate-100 p-8 flex flex-col shadow-sm hover:shadow-2xl hover:border-brand-200 transition-all group"
             >
               <div className="flex flex-wrap justify-between">
                 <section className="inline-block px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black rounded-xl uppercase tracking-widest border border-slate-100 self-start mb-6">
@@ -78,7 +78,7 @@ export default function JobsSection({ selectedCategory, onCategoryChange, getWha
               <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-brand-600 transition-colors tracking-tight">
                 {job.title}
               </h3>
-              <div className="space-y-3 mb-8 flex-grow">
+              <div className="space-y-3 mb-8 grow">
                 <div className="flex items-center gap-2.5 text-slate-400 font-bold text-sm">
                   <MapPin className="w-4 h-4 text-brand-500" />
                   {job.location}

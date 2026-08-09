@@ -1,12 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Header } from "../../components/layout/Header";
-import { Footer } from "../../components/layout/Footer";
-import { ScrollToTop } from "../../components/layout/ScrollToTop";
 import { FullTermsOverlay } from "../../features/legal";
 import { useScrolled } from "../../hooks/useScrolled";
 import { getWhatsAppLink } from "../../utils/whatsappLink";
 import { scrollToSection } from "../../utils/scrollToSection";
+import { Footer, Header, ScrollToTop } from "../../components";
 
 
 

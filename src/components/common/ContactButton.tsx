@@ -13,3 +13,5 @@ export const ContactButton = () =>{
         </Link>
     )
 }
+
+export default ContactButton

@@ -8,7 +8,7 @@ interface FooterProps {
   onOpenEmployerTerms: () => void;
 }
 
-export function Footer({ scrollToSection, onOpenSeekerTerms, onOpenEmployerTerms }: FooterProps) {
+const Footer =({ scrollToSection, onOpenSeekerTerms, onOpenEmployerTerms }: FooterProps) => {
   const { pathname } = useLocation()
   const showHomeLinks = pathname === "/"
 
@@ -93,3 +93,5 @@ export function Footer({ scrollToSection, onOpenSeekerTerms, onOpenEmployerTerms
     </footer>
   );
 }
+
+export default Footer

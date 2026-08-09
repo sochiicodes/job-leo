@@ -6,7 +6,7 @@ interface ToggleSwitchProps {
   label?: string;
 }
 
-export function ToggleSwitch({ checked, onChange, label }: ToggleSwitchProps) {
+const ToggleSwitch = ({ checked, onChange, label }: ToggleSwitchProps) => {
   return (
     <div className="flex items-center justify-between">
       {label && (
@@ -30,3 +30,5 @@ export function ToggleSwitch({ checked, onChange, label }: ToggleSwitchProps) {
     </div>
   );
 }
+
+export default ToggleSwitch
