@@ -1,6 +1,6 @@
 
 //Common.ts
 
-import { ProductFiltertSlice } from "../store/ProductFilterSlice";
+import { JobFilterSlice } from "../store/JobFilterSlice";
 
-export type Store = ProductFiltertSlice
+export type Store = JobFilterSlice

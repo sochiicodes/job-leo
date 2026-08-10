@@ -1,8 +1,8 @@
 import { create } from "zustand";
 import { Store } from "../types/store";
-import { createProductFilterSlice } from "./ProductFilterSlice";
+import { createJobFilterSlice } from "./JobFilterSlice";
 
 
 export const useStore = create<Store>()((...a) =>({
-    ...createProductFilterSlice(...a),
+    ...createJobFilterSlice(...a),
 }))

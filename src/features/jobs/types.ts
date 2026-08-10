@@ -39,7 +39,7 @@ import {
   
   export type Location = (typeof LOCATION)[number]
   
-  export type DatePosted = (typeof DATE_POSTED)[number]
+  export type DatePosted = (typeof DATE_POSTED)[number][1]
   
   export type ViewMode =  (typeof VIEW_MODE)[number]
   
