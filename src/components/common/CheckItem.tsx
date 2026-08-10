@@ -1,15 +1,15 @@
 import { Check } from "lucide-react"
-import { useState } from "react"
 
-interface CheckItemProps{
+
+interface CheckItemProps<T extends string = string>{
     type: "checkbox" | "radio"
     label: string
-    onChange: (value: string) => void
-    value: string
+    onChange: (value: T) => void
+    value: T
     checked: boolean
 }
 
-const CheckItem = ({type, label,value , checked, onChange}: CheckItemProps) =>{
+function CheckItem<T extends string>({type, label, value, checked, onChange}: CheckItemProps<T>){
     const count = 4
 
     
