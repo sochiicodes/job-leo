@@ -17,7 +17,7 @@ interface JobFilterState{
     expLevel: ExperienceLevel[]
     sort: SortOption
     jobStatus: JobStatus[]
-    location: Location | null
+    location: Location[]
     datePosted: DatePosted
     salaryRange: number
 }
@@ -28,7 +28,7 @@ export interface JobFilterAction{
     setExpLevel: (level: ExperienceLevel) => void
     setSort: (sort: SortOption) => void
     setJobStatus: (status: JobStatus) => void
-    setLocation: (location: Location | null) => void
+    setLocation: (location: Location) => void
     setDatePosted: (date: DatePosted) => void
     setSalaryRange: (salary: number) => void
 }
@@ -41,7 +41,7 @@ const initialState: JobFilterState = {
     expLevel: [],
     sort: "relevance",
     jobStatus: [],
-    location: null,
+    location: [],
     datePosted: "any",
     salaryRange: 20
 }
@@ -54,10 +54,18 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
         ? state.jobType.filter((item) => item !== type)
         : [...state.jobType, type]
     })),
-    setExpLevel: (level) => set({expLevel: [level]}),
+    setExpLevel: (level) => set((state) =>({
+        expLevel: state.expLevel.includes(level)
+        ? state.expLevel.filter((item) => item !== level)
+        : [...state.expLevel, level]
+    })),
     setSort: (sort) => set({sort}),
     setJobStatus: (status) => set({jobStatus: [status]}),
-    setLocation: (location) => set({location}),
+    setLocation: (location) => set((state) =>({
+        location: state.location?.includes(location)
+        ? state.location.filter((item) => item !== location)
+        : [...state.location, location]
+    })),
     setDatePosted: (date) => set({datePosted: date}),
     setSalaryRange: (salary) => set({salaryRange: salary})
 }))

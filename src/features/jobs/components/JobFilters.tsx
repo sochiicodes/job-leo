@@ -11,11 +11,12 @@ import {
 } from "../../../constants/jobs"
 import { useShallow } from "zustand/shallow"
 import { useStore } from "../../../store/store"
+import { JobCategory } from "../types"
 
 
+const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 
 
 const JobFilters = () =>{
-
     const {
         jobType, expLevel, jobStatus, location, sort, datePosted, salaryRange, category,
         setCategory, setJobType, setExpLevel, setSort,
@@ -47,7 +48,7 @@ const JobFilters = () =>{
     console.log(expLevel)
     // console.log(sort)
     // console.log(status)
-    // console.log(location)
+    console.log(location)
     // console.log(date)
     // console.log(cat)
 
@@ -107,7 +108,7 @@ const JobFilters = () =>{
                     </section>
                 </label>
             </JobFilterSection>
-            {/* <JobFilterSection title="Location">
+            <JobFilterSection title="Location">
                 {
                     LOCATION.map((loc) =>(
                         <CheckItem
@@ -120,35 +121,35 @@ const JobFilters = () =>{
                         />
                     ))
                 }
-            </JobFilterSection> */}
-            {/* <JobFilterSection title="Date Posted">
+            </JobFilterSection>
+            <JobFilterSection title="Date Posted">
                 {
                     DATE_POSTED.map(([label, value]) =>(
                         <CheckItem
                             key={label}
-                            type="checkbox"
+                            type="radio"
                             label={label}
                             value={value}
-                            checked={datePosted.includes(value)}
+                            checked={datePosted === value}
                             onChange={setDatePosted}
                         />
                     ))
                 }
-            </JobFilterSection> */}
-            {/* <JobFilterSection title="Category">
+            </JobFilterSection>
+            <JobFilterSection title="Category">
                 {
-                    ["All", ...JOB_CATEGORIES].map((cat) =>(
+                    categories.map((cat) =>(
                         <CheckItem
                             key={cat}
-                            type="checkbox"
+                            type="radio"
                             label={cat}
                             value={cat}
-                            checked={category.includes(cat)}
+                            checked={category === cat}
                             onChange={setCategory}
                         />
                     ))
                 }
-            </JobFilterSection> */}
+            </JobFilterSection>
         </aside>
     )
 }

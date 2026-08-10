@@ -1,4 +1,4 @@
-import { Check } from "lucide-react"
+import { Check, Radio } from "lucide-react"
 
 
 interface CheckItemProps<T extends string = string>{
@@ -28,7 +28,15 @@ function CheckItem<T extends string>({type, label, value, checked, onChange}: Ch
                         ? "border-brand-600 bg-brand-600" 
                         : "border-brand-600 bg-transparent"
                     }`}>
-                    {checked &&(
+                    {checked && (
+                        type === "checkbox"
+                        ? 
+                        <Radio
+                            size={12}
+                            strokeWidth={3}
+                            className="text-white"
+                        />
+                        :
                         <Check
                             size={12}
                             strokeWidth={3}
