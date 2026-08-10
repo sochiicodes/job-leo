@@ -1,6 +1,6 @@
-import { StateCreator } from "zustand"
-import { Store } from "../types/store"
-import { 
+import type { StateCreator } from "zustand"
+import type { Store } from "../types/store"
+import type { 
     DatePosted, 
     ExperienceLevel, 
     JobCategory, 
