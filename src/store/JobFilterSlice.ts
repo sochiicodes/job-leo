@@ -43,7 +43,7 @@ const initialState: JobFilterState = {
     jobStatus: [],
     location: [],
     datePosted: "any",
-    salaryRange: 20
+    salaryRange: 200
 }
 
 export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = ((set) =>({

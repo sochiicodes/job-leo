@@ -45,12 +45,7 @@ const JobFilters = () =>{
 
 
     console.log(jobType)
-    console.log(expLevel)
-    // console.log(sort)
-    // console.log(status)
-    console.log(location)
-    // console.log(date)
-    // console.log(cat)
+
 
 
     return(
@@ -96,11 +91,11 @@ const JobFilters = () =>{
                             min={0}
                             max={500}
                             step={10}
-                            value={salary}
-                            onChange={(e) => setSalary(Number(e.target.value))}
+                            value={salaryRange}
+                            onChange={(e) => setSalaryRange(Number(e.target.value))}
                         />
                         
-                        <p className="text-brand-500 font-bold text-lg">Up to<span> {salary}k</span>/yr</p>
+                        <p className="text-brand-500 font-bold text-lg">Up to<span> {salaryRange}k</span>/mo</p>
                     </section>
                     <section className="flex items-center justify-between text-gray-400 text-xs">
                         <p>0</p>
