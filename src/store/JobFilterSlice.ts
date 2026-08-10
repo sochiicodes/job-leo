@@ -49,7 +49,11 @@ const initialState: JobFilterState = {
 export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = ((set) =>({
     ...initialState,
     setCategory: (category) => set({category}),
-    setJobType: (type) => set({jobType: [type]}),
+    setJobType: (type) => set((state) => ({
+        jobType: state.jobType.includes(type)
+        ? state.jobType.filter((item) => item !== type)
+        : [...state.jobType, type]
+    })),
     setExpLevel: (level) => set({expLevel: [level]}),
     setSort: (sort) => set({sort}),
     setJobStatus: (status) => set({jobStatus: [status]}),

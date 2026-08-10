@@ -1,20 +1,26 @@
 import { Check } from "lucide-react"
+import { useState } from "react"
 
 interface CheckItemProps{
-    type: string
+    type: "checkbox" | "radio"
     label: string
-    value?: string
+    onChange: (value: string) => void
+    value: string
+    checked: boolean
 }
 
-const CheckItem = ({label}: CheckItemProps) =>{
+const CheckItem = ({type, label,value , checked, onChange}: CheckItemProps) =>{
     const count = 4
-    const checked = false
+
+    
     return(
         <label className="flex items-center justify-between">
             <section className="flex gap-2 items-center">
                 <input
-                    type="checkbox"
+                    type={type}
+                    value={value}
                     checked={checked}
+                    onChange={() => onChange(value)}
                     className="sr-only"
                 />
                 <span className={`flex border border-slate-300 size-4 items-center justify-center rounded-sm transition-colors
