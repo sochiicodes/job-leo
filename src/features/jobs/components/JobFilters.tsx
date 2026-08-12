@@ -41,7 +41,6 @@ const JobFilters = () =>{
             setSalaryRange: state.setSalaryRange,
         }))
     )
-    const [salary, setSalary] = useState(200)
 
 
     console.log(jobType)
