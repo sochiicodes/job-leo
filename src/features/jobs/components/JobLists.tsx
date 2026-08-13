@@ -2,6 +2,8 @@ import JobCard from "./JobCard";
 import type { ViewMode } from "../types";
 import JobActiveFilterChips from "./JobActiveFilterChips";
 import { VIEW_MODE } from "../../../constants/jobs";
+import { useStore } from "../../../store/store";
+import { useShallow } from "zustand/shallow";
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
     list: "grid-cols-1",
@@ -9,7 +11,13 @@ const GRID_LAYOUT: Record<ViewMode, string> = {
 };
 
 const JobLists = () => {
-    const viewMode: ViewMode = "list";
+    const {viewMode, setViewMode} = useStore(
+        useShallow((state) =>({
+            viewMode: state.viewMode,
+            setViewMode: state.setViewMode
+        }))
+    )
+    // const viewMode: ViewMode = "list";
     const filterLength = 20
 
     return (
@@ -27,12 +35,13 @@ const JobLists = () => {
                 <div className="flex">
                 {VIEW_MODE.map((v) => (
                     <button
-                    className={`w-8 h-8 border flex items-center justify-center text-xs transition-colors first:rounded-l-lg last:rounded-r-lg ${
-                        viewMode === v
-                        ? 'bg-brand-light text-brand-500 border-brand-500'
-                        : 'bg-white text-gray-400 border-gray-200 hover:bg-page'
-                    }`}
-                    title={`${v} view`}
+                        onClick={() => setViewMode(v)}
+                        className={`w-8 h-8 border flex items-center justify-center text-xs transition-colors first:rounded-l-lg last:rounded-r-lg ${
+                            viewMode === v
+                            ? 'bg-brand-light text-brand-500 border-brand-500'
+                            : 'bg-white text-gray-400 border-gray-200 hover:bg-page'
+                        }`}
+                        title={`${v} view`}
                     >
                     {v === 'list' ? '☰' : '⊞'}
                     </button>

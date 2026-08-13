@@ -7,7 +7,8 @@ import type {
     JobStatus, 
     JobType, 
     Location, 
-    SortOption 
+    SortOption, 
+    ViewMode
 } from "../features/jobs/types"
 
 
@@ -20,6 +21,7 @@ interface JobFilterState{
     location: Location[]
     datePosted: DatePosted
     salaryRange: number
+    viewMode: ViewMode
 }
 
 export interface JobFilterAction{
@@ -31,6 +33,7 @@ export interface JobFilterAction{
     setLocation: (location: Location) => void
     setDatePosted: (date: DatePosted) => void
     setSalaryRange: (salary: number) => void
+    setViewMode: (viewMode: ViewMode) => void
 }
 
 export type JobFilterSlice = JobFilterState & JobFilterAction
@@ -43,7 +46,8 @@ const initialState: JobFilterState = {
     jobStatus: [],
     location: [],
     datePosted: "any",
-    salaryRange: 200
+    salaryRange: 200,
+    viewMode: "grid"
 }
 
 export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = ((set) =>({
@@ -67,5 +71,6 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
         : [...state.location, location]
     })),
     setDatePosted: (date) => set({datePosted: date}),
-    setSalaryRange: (salary) => set({salaryRange: salary})
+    setSalaryRange: (salary) => set({salaryRange: salary}),
+    setViewMode: (viewMode) => set({viewMode:  viewMode})
 }))
