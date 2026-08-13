@@ -17,7 +17,7 @@ interface JobFilterState{
     jobType: JobType[]
     expLevel: ExperienceLevel[]
     sort: SortOption
-    jobStatus: JobStatus[]
+    jobStatus: JobStatus | null
     location: Location[]
     datePosted: DatePosted
     salaryRange: number
@@ -34,25 +34,26 @@ export interface JobFilterAction{
     setDatePosted: (date: DatePosted) => void
     setSalaryRange: (salary: number) => void
     setViewMode: (viewMode: ViewMode) => void
-    seClearFilters: () => void
+    clearFilters: () => void
 }
 
 export type JobFilterSlice = JobFilterState & JobFilterAction
 
-const initialState: JobFilterState = {
+const initialState: Omit<JobFilterState, "viewMode"> = {
     category: "All",
     jobType: [],
     expLevel: [],
     sort: "Most Relevant",
-    jobStatus: [],
+    jobStatus: null,
     location: [],
     datePosted: "any",
     salaryRange: 200,
-    viewMode: "grid"
 }
 
 export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = ((set) =>({
     ...initialState,
+    viewMode: "grid",
+
     setCategory: (category) => set({category}),
     setJobType: (type) => set((state) => ({
         jobType: state.jobType.includes(type)
@@ -65,7 +66,7 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
         : [...state.expLevel, level]
     })),
     setSort: (sort) => set({sort}),
-    setJobStatus: (status) => set({jobStatus: [status]}),
+    setJobStatus: (status) => set({jobStatus: status}),
     setLocation: (location) => set((state) =>({
         location: state.location?.includes(location)
         ? state.location.filter((item) => item !== location)
@@ -74,5 +75,5 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
     setDatePosted: (date) => set({datePosted: date}),
     setSalaryRange: (salary) => set({salaryRange: salary}),
     setViewMode: (viewMode) => set({viewMode:  viewMode}),
-    seClearFilters: () => set({...initialState})
+    clearFilters: () => set((state) => ({...initialState, viewMode: state.viewMode}))
 }))

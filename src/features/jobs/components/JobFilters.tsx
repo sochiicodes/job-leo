@@ -13,36 +13,28 @@ import { useShallow } from "zustand/shallow"
 import { useStore } from "../../../store/store"
 import { JobCategory } from "../types"
 import { RotateCcw } from "lucide-react"
+import { useJobFilters } from "../useJobFilters"
 
 
 const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 
 
 const JobFilters = () =>{
     const {
-        jobType, expLevel, jobStatus, location, sort, datePosted, salaryRange, category,
-        setCategory, setJobType, setExpLevel, setSort,
-        setJobStatus, setLocation, setDatePosted, setSalaryRange, seClearFilters
-    } = useStore(
-        useShallow((state) =>({
-            jobType: state.jobType,
-            expLevel: state.expLevel,
-            jobStatus: state.jobStatus,
-            location: state.location,
-            category: state.category,
-            sort: state.location,
-            salaryRange: state.salaryRange,
-            datePosted: state.datePosted,
-            setCategory: state.setCategory,
-            setJobType: state.setJobType,
-            setExpLevel: state.setExpLevel,
-            setSort: state.setSort,
-            setJobStatus: state.setJobStatus,
-            setLocation: state.setLocation,
-            setDatePosted: state.setDatePosted,
-            setSalaryRange: state.setSalaryRange,
-            seClearFilters: state.seClearFilters
-        }))
-    )
+        jobType, 
+        expLevel,
+        location,
+        datePosted, 
+        salaryRange, 
+        category,
+        setCategory, 
+        setJobType, 
+        setExpLevel,
+        setLocation, 
+        setDatePosted, 
+        setSalaryRange, 
+        clearFilters
+    } = useJobFilters()
+    
 
 
     console.log(jobType)
@@ -54,7 +46,7 @@ const JobFilters = () =>{
             <header className="flex justify-between p-5 border-b border-gray-100">
                 <p className="text-m">Filter</p>
                 <p 
-                    onClick={seClearFilters}
+                    onClick={clearFilters}
                     className="text-xs font-bold text-brand-600 flex gap-2 cursor-pointer">
                     <RotateCcw size={16}/>
                     {/* Clear All */}
