@@ -34,6 +34,7 @@ export interface JobFilterAction{
     setDatePosted: (date: DatePosted) => void
     setSalaryRange: (salary: number) => void
     setViewMode: (viewMode: ViewMode) => void
+    seClearFilters: () => void
 }
 
 export type JobFilterSlice = JobFilterState & JobFilterAction
@@ -72,5 +73,6 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
     })),
     setDatePosted: (date) => set({datePosted: date}),
     setSalaryRange: (salary) => set({salaryRange: salary}),
-    setViewMode: (viewMode) => set({viewMode:  viewMode})
+    setViewMode: (viewMode) => set({viewMode:  viewMode}),
+    seClearFilters: () => set({...initialState})
 }))

@@ -12,6 +12,7 @@ import {
 import { useShallow } from "zustand/shallow"
 import { useStore } from "../../../store/store"
 import { JobCategory } from "../types"
+import { RotateCcw } from "lucide-react"
 
 
 const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 
@@ -20,7 +21,7 @@ const JobFilters = () =>{
     const {
         jobType, expLevel, jobStatus, location, sort, datePosted, salaryRange, category,
         setCategory, setJobType, setExpLevel, setSort,
-        setJobStatus, setLocation, setDatePosted, setSalaryRange
+        setJobStatus, setLocation, setDatePosted, setSalaryRange, seClearFilters
     } = useStore(
         useShallow((state) =>({
             jobType: state.jobType,
@@ -39,6 +40,7 @@ const JobFilters = () =>{
             setLocation: state.setLocation,
             setDatePosted: state.setDatePosted,
             setSalaryRange: state.setSalaryRange,
+            seClearFilters: state.seClearFilters
         }))
     )
 
@@ -51,7 +53,12 @@ const JobFilters = () =>{
         <aside className="w-70 shrink-0 bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
             <header className="flex justify-between p-5 border-b border-gray-100">
                 <p className="text-m">Filter</p>
-                <p className="text-xs font-bold text-brand-600">Clear All</p>
+                <p 
+                    onClick={seClearFilters}
+                    className="text-xs font-bold text-brand-600 flex gap-2 cursor-pointer">
+                    <RotateCcw size={16}/>
+                    {/* Clear All */}
+                </p>
             </header>
             <JobFilterSection title="Job Type">
                 {
