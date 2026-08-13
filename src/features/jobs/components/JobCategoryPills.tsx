@@ -1,12 +1,17 @@
 import { useEffect, useRef, useState } from "react"
 import CategoryPill from "../../../components/common/CategoryPill"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useJobFilters } from "../useJobFilters"
+import { JobCategory } from "../types"
 
 interface categoryPillsProp{
-    categories: readonly string[]
+    categories: readonly JobCategory[]
 }
 
 const JobCategoryPills = ({categories}: categoryPillsProp) =>{
+    const { setCategory, category } = useJobFilters()
+    console.log(category, setCategory)
+
     const scrollRef = useRef<HTMLElement | null>(null)
 
     const [canScrollLeft, setCanScrollLeft] = useState(false)
@@ -56,8 +61,8 @@ const JobCategoryPills = ({categories}: categoryPillsProp) =>{
                 onScroll={checkOverflow}
             >
                 {
-                    ["All", ...categories].map((cat) =>(
-                        <CategoryPill cat={cat} key={cat}/>
+                    categories.map((cat) =>(
+                        <CategoryPill cat={cat} key={cat} onClick={() =>setCategory(cat)}/>
                     ))
                 }
             </section>

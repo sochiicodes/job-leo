@@ -10,7 +10,6 @@ import {
     LOCATION 
 } from "../../../constants/jobs"
 import { useShallow } from "zustand/shallow"
-import { useStore } from "../../../store/store"
 import { JobCategory } from "../types"
 import { RotateCcw } from "lucide-react"
 import { useJobFilters } from "../useJobFilters"
@@ -37,7 +36,7 @@ const JobFilters = () =>{
     
 
 
-    console.log(jobType)
+    console.log(category)
 
 
 
@@ -47,7 +46,9 @@ const JobFilters = () =>{
                 <p className="text-m">Filter</p>
                 <p 
                     onClick={clearFilters}
-                    className="text-xs font-bold text-brand-600 flex gap-2 cursor-pointer">
+                    className="text-xs font-bold text-brand-600 flex gap-2 cursor-pointer"
+                    title="Reset Filter"
+                >
                     <RotateCcw size={16}/>
                     {/* Clear All */}
                 </p>
