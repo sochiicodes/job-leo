@@ -42,7 +42,7 @@ const initialState: JobFilterState = {
     category: "All",
     jobType: [],
     expLevel: [],
-    sort: "relevance",
+    sort: "Most Relevant",
     jobStatus: [],
     location: [],
     datePosted: "any",

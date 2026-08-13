@@ -9,4 +9,5 @@ export {default as Header} from "./layout/Header"
 export {default as ScrollToTop} from "./layout/ScrollToTop"
 
 export {default as ToggleSwitch} from "./ui/ToggleSwitch"
+export {default as SortDropDown} from "./ui/SortDropDown"
 
