@@ -1,17 +1,16 @@
-interface ActiveFilterChipsProps{
+interface ActiveFilterChipProps{
     label: string
 }
 
-const ActiveFilterChips = ({label}: ActiveFilterChipsProps) => {
+const ActiveFilterChip = ({label}: ActiveFilterChipProps) => {
   
     return (
-      <div className="flex flex-wrap gap-2 mb-3">
-          <button
-            className="flex items-center gap-1.5 bg-brand-light text-brand-dark border border-green-200 rounded-full text-xs font-medium px-3 py-1 hover:bg-green-100 transition-colors"
-          >
+        <button
+            className="flex items-center gap-3 bg-brand-light text-brand-dark border border-green-200 rounded-full text-xs font-medium px-3 py-1 hover:bg-green-100 transition-colors group"
+        >
             {label}
-            <span className="text-brand-dark/60">✕</span>
-          </button>
-      </div>
+        <span className="text-brand-slate/60 text-xs group-hover:text-brand-900 transition-colors ">✕</span>
+        </button>
     );
   }
+  export default ActiveFilterChip

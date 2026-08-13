@@ -8,8 +8,8 @@ export default function JobsPage(){
             <HeroJobSection/>
             <JobCategoryPills categories={JOB_CATEGORIES}/>
             <section className="w-full flex items-start px-6 py-10 gap-10 bg-gray-100">
-                <JobFilters/>
-                <JobLists/>
+                <JobFilters />
+                <JobLists />
             </section>
         </main>
     )

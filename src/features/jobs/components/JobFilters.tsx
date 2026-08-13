@@ -48,7 +48,7 @@ const JobFilters = () =>{
 
 
     return(
-        <aside className="w-1/4 bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+        <aside className="w-70 shrink-0 bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
             <header className="flex justify-between p-5 border-b border-gray-100">
                 <p className="text-m">Filter</p>
                 <p className="text-xs font-bold text-brand-600">Clear All</p>

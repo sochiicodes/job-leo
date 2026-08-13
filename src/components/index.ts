@@ -2,6 +2,7 @@ export {default as CategoryPill} from "./common/CategoryPill"
 export {default as CheckItem} from "./common/CheckItem"
 export {default as ContactButton} from "./common/ContactButton"
 export {default as MetaPill} from "./common/MetaPill"
+export {default as ActiveFilterChip} from "./common/ActiveFilterChip"
 
 export {default as Footer} from "./layout/Footer"
 export {default as Header} from "./layout/Header"
