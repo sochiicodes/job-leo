@@ -1,5 +1,5 @@
 import { useShallow } from "zustand/shallow";
-import { useStore } from "../../store/store";
+import { useStore } from "../../../store/store";
 
 export const useJobFilters = () =>
   useStore(

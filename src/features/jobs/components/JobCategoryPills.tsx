@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import CategoryPill from "../../../components/common/CategoryPill"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { useJobFilters } from "../useJobFilters"
+import { useJobFilters } from "../hooks/useJobFilters"
 import { JobCategory } from "../types"
 
 interface categoryPillsProp{

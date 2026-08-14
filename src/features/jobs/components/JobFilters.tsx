@@ -12,7 +12,7 @@ import {
 import { useShallow } from "zustand/shallow"
 import { JobCategory } from "../types"
 import { RotateCcw } from "lucide-react"
-import { useJobFilters } from "../useJobFilters"
+import { useJobFilters } from "../hooks/useJobFilters"
 
 
 const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 

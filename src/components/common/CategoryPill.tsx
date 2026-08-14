@@ -1,4 +1,4 @@
-import { useJobFilters } from "../../features/jobs/useJobFilters"
+import { useJobFilters } from "../../features/jobs/hooks/useJobFilters"
 
 interface CategoryPillProp{
     cat: string

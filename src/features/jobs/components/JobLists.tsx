@@ -2,7 +2,8 @@ import JobCard from "./JobCard";
 import type { ViewMode } from "../types";
 import { VIEW_MODE } from "../../../constants/jobs";
 import { ActiveFilterChip, SortDropDown } from "../../../components";
-import { useJobFilters } from "../useJobFilters";
+import { useJobFilters } from "../hooks/useJobFilters";
+import { useActiveFilterChips } from "../hooks/useActiveFilterChips";
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
     list: "grid-cols-1",
@@ -13,54 +14,11 @@ const JobLists = () => {
     const {
         viewMode, 
         setViewMode,
-        category,
-        setCategory,
-        jobType,
-        setJobType,
-        expLevel,
-        setExpLevel,
-        location,
-        setLocation,
-        datePosted,
-        setDatePosted,
-        jobStatus,
-        setJobStatus,
     } = useJobFilters()
-    // const viewMode: ViewMode = "list";
+
     const filterLength = 20
 
-    const chips = [
-        ...(category !== "All"
-            ? [{label: category, onRemove: () => setCategory("All")}]
-            : []),
-        
-            ...jobType.map((type) =>({
-                label: type,
-                onRemove: () => setJobType(type)
-            })),
-
-            ...expLevel.map((level) =>({
-                label: level,
-                onRemove: () => setExpLevel(level)
-            })),
-
-            ...location.map((loc) =>({
-                label: loc,
-                onRemove: () => setLocation(loc)
-            })),
-
-            ...(datePosted !== "any" 
-                ? [{
-                    label: `Last ${datePosted} ${datePosted === "1" ? "day" : " days"}`,
-                    onRemove: () => setDatePosted("any")
-                }] 
-                : []),
-            
-            // ...jobStatus?.map((status) =>({
-            //     label: status,
-            //     onRemove: () => setJobStatus(status)
-            // }))
-    ]
+    const chips = useActiveFilterChips()
 
 
     return (
@@ -95,20 +53,15 @@ const JobLists = () => {
             </section>
             {/* Filter Chips */}
             <section className="flex flex-wrap gap-4">
-                {
-                // ["Design", "Tech", "Beauty"].map((label) =>(
-                //     <ActiveFilterChip label={label}/>
-                // ))
-                chips.map((chip) =>(
+                { chips.map((chip) =>(
                     <ActiveFilterChip
                         key={chip.label} 
                         label={chip.label}
                         onRemove={chip.onRemove}
                     />
-                ))
-                }
-
+                )) }
              </section>
+             
             <section
                 className={`grid w-full items-start gap-4 min-w-0 ${GRID_LAYOUT[viewMode]}`}
             >
