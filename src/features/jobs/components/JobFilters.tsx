@@ -33,10 +33,6 @@ const JobFilters = () =>{
         setSalaryRange, 
         clearFilters
     } = useJobFilters()
-    
-
-
-    console.log(category)
 
 
 

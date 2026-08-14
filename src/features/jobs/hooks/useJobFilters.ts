@@ -13,6 +13,8 @@ export const useJobFilters = () =>
       datePosted: state.datePosted,
       salaryRange: state.salaryRange,
       viewMode: state.viewMode,
+      jobSearchTerm: state.jobSearchTerm,
+      locationSearchTerm: state.locationSearchTerm,
 
       setCategory: state.setCategory,
       setJobType: state.setJobType,
@@ -24,5 +26,8 @@ export const useJobFilters = () =>
       setSalaryRange: state.setSalaryRange,
       setViewMode: state.setViewMode,
       clearFilters: state.clearFilters,
+
+      setJobSearchTerm: state.setJobSearchTerm,
+      setLocationSearchTerm: state.setLocationSearchTerm
     }))
   );

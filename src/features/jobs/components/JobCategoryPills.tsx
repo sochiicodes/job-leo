@@ -10,7 +10,6 @@ interface categoryPillsProp{
 
 const JobCategoryPills = ({categories}: categoryPillsProp) =>{
     const { setCategory, category } = useJobFilters()
-    console.log(category, setCategory)
 
     const scrollRef = useRef<HTMLElement | null>(null)
 

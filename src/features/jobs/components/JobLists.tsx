@@ -3,7 +3,7 @@ import type { ViewMode } from "../types";
 import { VIEW_MODE } from "../../../constants/jobs";
 import { ActiveFilterChip, SortDropDown } from "../../../components";
 import { useJobFilters } from "../hooks/useJobFilters";
-import { useActiveFilterChips } from "../hooks/useActiveFilterChips";
+import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
     list: "grid-cols-1",
