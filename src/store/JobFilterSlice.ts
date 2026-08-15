@@ -41,6 +41,17 @@ export interface JobFilterAction{
     setLocationSearchTerm: (value: string) => void
 }
 
+export type JobFilters = Pick<JobFilterState,
+    | "category"
+    | "jobType"
+    | "expLevel"
+    | "jobStatus"
+    | "location"
+    | "datePosted"
+    | "salaryRange"
+    | "jobSearchTerm"
+    | "locationSearchTerm"
+>
 export type JobFilterSlice = JobFilterState & JobFilterAction
 
 const initialState: Omit<JobFilterState, "viewMode"> = {
