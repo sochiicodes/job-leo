@@ -49,13 +49,12 @@ export const JOB_STATUS = [
   'Unavailable'
 ] as const
 
-export const LOCATION = [
-  "Remote Only", 
-  "Lagos", 
-  "Abuja", 
-  "London", 
-  "USA", 
-  "Nigeria"
+export const TOP_LOCATIONS = [
+  "Lagos",
+  "Abuja",
+  "Enugu",
+  "Port Harcourt",
+  "Ibadan",
 ] as const
 
 export const DATE_POSTED = [

@@ -8,7 +8,7 @@ import {
     JOB_CATEGORIES, 
     JOB_STATUS, 
     JOB_TYPES, 
-    LOCATION 
+    TOP_LOCATIONS 
 } from "../../../constants/jobs"
 import { useShallow } from "zustand/shallow"
 import { JobCategory } from "../types"
@@ -95,9 +95,9 @@ const JobFilters = () =>{
                     ))
                 }
             </JobFilterSection>
-            <JobFilterSection title="Location">
+            <JobFilterSection title="Top Locations">
                 {
-                    LOCATION.map((loc) =>(
+                    TOP_LOCATIONS.map((loc) =>(
                         <CheckItem
                             key={loc}
                             type="checkbox"

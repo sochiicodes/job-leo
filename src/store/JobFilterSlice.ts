@@ -39,7 +39,6 @@ export interface JobFilterAction{
     clearFilters: () => void
     setJobSearchTerm: (value: string) => void
     setLocationSearchTerm: (value: string) => void
-    handleSubmit: () => void
 }
 
 export type JobFilterSlice = JobFilterState & JobFilterAction
@@ -86,5 +85,4 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
 
     setJobSearchTerm: (value: string) => set({jobSearchTerm: value}),
     setLocationSearchTerm: (value: string) => set({locationSearchTerm: value}),
-    handleSubmit: () => set({})
 }))

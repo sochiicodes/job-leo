@@ -29,6 +29,5 @@ export const useJobFilters = () =>
 
       setJobSearchTerm: state.setJobSearchTerm,
       setLocationSearchTerm: state.setLocationSearchTerm,
-      handleSubmit: state.handleSubmit
     }))
   );

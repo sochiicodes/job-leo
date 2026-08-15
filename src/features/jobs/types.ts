@@ -5,7 +5,7 @@ import {
     JOB_CATEGORIES, 
     JOB_STATUS, 
     JOB_TYPES, 
-    LOCATION, 
+    TOP_LOCATIONS, 
     SORT_OPTIONS, 
     VIEW_MODE 
   } from "../../constants/jobs";
@@ -15,16 +15,20 @@ import {
   export interface JobListing {
     id: string
     title: string
+
     category: JobCategory
     type: JobType
     level: ExperienceLevel
+
     city: string
     state: string
     area: string
+
     salary: number
     postedAt: string
     status: JobStatus
     featured: boolean
+    
     tags: string[]
   }
   
@@ -38,7 +42,7 @@ import {
  
   export type JobStatus = (typeof JOB_STATUS)[number]
   
-  export type Location = (typeof LOCATION)[number]
+  export type Location = (typeof TOP_LOCATIONS)[number]
   
   export type DatePosted = (typeof DATE_POSTED)[number][1]
   
