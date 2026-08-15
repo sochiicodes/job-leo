@@ -21,7 +21,7 @@ export default function JobsSection({ selectedCategory, onCategoryChange, getWha
       selectedCategory === 'All' || job.category === selectedCategory;
   
     const matchesAvailability =
-      !showAvailableOnly || job.status === 'available';
+      !showAvailableOnly || job.status === 'Available';
   
     return matchesCategory && matchesAvailability;
   });
@@ -63,7 +63,7 @@ export default function JobsSection({ selectedCategory, onCategoryChange, getWha
                   {job.category}
                 </section>
                 <section className="inline-flex items-center gap-2 px-4 py-1.5 bg-slate-50 text-slate-600 text-[10px] font-black rounded-xl uppercase tracking-widest border border-slate-100 self-start mb-6">
-                  {job.status === 'available' && (
+                  {job.status === 'Available' && (
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -81,7 +81,7 @@ export default function JobsSection({ selectedCategory, onCategoryChange, getWha
               <div className="space-y-3 mb-8 grow">
                 <div className="flex items-center gap-2.5 text-slate-400 font-bold text-sm">
                   <MapPin className="w-4 h-4 text-brand-500" />
-                  {job.location}
+                  {/* {job.location} */}
                 </div>
                 <div className="flex items-center gap-2.5 text-slate-400 font-bold text-sm">
                   <Briefcase className="w-4 h-4 text-brand-500" />

@@ -14,6 +14,7 @@ import { useShallow } from "zustand/shallow"
 import { JobCategory } from "../types"
 import { RotateCcw } from "lucide-react"
 import { useJobFilters } from "../hooks/useJobFilters"
+import { formatCurrency } from "../../../utils/formatCurrency"
 
 
 const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 
@@ -130,13 +131,13 @@ const JobFilters = () =>{
                             type="range"
                             className="salary-range w-full h-3 accent-brand outline-none"
                             min={0}
-                            max={500}
-                            step={10}
+                            max={300000}
+                            step={5000}
                             value={salaryRange}
                             onChange={(e) => setSalaryRange(Number(e.target.value))}
                         />
                         
-                        <p className="text-brand-500 font-bold text-lg">Up to<span> {salaryRange}k</span>/mo</p>
+                        <p className="text-brand-500 font-bold text-lg">Up to<span> {formatCurrency(salaryRange)}</span>/mo</p>
                     </section>
                     <section className="flex items-center justify-between text-gray-400 text-xs">
                         <p>0</p>

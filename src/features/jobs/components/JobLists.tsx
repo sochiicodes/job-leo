@@ -4,21 +4,106 @@ import { JOB_LISTINGS, VIEW_MODE } from "../../../constants/jobs";
 import { ActiveFilterChip, SortDropDown, ToggleSwitch } from "../../../components";
 import { useJobFilters } from "../hooks/useJobFilters";
 import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
+import { filterJobs } from "../utils/filterJobs";
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
     list: "grid-cols-1",
     grid: "grid-cols-1 md:grid-cols-2 xl:grid-cols-3",
 };
 
+
+
 const JobLists = () => {
     const {
-        viewMode, 
+        category,
+        jobType,
+        expLevel,
+        sort,
+        jobStatus,
+        location,
+        datePosted,
+        salaryRange,
+        viewMode,
+        jobSearchTerm,
+        locationSearchTerm,
         setViewMode,
     } = useJobFilters()
 
-    const filterLength = 20
 
     const chips = useActiveFilterChips()
+    
+    const filteredJobs = JOB_LISTINGS.filter((job) =>{
+        const search = jobSearchTerm.toLowerCase().trim()
+        const locationSearch = locationSearchTerm.toLowerCase().trim()
+        // const jobTypeToggle = jobType.toLowerCase().trim()
+
+        const matchesJobSearch = 
+        !search 
+        || job.title
+                .toLowerCase()
+                .includes(search)
+        || job.tags.some((tag) =>{
+            tag
+                .toLowerCase()
+                .includes(search)
+        });
+
+        const matchesLocationSearch =
+        !locationSearchTerm
+        ||  job.area
+                .toLowerCase()
+                 .includes(locationSearch)
+        ||  job.city
+                .toLowerCase()
+                .includes(locationSearch)
+        ||  job.state
+                .toLowerCase()
+                .includes(locationSearch)
+
+        const matchesJobType = 
+            jobType.length === 0
+            || jobType.some((type) => job.type === type)
+
+        const matchesJobExperience = 
+            expLevel.length === 0
+            || expLevel.some((level) => job.level === level)
+        
+        const matchesJobStatus = 
+            jobStatus === "All"
+            || job.status === jobStatus
+
+        const matchesJobLocation = 
+            location.length === 0
+            || location.some((loc) => job.state === loc)
+            || location.some((loc) => job.city === loc)
+            location.some((loc) => job.area === loc)
+        
+        const matchesJobDatePosted =
+            datePosted === "any"
+            || datePosted === job.postedAt
+
+        const matchesJobSalary = 
+            job.salary <= salaryRange
+
+        const matchesJobCategory = 
+            category === "All"
+            || job.category === category
+        
+        // const matchesSortedJobs = 
+        //     sort === "Most Relevant"
+        //     || sortedJob === sort
+        
+        
+        return matchesJobSearch 
+            && matchesLocationSearch
+            && matchesJobType
+            && matchesJobExperience
+            && matchesJobStatus
+            && matchesJobLocation
+            && matchesJobCategory
+            && matchesJobSalary
+            && matchesJobDatePosted
+    })
 
 
     return (
@@ -26,8 +111,8 @@ const JobLists = () => {
             <section className="flex items-center justify-between flex-wrap gap-3">
                 {/* Count */}
                 <p className="text-sm text-gray-500">
-                    Showing <strong className="text-gray-900">{filterLength}</strong> job
-                    {filterLength > 1 ? 's' : ''}
+                    Showing <strong className="text-gray-900">{filteredJobs.length}</strong> job
+                    {filteredJobs.length > 1 ? 's' : ''}
                 </p>
                 
                 <div className="flex items-center gap-2">
@@ -66,7 +151,7 @@ const JobLists = () => {
             <section
                 className={`grid w-full items-start gap-4 min-w-0 ${GRID_LAYOUT[viewMode]}`}
             >
-                {JOB_LISTINGS.map((jobs) => (
+                {filteredJobs.map((jobs) => (
                     <JobCard 
                         jobs={jobs}
                         key={jobs.id} 

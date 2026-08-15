@@ -51,7 +51,7 @@ const initialState: Omit<JobFilterState, "viewMode"> = {
     jobStatus: "All",
     location: [],
     datePosted: "any",
-    salaryRange: 200,
+    salaryRange: 250000,
     jobSearchTerm: "",
     locationSearchTerm: ""
 }
