@@ -6,6 +6,7 @@ import {
     DATE_POSTED, 
     EXPERIENCE_LEVELS, 
     JOB_CATEGORIES, 
+    JOB_STATUS, 
     JOB_TYPES, 
     LOCATION 
 } from "../../../constants/jobs"
@@ -25,9 +26,12 @@ const JobFilters = () =>{
         datePosted, 
         salaryRange, 
         category,
+        jobStatus,
+
         setCategory, 
         setJobType, 
         setExpLevel,
+        setJobStatus,
         setLocation, 
         setDatePosted, 
         setSalaryRange, 
@@ -77,26 +81,19 @@ const JobFilters = () =>{
                     ))
                 }
             </JobFilterSection>
-            <JobFilterSection title="Salary Range">
-                <label className="flex flex-col justify-start gap-2">
-                    <section className="flex flex-col gap-4 items-center">
-                        <input
-                            type="range"
-                            className="salary-range w-full h-3 accent-brand outline-none"
-                            min={0}
-                            max={500}
-                            step={10}
-                            value={salaryRange}
-                            onChange={(e) => setSalaryRange(Number(e.target.value))}
+            <JobFilterSection title="Job Status">
+                {
+                    JOB_STATUS.map((status) =>(
+                        <CheckItem
+                            key={status}
+                            type="radio"
+                            label={status}
+                            value={status}
+                            checked={jobStatus.includes(status)}
+                            onChange={setJobStatus}
                         />
-                        
-                        <p className="text-brand-500 font-bold text-lg">Up to<span> {salaryRange}k</span>/mo</p>
-                    </section>
-                    <section className="flex items-center justify-between text-gray-400 text-xs">
-                        <p>0</p>
-                        <p>500k</p>
-                    </section>
-                </label>
+                    ))
+                }
             </JobFilterSection>
             <JobFilterSection title="Location">
                 {
@@ -125,6 +122,27 @@ const JobFilters = () =>{
                         />
                     ))
                 }
+            </JobFilterSection>
+            <JobFilterSection title="Salary Range">
+                <label className="flex flex-col justify-start gap-2">
+                    <section className="flex flex-col gap-4 items-center">
+                        <input
+                            type="range"
+                            className="salary-range w-full h-3 accent-brand outline-none"
+                            min={0}
+                            max={500}
+                            step={10}
+                            value={salaryRange}
+                            onChange={(e) => setSalaryRange(Number(e.target.value))}
+                        />
+                        
+                        <p className="text-brand-500 font-bold text-lg">Up to<span> {salaryRange}k</span>/mo</p>
+                    </section>
+                    <section className="flex items-center justify-between text-gray-400 text-xs">
+                        <p>0</p>
+                        <p>500k</p>
+                    </section>
+                </label>
             </JobFilterSection>
             <JobFilterSection title="Category">
                 {

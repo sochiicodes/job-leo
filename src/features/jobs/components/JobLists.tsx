@@ -1,7 +1,7 @@
 import JobCard from "./JobCard";
 import type { ViewMode } from "../types";
-import { VIEW_MODE } from "../../../constants/jobs";
-import { ActiveFilterChip, SortDropDown } from "../../../components";
+import { JOB_LISTINGS, VIEW_MODE } from "../../../constants/jobs";
+import { ActiveFilterChip, SortDropDown, ToggleSwitch } from "../../../components";
 import { useJobFilters } from "../hooks/useJobFilters";
 import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
 
@@ -29,10 +29,11 @@ const JobLists = () => {
                     Showing <strong className="text-gray-900">{filterLength}</strong> job
                     {filterLength > 1 ? 's' : ''}
                 </p>
+                
                 <div className="flex items-center gap-2">
                     {/* Sort dropdown */}
                     <SortDropDown/>
-
+                    
                     {/* View toggle */}
                     <div className="flex">
                     {VIEW_MODE.map((v) => (
@@ -65,8 +66,12 @@ const JobLists = () => {
             <section
                 className={`grid w-full items-start gap-4 min-w-0 ${GRID_LAYOUT[viewMode]}`}
             >
-                {Array.from({ length: 6 }).map((_, index) => (
-                    <JobCard key={index} viewMode={viewMode} />
+                {JOB_LISTINGS.map((jobs) => (
+                    <JobCard 
+                        jobs={jobs}
+                        key={jobs.id} 
+                        viewMode={viewMode} 
+                    />
                 ))}
             </section>
         </section>

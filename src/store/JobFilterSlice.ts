@@ -17,7 +17,7 @@ interface JobFilterState{
     jobType: JobType[]
     expLevel: ExperienceLevel[]
     sort: SortOption
-    jobStatus: JobStatus | null
+    jobStatus: JobStatus
     location: Location[]
     datePosted: DatePosted
     salaryRange: number
@@ -39,6 +39,7 @@ export interface JobFilterAction{
     clearFilters: () => void
     setJobSearchTerm: (value: string) => void
     setLocationSearchTerm: (value: string) => void
+    handleSubmit: () => void
 }
 
 export type JobFilterSlice = JobFilterState & JobFilterAction
@@ -48,7 +49,7 @@ const initialState: Omit<JobFilterState, "viewMode"> = {
     jobType: [],
     expLevel: [],
     sort: "Most Relevant",
-    jobStatus: null,
+    jobStatus: "All",
     location: [],
     datePosted: "any",
     salaryRange: 200,
@@ -72,7 +73,7 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
         : [...state.expLevel, level]
     })),
     setSort: (sort) => set({sort}),
-    setJobStatus: (status) => set({jobStatus: status}),
+    setJobStatus: (jobStatus) => set({jobStatus}),
     setLocation: (location) => set((state) =>({
         location: state.location?.includes(location)
         ? state.location.filter((item) => item !== location)
@@ -82,6 +83,8 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
     setSalaryRange: (salary) => set({salaryRange: salary}),
     setViewMode: (viewMode) => set({viewMode:  viewMode}),
     clearFilters: () => set((state) => ({...initialState, viewMode: state.viewMode})),
+
     setJobSearchTerm: (value: string) => set({jobSearchTerm: value}),
-    setLocationSearchTerm: (value: string) => set({locationSearchTerm: value})
+    setLocationSearchTerm: (value: string) => set({locationSearchTerm: value}),
+    handleSubmit: () => set({})
 }))

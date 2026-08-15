@@ -11,11 +11,11 @@ const JobFilterSection = ({title,children}: JobFilterSectionProps) =>{
     return(
         <section className="p-5 border-b border-gray-100">
             <button 
-                className="flex justify-between items-center w-full text-slate-400 cursor-pointer"
+                className="flex justify-between items-center w-full text-slate-400 cursor-pointer "
                 onClick={() => setOpenSection(!openSection)}
             >
                 <span className="font-medium uppercase text-sm">{title}</span> 
-                <ChevronDown size="16"/>
+                <ChevronDown size="16" className={`${openSection? "-rotate-180 transition-all" : ""}`}/>
             </button>
             {openSection &&(
                 <section className="mt-4 text-slate-600 text-sm space-y-2">

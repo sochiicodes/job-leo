@@ -13,18 +13,19 @@ import {
 
   
   export interface JobListing {
-    id: string;
-    title: string;
-    category: JobCategory;
-    type: JobType;
+    id: string
+    title: string
+    category: JobCategory
+    type: JobType
     level: ExperienceLevel
-    location: string;
-    state: string;
-    salary?: number;
-    postedAt: string;
-    status: JobStatus;
+    city: string
+    state: string
+    area: string
+    salary: number
+    postedAt: string
+    status: JobStatus
+    featured: boolean
     tags: string[]
-    feature?: boolean
   }
   
   export type JobCategory = "All" | (typeof JOB_CATEGORIES)[number]

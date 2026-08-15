@@ -18,19 +18,21 @@ export const useActiveFilterChips = () => {
     } = useJobFilters()
 
     const chips = [
-        ...(category !== "All"
-            ? [{label: category, onRemove: () => setCategory("All")}]
-            : []),
-        
             ...jobType.map((type) =>({
                 label: type,
                 onRemove: () => setJobType(type)
             })),
+        
 
             ...expLevel.map((level) =>({
                 label: level,
                 onRemove: () => setExpLevel(level)
             })),
+
+            ...(jobStatus !== "All"
+                ? [{label: jobStatus, onRemove: () => setJobStatus("All")}]
+                : []
+            ),
 
             ...location.map((loc) =>({
                 label: loc,
@@ -44,10 +46,9 @@ export const useActiveFilterChips = () => {
                 }] 
                 : []),
             
-            // ...jobStatus?.map((status) =>({
-            //     label: status,
-            //     onRemove: () => setJobStatus(status)
-            // }))
+            ...(category !== "All"
+                ? [{label: category, onRemove: () => setCategory("All")}]
+                : []),
     ]
 
 return chips
