@@ -2,6 +2,7 @@ import { ChevronRight, FolderTree, MapPin, Network } from "lucide-react";
 import { MetaPill } from "../../../components";
 import { Link } from "react-router-dom";
 import type { JobListing, ViewMode } from "../types";
+import { formatCurrency } from "../../../utils/formatCurrency";
 
 interface JobCardProps {
     jobs: JobListing
@@ -59,7 +60,7 @@ const JobCard = ({ viewMode = "grid", jobs }: JobCardProps) => {
 
                     <div className="flex items-center justify-between gap-2">
                         <span className="font-black text-sm text-brand-600 tracking-tight whitespace-nowrap">
-                        ₦{jobs.salary}/yr
+                        ₦{formatCurrency(jobs.salary)}/mo
                         </span>
                         <span className="text-[11px] text-gray-400">{jobs.postedAt}</span>
                     </div>
