@@ -39,8 +39,8 @@ export const EXPERIENCE_LEVELS = [
 export const SORT_OPTIONS = [
   "Most Relevant",
   "Most Recent",
-  "Salary High to Low",
-  "Salary Low to High",
+  "Highest Salary",
+  "Lowest Salary",
 ] as const;
 
 export const JOB_STATUS = [

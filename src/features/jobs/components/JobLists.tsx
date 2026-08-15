@@ -105,6 +105,21 @@ const JobLists = () => {
             && matchesJobDatePosted
     })
 
+    const sortedJobs = [...filteredJobs].sort((a, b) =>{
+        switch (sort){
+            case "Highest Salary":
+                return b.salary - a.salary
+
+            case "Lowest Salary":
+                return a.salary - b.salary
+
+            case "Most Recent": 
+                return new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()
+            
+                default: 
+                return 0
+        }
+    })
 
     return (
         <section className="grow min-w-0 flex flex-col gap-4">
@@ -151,7 +166,7 @@ const JobLists = () => {
             <section
                 className={`grid w-full items-start gap-4 min-w-0 ${GRID_LAYOUT[viewMode]}`}
             >
-                {filteredJobs.map((jobs) => (
+                {sortedJobs.map((jobs) => (
                     <JobCard 
                         jobs={jobs}
                         key={jobs.id} 
