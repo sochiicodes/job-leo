@@ -44,12 +44,12 @@ const JobCategoryPills = ({categories}: categoryPillsProp) =>{
     },[categories])
 
     return(
-        <section className="relative flex ">
+        <section className="relative flex px-2">
             {canScrollLeft &&(
             <button
                 type="button"
                 onClick={scrollLeft}
-                className="absolute left-0 top-0 z-10 flex h-full w-16 items-center justify-start bg-linear-to-r from-white via-white/90 to-transparent pl-2 text-slate-500 transition-colors hover:text-brand-500"
+                className="absolute left-0 top-0 z-10 hidden md:flex h-full w-16 items-center justify-start bg-linear-to-r from-white via-white/90 to-transparent pl-2 text-slate-500 transition-colors hover:text-brand-500"
              >
                  <ChevronLeft size={18}/>
              </button>
@@ -70,7 +70,7 @@ const JobCategoryPills = ({categories}: categoryPillsProp) =>{
             <button
                 type="button"
                 onClick={scrollRight}
-                className="absolute right-0 top-0 z-10 flex h-full w-16 items-center justify-end bg-linear-to-l from-white via-white/90 to-transparent pr-2 text-slate-500 transition-colors hover:text-brand-500"
+                className="absolute right-0 top-0 z-10 hidden md:flex h-full w-16 items-center justify-end bg-linear-to-l from-white via-white/90 to-transparent pr-2 text-slate-500 transition-colors hover:text-brand-500"
             >
                 <ChevronRight size={18}/>
             </button>

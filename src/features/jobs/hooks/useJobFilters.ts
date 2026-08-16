@@ -15,6 +15,7 @@ export const useJobFilters = () =>
       viewMode: state.viewMode,
       jobSearchTerm: state.jobSearchTerm,
       locationSearchTerm: state.locationSearchTerm,
+      openMobileFilter: state.openMobileFilter,
 
       setCategory: state.setCategory,
       setJobType: state.setJobType,
@@ -24,8 +25,10 @@ export const useJobFilters = () =>
       setLocation: state.setLocation,
       setDatePosted: state.setDatePosted,
       setSalaryRange: state.setSalaryRange,
+      
       setViewMode: state.setViewMode,
       clearFilters: state.clearFilters,
+      setOpenMobileFilter: state.setOpenMobileFilter,
 
       setJobSearchTerm: state.setJobSearchTerm,
       setLocationSearchTerm: state.setLocationSearchTerm,

@@ -28,6 +28,9 @@ const JobLists = () => {
         viewMode,
         jobSearchTerm,
         locationSearchTerm,
+        openMobileFilter,
+
+        setOpenMobileFilter,
         setViewMode,
     } = useJobFilters()
 
@@ -41,6 +44,7 @@ const JobLists = () => {
         salaryRange,
         jobSearchTerm,
         locationSearchTerm,
+        openMobileFilter,
     };
     
     const chips = useActiveFilterChips()
@@ -57,6 +61,15 @@ const JobLists = () => {
                 </p>
                 
                 <div className="flex items-center gap-2">
+                    {/* Open Mobile Filter */}
+                    <button
+                        onClick={() => setOpenMobileFilter(!openMobileFilter)}
+                        className="md:hidden flex items-center gap-2 bg-white border border-gray-200 rounded-lg px-4 py-1.5 text-sm font-medium text-gray-700 cursor-pointer"
+                    >
+                        <span>☰</span> Filters
+                        
+                    </button>
+
                     {/* Sort dropdown */}
                     <SortDropDown/>
                     
