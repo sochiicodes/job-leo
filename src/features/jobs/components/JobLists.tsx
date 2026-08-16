@@ -1,7 +1,7 @@
 import JobCard from "./JobCard";
 import type { ViewMode } from "../types";
 import { JOB_LISTINGS, VIEW_MODE } from "../../../constants/jobs";
-import { ActiveFilterChip, SortDropDown} from "../../../components";
+import { ActiveFilterChip, Pagination, SortDropDown} from "../../../components";
 import { useJobFilters } from "../hooks/useJobFilters";
 import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
 import { filterJobs } from "../utils/filteredJobs";
@@ -112,6 +112,7 @@ const JobLists = () => {
                     />
                 ))}
             </section>
+            <Pagination/>
         </section>
     );
 };
