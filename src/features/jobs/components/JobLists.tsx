@@ -45,8 +45,6 @@ const JobLists = () => {
     
     const chips = useActiveFilterChips()
     const filteredJobs = filterJobs(JOB_LISTINGS, filters)
-    
-
     const sortedJobs = sortJobs(filteredJobs, sort)
 
     return (

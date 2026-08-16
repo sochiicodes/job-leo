@@ -3,6 +3,7 @@ import { MetaPill } from "../../../components";
 import { Link } from "react-router-dom";
 import type { JobListing, ViewMode } from "../types";
 import { formatCurrency } from "../../../utils/formatCurrency";
+import { formatPostedDate } from "../../../utils/formatPostedDate";
 
 interface JobCardProps {
     jobs: JobListing
@@ -61,7 +62,7 @@ const JobCard = ({ viewMode = "grid", jobs }: JobCardProps) => {
                         <span className="font-black text-sm text-brand-600 tracking-tight whitespace-nowrap">
                         ₦{formatCurrency(jobs.salary)}/mo
                         </span>
-                        <span className="text-[11px] text-gray-400">{jobs.postedAt}</span>
+                        <span className="text-[11px] text-gray-400">{formatPostedDate(jobs.postedAt)}</span>
                     </div>
 
                     <span className={`flex items-center gap-2 text-[11px] ${jobs.status === "Available"? "bg-brand-100/50": "bg-red-100/50 text-red-300" }  rounded-full px-2 py-0.5 text-brand-600 border border-brand-100 self-start`}>
@@ -94,7 +95,7 @@ const JobCard = ({ viewMode = "grid", jobs }: JobCardProps) => {
                             <MetaPill icon="clock" title="Job Type">{jobs.type}</MetaPill>
                         </div>
                         <span className="text-[11px] text-gray-400 whitespace-nowrap shrink-0">
-                            {jobs.postedAt}
+                            {formatPostedDate(jobs.postedAt)}
                         </span>
                     </div>
 
