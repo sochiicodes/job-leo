@@ -1,12 +1,11 @@
 import { useJobFilters } from "../hooks/useJobFilters"
+import { useLockBodyScroll } from "../hooks/useLockBodyScroll"
 import SideBarFilters from "./SidebarFilters"
 
 
 const JobFilters = () =>{
-    const {
-        openMobileFilter,
-        setOpenMobileFilter,
-    } = useJobFilters()
+    const { openMobileFilter, setOpenMobileFilter, } = useJobFilters()
+    useLockBodyScroll(openMobileFilter)
 
 
 
@@ -18,7 +17,7 @@ const JobFilters = () =>{
             </aside>
             {/* MobileFilter */}
             {openMobileFilter && 
-            (<aside className="w-full h-full bg-black/50 md:hidden fixed top-0 left-0 bottom-0 z-999">
+            (<aside className="w-full h-full bg-black/50 md:hidden fixed top-0 left-0 bottom-0 z-999 backdrop-blur-xs">
                 <section className=" md:w-70 bg-white overflow-y-scroll w-75 h-full shadow-xl shrink-0 scrollbar-hide">
                     <div className="flex items-center justify-between px-7 py-2 border-b border-gray-100 bg-slate-100 sticky top-0 z-100">
                         <span className=" text-slate-300">Close</span>
