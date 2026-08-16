@@ -62,7 +62,17 @@ export const filterJobs = (jobs: JobListing[], filters: JobFilters ) => {
         
         const matchesJobDatePosted =
             datePosted === "any" ||
-            datePosted === job.postedAt
+            (() =>{
+                const days = Number(datePosted)
+
+                const cutoffDate = new Date()
+                cutoffDate.setDate(cutoffDate.getDate() - days)
+                
+                const jobDate = new Date(job.postedAt)
+
+                return jobDate>= cutoffDate
+            })()
+            
 
         const matchesJobSalary = 
             job.salary <= salaryRange
