@@ -40,7 +40,7 @@ export interface JobFilterAction{
     clearFilters: () => void
     setJobSearchTerm: (value: string) => void
     setLocationSearchTerm: (value: string) => void
-    setOpenMobileFilter: (value: boolean) => void
+    setOpenMobileFilter: (open: boolean) => void
 }
 
 export type JobFilters = Pick<JobFilterState,
@@ -56,7 +56,7 @@ export type JobFilters = Pick<JobFilterState,
 >
 export type JobFilterSlice = JobFilterState & JobFilterAction
 
-const initialState: Omit<JobFilterState, "viewMode"> = {
+const initialState: Omit<JobFilterState, "viewMode" | "openMobileFilter"> = {
     category: "All",
     jobType: [],
     expLevel: [],
@@ -67,12 +67,12 @@ const initialState: Omit<JobFilterState, "viewMode"> = {
     salaryRange: 250000,
     jobSearchTerm: "",
     locationSearchTerm: "",
-    openMobileFilter: false
 }
 
 export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = ((set) =>({
     ...initialState,
-    viewMode: "grid",
+    viewMode: "Grid",
+    openMobileFilter: false,
 
     setCategory: (category) => set({category}),
     setJobType: (type) => set((state) => ({
@@ -99,5 +99,5 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
 
     setJobSearchTerm: (value: string) => set({jobSearchTerm: value}),
     setLocationSearchTerm: (value: string) => set({locationSearchTerm: value}),
-    setOpenMobileFilter: (openMobileFilter: boolean) => set({openMobileFilter: true})
+    setOpenMobileFilter: (open) => set({openMobileFilter: open})
 }))

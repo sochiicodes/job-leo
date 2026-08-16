@@ -66,8 +66,8 @@ export const DATE_POSTED = [
 ] as const
 
 export const VIEW_MODE = [
-  'list',
-  'grid'
+  'List',
+  'Grid'
 ] as const
 
 export const JOB_LISTINGS: JobListing[] = [

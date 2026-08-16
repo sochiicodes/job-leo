@@ -6,3 +6,5 @@ export {default as JobFilters} from './components/JobFilters'
 export {default as JobLists} from './components/JobLists'
 export {default as JobCard} from './components/JobCard'
 export {default as JobFilterSection} from './components/JobFilterSection'
+export {default as SideBarFilters} from './components/SidebarFilters'
+

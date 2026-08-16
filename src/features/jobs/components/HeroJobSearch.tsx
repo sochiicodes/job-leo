@@ -1,5 +1,4 @@
-import { MapPin, Search, SearchIcon } from "lucide-react"
-import { useState } from "react"
+import { MapPin, Search} from "lucide-react"
 import { useJobFilters } from "../hooks/useJobFilters"
 
 const HeroJobSearch = () =>{
@@ -10,7 +9,7 @@ const HeroJobSearch = () =>{
         setJobSearchTerm,
         setLocationSearchTerm,
     } = useJobFilters()
-    console.log("Job Search Term:",jobSearchTerm, "City Search Term:",locationSearchTerm )
+    // console.log("Job Search Term:",jobSearchTerm, "City Search Term:",locationSearchTerm )
 
     return(
         <section 

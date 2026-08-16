@@ -9,8 +9,8 @@ import {  sortJobs } from "../utils/sortedJobs";
 
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
-    list: "grid-cols-1",
-    grid: "grid-cols-1 md:grid-cols-2 xl:grid-cols-3",
+    List: "grid-cols-1",
+    Grid: "grid-cols-1 md:grid-cols-2 xl:grid-cols-3",
 };
 
 
@@ -63,11 +63,10 @@ const JobLists = () => {
                 <div className="flex items-center gap-2">
                     {/* Open Mobile Filter */}
                     <button
-                        onClick={() => setOpenMobileFilter(!openMobileFilter)}
+                        onClick={() => setOpenMobileFilter(true)}
                         className="md:hidden flex items-center gap-2 bg-white border border-gray-200 rounded-lg px-4 py-1.5 text-sm font-medium text-gray-700 cursor-pointer"
                     >
-                        <span>☰</span> Filters
-                        
+                        <span>☰</span> Filters  
                     </button>
 
                     {/* Sort dropdown */}
@@ -78,14 +77,14 @@ const JobLists = () => {
                     {VIEW_MODE.map((v) => (
                         <button
                             onClick={() => setViewMode(v)}
-                            className={`w-8 h-8 border flex items-center justify-center text-xs transition-colors first:rounded-l-lg last:rounded-r-lg ${
+                            className={`w-8 h-8 border flex items-center justify-center text-xs transition-colors first:rounded-l-lg last:rounded-r-lg bg-white ${
                                 viewMode === v
                                 ? 'bg-brand-light text-brand-500 border-brand-500'
                                 : 'bg-white text-gray-400 border-gray-200 hover:bg-page'
                             }`}
-                            title={`${v} view`}
+                            title={`${v} View`}
                         >
-                        {v === 'list' ? '☰' : '⊞'}
+                        {v === 'List' ? '☰' : '⊞'}
                         </button>
                     ))}
                 </div>

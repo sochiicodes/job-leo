@@ -10,10 +10,10 @@ interface JobCardProps {
     viewMode?: ViewMode;
 }
 
-const JobCard = ({ viewMode = "grid", jobs }: JobCardProps) => {
+const JobCard = ({ viewMode = "Grid", jobs }: JobCardProps) => {
     const isAvailable = true;
-    const isList = viewMode === "list";
-    const isGrid = viewMode === "grid";
+    const isList = viewMode === "List";
+    const isGrid = viewMode === "Grid";
 
     return (
         <section
