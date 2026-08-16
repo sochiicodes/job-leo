@@ -54,6 +54,20 @@ const JobFilters = () =>{
                     {/* Clear All */}
                 </p>
             </header>
+            <JobFilterSection title="Job Status">
+                {
+                    JOB_STATUS.map((status) =>(
+                        <CheckItem
+                            key={status}
+                            type="radio"
+                            label={status}
+                            value={status}
+                            checked={jobStatus.includes(status)}
+                            onChange={setJobStatus}
+                        />
+                    ))
+                }
+            </JobFilterSection>
             <JobFilterSection title="Job Type">
                 {
                     JOB_TYPES.map((type) =>(
@@ -78,20 +92,6 @@ const JobFilters = () =>{
                             value={exp}
                             checked={expLevel.includes(exp)}
                             onChange={setExpLevel}
-                        />
-                    ))
-                }
-            </JobFilterSection>
-            <JobFilterSection title="Job Status">
-                {
-                    JOB_STATUS.map((status) =>(
-                        <CheckItem
-                            key={status}
-                            type="radio"
-                            label={status}
-                            value={status}
-                            checked={jobStatus.includes(status)}
-                            onChange={setJobStatus}
                         />
                     ))
                 }

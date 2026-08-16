@@ -1,10 +1,12 @@
 import JobCard from "./JobCard";
 import type { ViewMode } from "../types";
 import { JOB_LISTINGS, VIEW_MODE } from "../../../constants/jobs";
-import { ActiveFilterChip, SortDropDown, ToggleSwitch } from "../../../components";
+import { ActiveFilterChip, SortDropDown} from "../../../components";
 import { useJobFilters } from "../hooks/useJobFilters";
 import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
-import { filterJobs } from "../utils/filterJobs";
+import { filterJobs } from "../utils/filteredJobs";
+import {  sortJobs } from "../utils/sortedJobs";
+
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
     list: "grid-cols-1",
@@ -29,97 +31,23 @@ const JobLists = () => {
         setViewMode,
     } = useJobFilters()
 
-
-    const chips = useActiveFilterChips()
+    const filters = {
+        category,
+        jobType,
+        expLevel,
+        jobStatus,
+        location,
+        datePosted,
+        salaryRange,
+        jobSearchTerm,
+        locationSearchTerm,
+    };
     
-    const filteredJobs = JOB_LISTINGS.filter((job) =>{
-        const search = jobSearchTerm.toLowerCase().trim()
-        const locationSearch = locationSearchTerm.toLowerCase().trim()
-        // const jobTypeToggle = jobType.toLowerCase().trim()
+    const chips = useActiveFilterChips()
+    const filteredJobs = filterJobs(JOB_LISTINGS, filters)
+    
 
-        const matchesJobSearch = 
-        !search 
-        || job.title
-                .toLowerCase()
-                .includes(search)
-        || job.tags.some((tag) =>{
-            tag
-                .toLowerCase()
-                .includes(search)
-        });
-
-        const matchesLocationSearch =
-        !locationSearchTerm
-        ||  job.area
-                .toLowerCase()
-                 .includes(locationSearch)
-        ||  job.city
-                .toLowerCase()
-                .includes(locationSearch)
-        ||  job.state
-                .toLowerCase()
-                .includes(locationSearch)
-
-        const matchesJobType = 
-            jobType.length === 0
-            || jobType.some((type) => job.type === type)
-
-        const matchesJobExperience = 
-            expLevel.length === 0
-            || expLevel.some((level) => job.level === level)
-        
-        const matchesJobStatus = 
-            jobStatus === "All"
-            || job.status === jobStatus
-
-        const matchesJobLocation = 
-            location.length === 0
-            || location.some((loc) => job.state === loc)
-            || location.some((loc) => job.city === loc)
-            location.some((loc) => job.area === loc)
-        
-        const matchesJobDatePosted =
-            datePosted === "any"
-            || datePosted === job.postedAt
-
-        const matchesJobSalary = 
-            job.salary <= salaryRange
-
-        const matchesJobCategory = 
-            category === "All"
-            || job.category === category
-        
-        // const matchesSortedJobs = 
-        //     sort === "Most Relevant"
-        //     || sortedJob === sort
-        
-        
-        return matchesJobSearch 
-            && matchesLocationSearch
-            && matchesJobType
-            && matchesJobExperience
-            && matchesJobStatus
-            && matchesJobLocation
-            && matchesJobCategory
-            && matchesJobSalary
-            && matchesJobDatePosted
-    })
-
-    const sortedJobs = [...filteredJobs].sort((a, b) =>{
-        switch (sort){
-            case "Highest Salary":
-                return b.salary - a.salary
-
-            case "Lowest Salary":
-                return a.salary - b.salary
-
-            case "Most Recent": 
-                return new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()
-            
-                default: 
-                return 0
-        }
-    })
+    const sortedJobs = sortJobs(filteredJobs, sort)
 
     return (
         <section className="grow min-w-0 flex flex-col gap-4">
