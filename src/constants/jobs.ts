@@ -70,6 +70,8 @@ export const VIEW_MODE = [
   'Grid'
 ] as const
 
+export const JOBS_PER_PAGE = 9;
+
 export const JOB_LISTINGS: JobListing[] = [
   {
     id: crypto.randomUUID(),

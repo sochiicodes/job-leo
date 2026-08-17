@@ -6,6 +6,7 @@ import { useJobFilters } from "../hooks/useJobFilters";
 import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
 import { filterJobs } from "../utils/filteredJobs";
 import {  sortJobs } from "../utils/sortedJobs";
+import { usePagination } from "../../../hooks/usePagination";
 
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
@@ -50,6 +51,12 @@ const JobLists = () => {
     const chips = useActiveFilterChips()
     const filteredJobs = filterJobs(JOB_LISTINGS, filters)
     const sortedJobs = sortJobs(filteredJobs, sort)
+    const {
+        currentPage,
+        setCurrentPage,
+        paginatedJobs,
+        totalPages,
+    } =usePagination(sortedJobs)
 
     return (
         <section className="grow min-w-0 flex flex-col gap-4">
@@ -104,7 +111,7 @@ const JobLists = () => {
             <section
                 className={`grid w-full items-start gap-4 min-w-0 ${GRID_LAYOUT[viewMode]}`}
             >
-                {sortedJobs.map((jobs) => (
+                {paginatedJobs.map((jobs) => (
                     <JobCard 
                         jobs={jobs}
                         key={jobs.id} 
@@ -112,7 +119,11 @@ const JobLists = () => {
                     />
                 ))}
             </section>
-            <Pagination/>
+            <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                setCurrentPage={setCurrentPage}
+            />
         </section>
     );
 };

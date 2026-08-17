@@ -73,6 +73,7 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
     ...initialState,
     viewMode: "Grid",
     openMobileFilter: false,
+    currentPage: 1,
 
     setCategory: (category) => set({category}),
     setJobType: (type) => set((state) => ({
@@ -99,5 +100,5 @@ export const createJobFilterSlice:StateCreator<Store, [],[], JobFilterSlice> = (
 
     setJobSearchTerm: (value: string) => set({jobSearchTerm: value}),
     setLocationSearchTerm: (value: string) => set({locationSearchTerm: value}),
-    setOpenMobileFilter: (open) => set({openMobileFilter: open})
+    setOpenMobileFilter: (open) => set({openMobileFilter: open}),
 }))
