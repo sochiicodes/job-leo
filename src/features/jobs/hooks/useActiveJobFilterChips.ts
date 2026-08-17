@@ -15,6 +15,10 @@ export const useActiveFilterChips = () => {
         setDatePosted,
         jobStatus,
         setJobStatus,
+        jobSearchTerm,
+        locationSearchTerm,
+        setJobSearchTerm,
+        setLocationSearchTerm,
     } = useJobFilters()
 
     const chips = [
@@ -34,11 +38,16 @@ export const useActiveFilterChips = () => {
                 : []
             ),
 
-            ...location.map((loc) =>({
-                label: loc,
-                onRemove: () => setLocation(loc)
-            })),
+            ...(jobSearchTerm !== ""
+                ? [{label: jobSearchTerm, onRemove: () => setJobSearchTerm("")}]
+                : []
+            ),
 
+            ...(locationSearchTerm !== ""
+                ? [{label: locationSearchTerm, onRemove: () => setLocationSearchTerm("")}]
+                : []
+            ),
+            
             ...(datePosted !== "any" 
                 ? [{
                     label: `Last ${datePosted} ${datePosted === "1" ? "day" : " days"}`,
