@@ -12,7 +12,7 @@ export const formatPostedDate = (postedAt: string) =>{
     if(diffInDays < 7) return `${diffInDays} day${diffInDays === 1? "" : "s"}ago`
 
     //Less  than 1-4 weeks
-    if(diffInDays <= 4) return `${diffInDays} week${diffInDays === 1? "" : "s"}ago`
+    if(diffInDays <= 28) return `${diffInDays} week${diffInDays === 1? "" : "s"}ago`
 
     //More than 4 weeks
     

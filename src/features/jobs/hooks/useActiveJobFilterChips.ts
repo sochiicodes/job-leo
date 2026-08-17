@@ -22,6 +22,21 @@ export const useActiveFilterChips = () => {
     } = useJobFilters()
 
     const chips = [
+            ...(jobSearchTerm !== ""
+                ? [{label: jobSearchTerm, onRemove: () => setJobSearchTerm("")}]
+                : []
+            ),
+
+            ...(locationSearchTerm !== ""
+                ? [{label: locationSearchTerm, onRemove: () => setLocationSearchTerm("")}]
+                : []
+            ),
+
+            ...location.map((loc) =>({
+                label: loc,
+                onRemove: () => setLocation(loc)
+            })),
+
             ...jobType.map((type) =>({
                 label: type,
                 onRemove: () => setJobType(type)
@@ -35,16 +50,6 @@ export const useActiveFilterChips = () => {
 
             ...(jobStatus !== "All"
                 ? [{label: jobStatus, onRemove: () => setJobStatus("All")}]
-                : []
-            ),
-
-            ...(jobSearchTerm !== ""
-                ? [{label: jobSearchTerm, onRemove: () => setJobSearchTerm("")}]
-                : []
-            ),
-
-            ...(locationSearchTerm !== ""
-                ? [{label: locationSearchTerm, onRemove: () => setLocationSearchTerm("")}]
                 : []
             ),
             

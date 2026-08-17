@@ -7,10 +7,10 @@ interface CheckItemProps<T extends string = string>{
     onChange: (value: T) => void
     value: T
     checked: boolean
+    count: number
 }
 
-function CheckItem<T extends string>({type, label, value, checked, onChange}: CheckItemProps<T>){
-    const count = 4
+function CheckItem<T extends string>({type, label, value, checked, count, onChange}: CheckItemProps<T>){
 
     
     return(

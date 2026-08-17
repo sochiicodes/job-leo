@@ -4,8 +4,8 @@ import { JOB_LISTINGS, VIEW_MODE } from "../../../constants/jobs";
 import { ActiveFilterChip, Pagination, SortDropDown} from "../../../components";
 import { useJobFilters } from "../hooks/useJobFilters";
 import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
-import { filterJobs } from "../utils/filteredJobs";
-import {  sortJobs } from "../utils/sortedJobs";
+import { filterJobs } from "../utils/getFilteredJobs";
+import {  sortJobs } from "../utils/getSortedJobs";
 import { usePagination } from "../../../hooks/usePagination";
 
 
@@ -57,6 +57,7 @@ const JobLists = () => {
         paginatedJobs,
         totalPages,
     } =usePagination(sortedJobs)
+    
 
     return (
         <section className="grow min-w-0 flex flex-col gap-4">

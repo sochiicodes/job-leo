@@ -5,15 +5,18 @@ import {
     DATE_POSTED, 
     EXPERIENCE_LEVELS, 
     JOB_CATEGORIES, 
+    JOB_LISTINGS, 
     JOB_STATUS, 
     JOB_TYPES, 
     TOP_LOCATIONS 
 } from "../../../constants/jobs"
-import { useShallow } from "zustand/shallow"
+
 import { JobCategory } from "../types"
 import { RotateCcw } from "lucide-react"
 import { useJobFilters } from "../hooks/useJobFilters"
 import { formatCurrency } from "../../../utils/formatCurrency"
+import { getJobFilterCount } from "../utils/getJobFilterCount"
+import { getJobPostedDateCount } from "../utils/getJobPostedDateCount"
 
 
 const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 
@@ -38,7 +41,7 @@ const SideBarFilters = () =>{
         clearFilters,
     } = useJobFilters()
 
-
+    console.log(DATE_POSTED)
     return(
         <aside className="">
             <header className="flex justify-between p-5 border-b border-gray-100">
@@ -62,6 +65,11 @@ const SideBarFilters = () =>{
                             value={status}
                             checked={jobStatus.includes(status)}
                             onChange={setJobStatus}
+                            count={getJobFilterCount({
+                                jobs: JOB_LISTINGS,
+                                field: "status",
+                                value: status
+                            })}
                         />
                     ))
                 }
@@ -76,6 +84,11 @@ const SideBarFilters = () =>{
                             value={type}
                             checked={jobType.includes(type)}
                             onChange={setJobType} 
+                            count={getJobFilterCount({
+                                jobs: JOB_LISTINGS,
+                                field: "type",
+                                value: type
+                            })}
                         />
                     ))
                 }
@@ -90,6 +103,11 @@ const SideBarFilters = () =>{
                             value={exp}
                             checked={expLevel.includes(exp)}
                             onChange={setExpLevel}
+                            count={getJobFilterCount({
+                                jobs: JOB_LISTINGS,
+                                field: "level",
+                                value: exp
+                            })}
                         />
                     ))
                 }
@@ -104,6 +122,11 @@ const SideBarFilters = () =>{
                             value={loc}
                             checked={location.includes(loc)}
                             onChange={setLocation}
+                            count={getJobFilterCount({
+                                jobs: JOB_LISTINGS,
+                                field: "state",
+                                value: loc
+                            })}
                         />
                     ))
                 }
@@ -118,6 +141,10 @@ const SideBarFilters = () =>{
                             value={value}
                             checked={datePosted === value}
                             onChange={setDatePosted}
+                            count={getJobPostedDateCount(
+                                JOB_LISTINGS,
+                                value
+                            )}
                         />
                     ))
                 }
@@ -153,6 +180,12 @@ const SideBarFilters = () =>{
                             value={cat}
                             checked={category === cat}
                             onChange={setCategory}
+                            count={getJobFilterCount({
+                                jobs: JOB_LISTINGS,
+                                field: "category",
+                                value: cat
+                            })}
+                            
                         />
                     ))
                 }
