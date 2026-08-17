@@ -4,7 +4,7 @@ import { FullTermsOverlay } from "../../features/legal";
 import { useScrolled } from "../../hooks/useScrolled";
 import { getWhatsAppLink } from "../../utils/whatsappLink";
 import { handleNavClick } from "../../utils/handleNavClick";
-import { Footer, Header, ScrollToTop } from "../../components";
+import { Footer, Header, ScrollToTop, ScrollToTopOnRouteChange } from "../../components";
 
 
 
@@ -49,6 +49,7 @@ export default function RootLayout(){
                 }}
             />
             <ScrollToTop />
+            <ScrollToTopOnRouteChange/>
         </div>
     )
 }

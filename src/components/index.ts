@@ -8,6 +8,7 @@ export {default as Pagination} from "./common/Pagination"
 export {default as Footer} from "./layout/Footer"
 export {default as Header} from "./layout/Header"
 export {default as ScrollToTop} from "./layout/ScrollToTop"
+export {default as ScrollToTopOnRouteChange} from "./layout/ScrollToTopOnRouteChange"
 
 export {default as ToggleSwitch} from "./ui/ToggleSwitch"
 export {default as SortDropDown} from "./ui/SortDropDown"
