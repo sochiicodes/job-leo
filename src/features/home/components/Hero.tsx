@@ -1,12 +1,14 @@
-import React from 'react';
+
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { handleNavClick } from '../../../utils/handleNavClick';
 
-interface HeroProps {
-  scrollToSection: (id: string) => void;
-}
 
-export default function Hero({ scrollToSection }: HeroProps) {
+
+export default function Hero() {
+  const navigate = useNavigate()
+  const {pathname} = useLocation()
+
   return (
     <section className="relative py-24 md:py-10 px-4 overflow-hidden bg-white ">
       <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none">
@@ -34,13 +36,13 @@ export default function Hero({ scrollToSection }: HeroProps) {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
           <Link
             to="/jobs"
-            className="w-full sm:w-auto px-12 py-6 bg-brand-500 text-white rounded-[1.5rem] font-bold text-xl hover:bg-brand-600 transition-all shadow-xl shadow-brand-100 border-none"
+            className="w-full sm:w-auto px-12 py-6 bg-brand-500 text-white rounded-3xl font-bold text-xl hover:bg-brand-600 transition-all shadow-xl shadow-brand-100 border-none"
           >
             See All Jobs
           </Link>
           <button
-            onClick={() => scrollToSection('register')}
-            className="w-full sm:w-auto px-12 py-6 bg-white border-2 border-slate-200 text-slate-900 rounded-[1.5rem] font-bold text-xl hover:border-brand-500 transition-all flex items-center justify-center gap-2"
+            onClick={() => handleNavClick("join-network", navigate, pathname)}
+            className="w-full sm:w-auto px-12 py-6 bg-white border-2 border-slate-200 text-slate-900 rounded-3xl font-bold text-xl hover:border-brand-500 transition-all flex items-center justify-center gap-2"
           >
             Join the Network <ArrowUpRight className="w-5 h-5" />
           </button>

@@ -1,9 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { FullTermsOverlay } from "../../features/legal";
 import { useScrolled } from "../../hooks/useScrolled";
 import { getWhatsAppLink } from "../../utils/whatsappLink";
-import { scrollToSection } from "../../utils/scrollToSection";
+import { handleNavClick } from "../../utils/handleNavClick";
 import { Footer, Header, ScrollToTop } from "../../components";
 
 
@@ -14,8 +14,11 @@ export default function RootLayout(){
 
     const isScrolled = useScrolled()
 
+    const navigate = useNavigate()
+    const {pathname} = useLocation()
+
     const handleScrollToSection = (id: string) =>{
-        scrollToSection(id)
+        handleNavClick(id, navigate, pathname)
     }
 
 
@@ -37,11 +40,11 @@ export default function RootLayout(){
             <Footer
                 scrollToSection={handleScrollToSection}
                 onOpenSeekerTerms={() => {
-                scrollToSection('terms', 'seeker');
+                handleNavClick("terms", navigate, pathname)
                 setShowFullTerms(true);
                 }}
                 onOpenEmployerTerms={() => {
-                scrollToSection('terms', 'employer');
+                handleNavClick("terms", navigate, pathname);
                 setShowFullTerms(true);
                 }}
             />

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 
+// For Header on Scroll
 export const useScrolled = (threshold = 20) =>{
     const [isScrolled, setIsScrolled] = useState(false)
 

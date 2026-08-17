@@ -41,7 +41,6 @@ const SideBarFilters = () =>{
         clearFilters,
     } = useJobFilters()
 
-    console.log(DATE_POSTED)
     return(
         <aside className="">
             <header className="flex justify-between p-5 border-b border-gray-100">

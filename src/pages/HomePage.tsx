@@ -22,20 +22,21 @@ export default function HomePage() {
   const [activeTab, setActiveTab] = useState<'seeker' | 'employer'>('seeker');
   const [showFullTerms, setShowFullTerms] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  useEffect(() =>{
+    const sectionId = window.location.hash.slice(1)
 
-  const scrollToSection = (id: string, tab?: 'seeker' | 'employer') => {
-    const element = document.getElementById(id);
-    if (element) element.scrollIntoView({ behavior: 'smooth' });
-    if (tab) setActiveTab(tab);
-    
-  };
+    if(!sectionId) return
+
+    const element = document.getElementById(sectionId)
+
+    if(element){
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      })
+    }
+  },[])
 
   return (
     <div className="min-h-screen bg-white selection:bg-brand-100 selection:text-brand-900">
@@ -44,7 +45,7 @@ export default function HomePage() {
       )}
 
       <main className="pt-16">
-        <Hero scrollToSection={scrollToSection} />
+        <Hero/>
         <ProcessSection />
         <JobsSection
           selectedCategory={selectedCategory}

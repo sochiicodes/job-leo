@@ -9,7 +9,7 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section id="how-it-works" className="py-24 px-4 bg-white border-y border-slate-50">
+    <section id="process" className="py-24 px-4 bg-white border-y border-slate-50">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-black text-slate-900 mb-20 tracking-tight">The JobLeo Method</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">

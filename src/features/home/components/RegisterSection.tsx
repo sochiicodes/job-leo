@@ -5,7 +5,7 @@ import { EMPLOYER_FORM_URL, SEEKER_FORM_URL } from '../../../constants/urls';
 
 export default function RegisterSection() {
   return (
-    <section id="register" className="py-24 px-4 bg-white">
+    <section id="join-network" className="py-24 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tight">Join the Network</h2>
@@ -20,7 +20,7 @@ export default function RegisterSection() {
             <p className="text-slate-600 mb-8 font-medium leading-relaxed">
               Register in our candidate database. Pay a one-time ₦2,000 fee and get referred to the best employers in Nsukka.
             </p>
-            <div className="space-y-4 mb-10 flex-grow">
+            <div className="space-y-4 mb-10 grow">
               <div className="flex items-center gap-3 text-slate-700 font-bold text-sm">
                 <CheckCircle className="w-5 h-5 text-brand-500" /> Access to exclusive local roles
               </div>
