@@ -11,13 +11,12 @@ interface JobCardProps {
 }
 
 const JobCard = ({ viewMode = "Grid", jobs }: JobCardProps) => {
-    const isAvailable = true;
     const isList = viewMode === "List";
     const isGrid = viewMode === "Grid";
 
     return (
         <section
-            className={`relative bg-white rounded-3xl border border-slate-100 p-6 shadow-sm hover:shadow-2xl hover:border-brand-200 transition-all group min-w-0 w-full h-full ${
+            className={`relative bg-brand-100/10 rounded-3xl border border-slate-100 p-6 shadow-sm hover:bg-white hover:shadow-2xl hover:border-brand-200 transition-all group min-w-0 w-full h-full ${
                 isGrid ? "flex flex-col justify-between" : ""
             }`}
         >

@@ -14,7 +14,7 @@ const SortDropDown = () =>{
         <select
             value={sort}
             onChange={(e) => setSort(e.target.value as typeof sort)}
-            className="border border-gray-200 rounded-lg text-sm px-3 py-1.5 text-gray-700 bg-white cursor-pointer outline-none"
+            className="border border-gray-200 rounded-lg font-bold text-sm px-3 py-1.5 text-gray-700 bg-white cursor-pointer outline-none"
         >
             {SORT_OPTIONS.map((label) =>(
                 <option key={label} value={label}>{label}</option>

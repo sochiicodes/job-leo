@@ -83,6 +83,7 @@ const JobLists = () => {
                     <div className="flex">
                     {VIEW_MODE.map((v) => (
                         <button
+                            key={v}
                             onClick={() => setViewMode(v)}
                             className={`w-8 h-8 border flex items-center justify-center text-xs transition-colors first:rounded-l-lg last:rounded-r-lg bg-white ${
                                 viewMode === v

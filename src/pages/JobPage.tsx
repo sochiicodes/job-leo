@@ -10,7 +10,7 @@ export default function JobsPage(){
         <main className="pt-16 w-full">
             <HeroJobSection/>
             <JobCategoryPills categories={categories}/>
-            <section className="w-full flex items-start px-6 py-10 gap-10 bg-slate-200/90">
+            <section className="w-full flex items-start px-6 py-10 gap-10 bg-white">
                 <JobFilters />
                 <JobLists />
             </section>

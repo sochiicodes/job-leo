@@ -42,14 +42,14 @@ const SideBarFilters = () =>{
     return(
         <aside className="">
             <header className="flex justify-between p-5 border-b border-gray-100">
-                <p className="text-m">Filter</p>
+                <p className="text-sm font-bold">Filters</p>
                 <p 
                     onClick={clearFilters}
                     className="text-xs text-brand-500 hover:text-brand-600 flex gap-1 cursor-pointer transition-all"
                     title="Reset Filter"
                 >
                     <RotateCcw size={16}/>
-                    Clear All
+                    Reset All
                 </p>
             </header>
             <JobFilterSection title="Job Status">

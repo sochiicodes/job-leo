@@ -12,7 +12,7 @@ const JobFilters = () =>{
     return(
         <>
             {/* Desktop */}
-            <aside className="hidden md:block w-70 shrink-0 bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+            <aside className="sticky top-25 hidden md:block w-70 shrink-0 bg-white rounded-2xl overflow-hidden  border border-gray-200">
                 <SideBarFilters/>
             </aside>
             {/* MobileFilter */}
