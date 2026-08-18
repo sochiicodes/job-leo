@@ -29,8 +29,6 @@ export default function RootLayout(){
             )}
             <Header
                 isScrolled={isScrolled}
-                scrollToSection={handleScrollToSection}
-                getWhatsAppLink={getWhatsAppLink}
             />
 
                 <main>
