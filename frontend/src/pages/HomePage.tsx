@@ -11,14 +11,12 @@ import {
   WhatsPopular
 } from '../features/home';
 import { FullTermsOverlay } from '../features/legal';
-import { JobCategory } from '../features/jobs/types';
 import { getWhatsAppLink } from '../utils/whatsappLink';
 
 
 
 
 export default function HomePage() {
-  const [selectedCategory, setSelectedCategory] = useState<JobCategory>('All');
   const [activeTab, setActiveTab] = useState<'seeker' | 'employer'>('seeker');
   const [showFullTerms, setShowFullTerms] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -47,11 +45,7 @@ export default function HomePage() {
       <main className="pt-16">
         <Hero/>
         <ProcessSection />
-        <WhatsPopular
-          selectedCategory={selectedCategory}
-          onCategoryChange={setSelectedCategory}
-          getWhatsAppLink={getWhatsAppLink}
-        />
+        <WhatsPopular/>
         <RegisterSection />
         <FAQSection openFaqIndex={openFaqIndex} onFaqToggle={setOpenFaqIndex} />
         <TermsSection

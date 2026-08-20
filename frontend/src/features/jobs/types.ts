@@ -32,7 +32,8 @@ import {
     tags: string[]
   }
   
-  export type JobCategory = "All" | (typeof JOB_CATEGORIES)[number]
+  export type JobCategory = (typeof JOB_CATEGORIES)[number]
+  export type JobCategoryFilter = "All" | JobCategory
   
   export type JobType = (typeof JOB_TYPES) [number]
   
@@ -48,5 +49,3 @@ import {
   
   export type ViewMode =  (typeof VIEW_MODE)[number]
   
-  
-  export type JobFilter = "All" | JobCategory

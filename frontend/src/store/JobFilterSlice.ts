@@ -4,6 +4,7 @@ import type {
     DatePosted, 
     ExperienceLevel, 
     JobCategory, 
+    JobCategoryFilter, 
     JobStatus, 
     JobType, 
     Location, 
@@ -13,7 +14,7 @@ import type {
 
 
 interface JobFilterState{
-    category: JobCategory
+    category: JobCategoryFilter
     jobType: JobType[]
     expLevel: ExperienceLevel[]
     sort: SortOption
@@ -28,7 +29,7 @@ interface JobFilterState{
 }
 
 export interface JobFilterAction{
-    setCategory: (category: JobCategory) => void
+    setCategory: (category: JobCategoryFilter) => void
     setJobType: (type: JobType) => void
     setExpLevel: (level: ExperienceLevel) => void
     setSort: (sort: SortOption) => void

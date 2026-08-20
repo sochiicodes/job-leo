@@ -7,6 +7,7 @@ import { useActiveFilterChips } from "../hooks/useActiveJobFilterChips";
 import { filterJobs } from "../utils/getFilteredJobs";
 import {  sortJobs } from "../utils/getSortedJobs";
 import { usePagination } from "../../../hooks/usePagination";
+import { useSyncJobFiltersWithUrl } from "../hooks/useSyncJobFiltersWithUrl";
 
 
 const GRID_LAYOUT: Record<ViewMode, string> = {
@@ -17,6 +18,7 @@ const GRID_LAYOUT: Record<ViewMode, string> = {
 
 
 const JobLists = () => {
+    useSyncJobFiltersWithUrl()
     const {
         category,
         jobType,
@@ -58,6 +60,8 @@ const JobLists = () => {
         totalPages,
     } =usePagination(sortedJobs)
     
+    
+
 
     return (
         <section className="grow min-w-0 flex flex-col gap-4">

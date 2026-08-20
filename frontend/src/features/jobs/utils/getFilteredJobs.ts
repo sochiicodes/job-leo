@@ -1,8 +1,10 @@
+
 import { JobFilters } from "../../../store/JobFilterSlice"
 import { JobListing } from "../types"
 
 
 export const filterJobs = (jobs: JobListing[], filters: JobFilters ) => {
+
     const {
         category,
         jobType,
