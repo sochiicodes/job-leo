@@ -33,10 +33,10 @@ const WhatsPopularCard = ({
                 <h1 className="font-bold group group-hover:text-brand-600 transition-colors"> {title}</h1>
                 <p className="text-sm text-slate-500">{description}</p>
             </article>
-            <footer className="text-slate-800 flex items-center justify-between text-xs font-bold border-t border-t-slate-200 pt-4 group-hover:text-brand-600 transition-colors">
+            <footer className="text-brand-600 lg:text-slate-800 flex items-center justify-between text-xs font-bold border-t border-t-slate-200 pt-4 group-hover:text-brand-600 transition-colors">
                 <p>{footerText}</p> 
-                <div className="group-hover:bg-brand-600 p-2 rounded-full duration-200 group-hover:translate-x-1 transition-colors">
-                    <ArrowRight size={14} className="text-slate-500 group-hover:text-white transition-colors"/>
+                <div className="group-hover:bg-brand-600 p-2 rounded-full duration-200 group-hover:translate-x-1 transition-colors group-hover:shadow-xl">
+                    <ArrowRight size={14} className="text-brand-600 lg:text-slate-800 group-hover:text-white transition-colors"/>
                 </div>
             </footer>
         </section>

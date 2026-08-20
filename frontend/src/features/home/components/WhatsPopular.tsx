@@ -17,14 +17,14 @@ const WhatsPopular = () => {
  const navigate = useNavigate()
 
   return (
-    <section className="py-24 px-24 bg-slate-50/50">
+    <section className="py-24 px-8 md:px-24 bg-slate-50/50">
       <div className="max-w-7xl mx-auto space-y-10">
-        <section className="flex flex-col justify-center items-center">
+        <section className="flex flex-col items-start md:items-center">
           <h3 className="text-brand-600 uppercase text-xs">Browse Opportunities</h3>
-          <h2 className="text-4xl font-black text-slate-900 tracking-tight ">Explore by Industry & Location</h2>
+          <h2 className="text-2xl lg:text-4xl font-black text-slate-900 tracking-tight ">Explore by Industry & Location</h2>
         </section>
        
-        <section className="flex flex-col gap-8 w-full">
+        <section className="flex flex-col gap-20 lg:gap-10 w-full">
           {/* Popular Categories */}
           <section className="flex flex-col gap-10">
             <div className="flex justify-between">
@@ -40,7 +40,7 @@ const WhatsPopular = () => {
                   <ArrowRight size={14} className="text-slate-500 duration-200 group-hover:text-brand-600 group-hover:translate-x-1 transition-colors "/>
               </section>
             </div>
-            <section className="flex justify-between gap-8">
+            <section className="flex flex-col lg:flex-row justify-between gap-8">
               <WhatsPopularCard
                 title="Sales"
                 description={salesDescription}
@@ -92,7 +92,7 @@ const WhatsPopular = () => {
                   <ArrowRight size={14} className="text-slate-500 duration-200 group-hover:translate-x-1 transition-colors group-hover:text-brand-600 group "/>
               </section>
             </div>
-            <section className="flex justify-between gap-8">
+            <section className="flex flex-col lg:flex-row  justify-between gap-8">
               <WhatsPopularCard
                 title="Nsukka Town"
                 description={"Central commercial district with supermarkets, corporate banks and marts."}
