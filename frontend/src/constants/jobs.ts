@@ -2,22 +2,82 @@ import { JobListing } from "../features/jobs/types";
 
 
 export const JOB_CATEGORIES = [
-    'Technology',
-    'Design',
-    'Marketing',
-    'Finance',
-    'Healthcare',
-    'Education',
-    'Sales',
-    'Operations',
-    'Engineering',
-    'Legal',
-    'Hospitality',
-    'Domestic & Care',
-    'Office',
-    'Events',
-    'Beauty & Fashion',
-  ] as const
+  {
+    name: "Technology",
+    description:
+      "Explore jobs building and supporting the digital tools that power modern businesses.",
+  },
+  {
+    name: "Design",
+    description:
+      "Find creative roles shaping beautiful, intuitive, and engaging experiences.",
+  },
+  {
+    name: "Marketing",
+    description:
+      "Discover opportunities to grow brands, reach audiences, and drive engagement.",
+  },
+  {
+    name: "Finance",
+    description:
+      "Explore roles managing money, analysing data, and driving financial growth.",
+  },
+  {
+    name: "Healthcare",
+    description:
+      "Find rewarding opportunities focused on caring for and improving people's health.",
+  },
+  {
+    name: "Education",
+    description:
+      "Discover roles helping people learn, grow, and achieve their potential.",
+  },
+  {
+    name: "Sales",
+    description:
+      "Explore opportunities to connect with customers and drive business revenue.",
+  },
+  {
+    name: "Operations",
+    description:
+      "Find roles that keep businesses organised, efficient, and running smoothly.",
+  },
+  {
+    name: "Engineering",
+    description:
+      "Discover opportunities to design, build, and improve innovative solutions.",
+  },
+  {
+    name: "Legal",
+    description:
+      "Explore careers providing legal advice, support, and professional expertise.",
+  },
+  {
+    name: "Hospitality",
+    description:
+      "Find roles creating exceptional experiences across hotels, restaurants, and tourism.",
+  },
+  {
+    name: "Domestic & Care",
+    description:
+      "Discover opportunities providing essential support and care in homes and communities.",
+  },
+  {
+    name: "Office",
+    description:
+      "Explore administrative and support roles that keep workplaces running efficiently.",
+  },
+  {
+    name: "Events",
+    description:
+      "Find opportunities planning, coordinating, and delivering memorable experiences.",
+  },
+  {
+    name: "Beauty & Fashion",
+    description:
+      "Discover creative roles in beauty, style, fashion, and personal care.",
+  },
+] as const;
   
 export const JOB_TYPES = [
   "Full-time", 
