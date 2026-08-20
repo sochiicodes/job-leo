@@ -7,8 +7,8 @@ import {
   FAQSection,
   TermsSection,
   ContactSection,
-  JobsSection,
-  ProcessSection
+  ProcessSection,
+  WhatsPopular
 } from '../features/home';
 import { FullTermsOverlay } from '../features/legal';
 import { JobCategory } from '../features/jobs/types';
@@ -47,7 +47,7 @@ export default function HomePage() {
       <main className="pt-16">
         <Hero/>
         <ProcessSection />
-        <JobsSection
+        <WhatsPopular
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
           getWhatsAppLink={getWhatsAppLink}

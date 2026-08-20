@@ -7,4 +7,5 @@ export {default as JobLists} from './components/JobLists'
 export {default as JobCard} from './components/JobCard'
 export {default as JobFilterSection} from './components/JobFilterSection'
 export {default as SideBarFilters} from './components/SidebarFilters'
+export {default as WhatsPopularCard} from './components/WhatsPopularCard'
 
