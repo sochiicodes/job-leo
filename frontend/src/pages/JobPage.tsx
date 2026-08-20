@@ -3,7 +3,7 @@ import { JOB_CATEGORIES } from "../constants/jobs";
 import { JobCategoryPills, JobFilters, JobLists,  } from "../features/jobs";
 import { JobCategoryFilter } from "../features/jobs/types";
 
-const categories = [...JOB_CATEGORIES] satisfies JobCategoryFilter[]
+const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategoryFilter[]
 
 export default function JobsPage(){
     return(

@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react"
 import CategoryPill from "../../../components/common/CategoryPill"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { useJobFilters } from "../hooks/useJobFilters"
-import { JobCategory } from "../types"
+import { JobCategoryFilter } from "../types"
 
 interface categoryPillsProp{
-    categories: readonly JobCategory[]
+    categories: readonly JobCategoryFilter[]
 }
 
 const JobCategoryPills = ({categories}: categoryPillsProp) =>{

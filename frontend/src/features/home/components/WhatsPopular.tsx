@@ -32,7 +32,10 @@ const WhatsPopular = () => {
                 <h1 className="text-xl text-black font-medium">Popular Categories</h1>
                 <p className="text-xs text-slate-400">High-demand employment sectors</p>
               </section>
-              <section className="flex items-center gap-3 text-sm text-slate-700 hover:text-brand-600 group transition-colors">
+              <section 
+                className="flex items-center gap-3 text-sm text-slate-700 hover:text-brand-600 group transition-colors cursor-pointer"
+                onClick={() => navigate('/jobs?category=All')}
+                >
                   <p>View All</p> 
                   <ArrowRight size={14} className="text-slate-500 duration-200 group-hover:text-brand-600 group-hover:translate-x-1 transition-colors "/>
               </section>
