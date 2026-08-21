@@ -53,7 +53,13 @@ const Header = ({isScrolled,}: HeaderProps) => {
           <button onClick={() => handleNavClick("terms", navigate, pathname)}  className="hover:text-brand-600 transition-colors font-semibold">Terms</button>
 
           <section className="flex items-center gap-3 pl-4 border-l border-slate-100">
-            <ContactButton/>
+              <button
+                onClick={() => handleNavClick("contact", navigate, pathname)}
+                rel="noopener noreferrer"
+                className="px-6 py-2 bg-slate-900 text-white rounded-full hover:bg-slate-900/90 transition-all hover:shadow-xl hover:shadow-brand-100 active:scale-95 text-sm font-bold"
+              >
+                Contact Us
+              </button>
             <PostJobButton/>
           </section>
         </section>

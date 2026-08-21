@@ -2,6 +2,8 @@ import { useShallow } from "zustand/shallow";
 import { useStore } from "../../../store/store";
 
 export const useJobFilters = () =>
+  
+
   useStore(
     useShallow((state) => ({
       category: state.category,

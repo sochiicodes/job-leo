@@ -5,11 +5,11 @@ import { EMPLOYER_FORM_URL, SEEKER_FORM_URL } from '../../../constants/urls';
 
 export default function RegisterSection() {
   return (
-    <section id="join-network" className="py-24 px-4 bg-white">
+    <section className="py-24 px-4 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tight">Join the Network</h2>
-          <p className="text-slate-500 font-medium text-lg">Choose how you want to get started with JobLeo.</p>
+          <p className="text-slate-500 font-medium text-lg" id="register">Choose how you want to get started with JobLeo.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-10 md:p-14 rounded-[3.5rem] bg-brand-50 border border-brand-100 flex flex-col shadow-sm hover:shadow-xl transition-all group">

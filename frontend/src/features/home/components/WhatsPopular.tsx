@@ -40,7 +40,7 @@ const WhatsPopular = () => {
                   <ArrowRight size={14} className="text-slate-500 duration-200 group-hover:text-brand-600 group-hover:translate-x-1 transition-colors "/>
               </section>
             </div>
-            <section className="flex flex-col lg:flex-row justify-between gap-8">
+            <section className="flex flex-col lg:flex-row justify-between gap-4">
               <WhatsPopularCard
                 title="Sales"
                 description={salesDescription}
@@ -87,12 +87,12 @@ const WhatsPopular = () => {
                 <h1 className="text-xl text-black font-medium">Popular Locations</h1>
                 <p className="text-xs text-slate-400">Key commercial districts close to you</p>
               </section>
-              <section className="flex items-center gap-3 text-sm text-slate-700 group hover:text-brand-600 group transition-colors">
+              <section className="flex items-center gap-3 text-sm text-slate-700 group hover:text-brand-600 group transition-colors cursor-pointer">
                   <p>View All</p> 
                   <ArrowRight size={14} className="text-slate-500 duration-200 group-hover:translate-x-1 transition-colors group-hover:text-brand-600 group "/>
               </section>
             </div>
-            <section className="flex flex-col lg:flex-row  justify-between gap-8">
+            <section className="flex flex-col lg:flex-row  justify-between gap-4 ">
               <WhatsPopularCard
                 title="Nsukka Town"
                 description={"Central commercial district with supermarkets, corporate banks and marts."}

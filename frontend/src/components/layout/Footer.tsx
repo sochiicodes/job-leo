@@ -1,6 +1,7 @@
 import React from 'react';
 import { Zap, Mail } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { handleNavClick } from '../../utils/handleNavClick';
 
 interface FooterProps {
   scrollToSection: (id: string, tab?: 'seeker' | 'employer') => void;
@@ -8,9 +9,10 @@ interface FooterProps {
   onOpenEmployerTerms: () => void;
 }
 
-const Footer =({ scrollToSection, onOpenSeekerTerms, onOpenEmployerTerms }: FooterProps) => {
-  const { pathname } = useLocation()
-  const showHomeLinks = pathname === "/"
+const Footer =({onOpenSeekerTerms, onOpenEmployerTerms }: FooterProps) => {
+  const navigate = useNavigate()
+  const {pathname} = useLocation()
+  // const showHomeLinks = pathname === "/"
 
   return (
     <footer className="bg-slate-900 text-slate-400 py-20 px-4">
@@ -41,31 +43,27 @@ const Footer =({ scrollToSection, onOpenSeekerTerms, onOpenEmployerTerms }: Foot
             <h4 className="text-white font-black text-xs uppercase tracking-widest mb-6">Quick Links</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <button onClick={() => scrollToSection('jobs')} className="hover:text-brand-400 transition-colors">
+                <Link to="/jobs" className="hover:text-brand-400 transition-colors">
                   Browse Jobs
-                </button>
+                </Link>
               </li>
 
               
-                {showHomeLinks &&(
-                  <>
-                    <li>
-                      <button onClick={() => scrollToSection('how-it-works')} className="hover:text-brand-400 transition-colors">
-                        Process
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => scrollToSection('register')} className="hover:text-brand-400 transition-colors">
-                        Registration
-                      </button>
-                    </li>
-                    <li>
-                      <button onClick={() => scrollToSection('faq')} className="hover:text-brand-400 transition-colors">
-                        FAQ
-                      </button>
-                    </li>
-                  </>
-                )}
+              <li>
+                <button onClick={() => handleNavClick("process", navigate, pathname)} className="hover:text-brand-400 transition-colors">
+                  Process
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick("register", navigate, pathname)} className="hover:text-brand-400 transition-colors">
+                  Registration
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick("faq", navigate, pathname)} className="hover:text-brand-400 transition-colors">
+                  FAQ
+                </button>
+              </li>
             
             </ul>
           </div>
