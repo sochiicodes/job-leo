@@ -11,7 +11,7 @@ import {
     TOP_LOCATIONS 
 } from "../../../constants/jobs"
 
-import { JobCategory } from "../types"
+import { JobCategory, JobCategoryFilter } from "../types"
 import { RotateCcw } from "lucide-react"
 import { useJobFilters } from "../hooks/useJobFilters"
 import { formatCurrency } from "../../../utils/formatCurrency"
@@ -19,7 +19,7 @@ import { getJobFilterCount } from "../utils/getJobFilterCount"
 import { getJobPostedDateCount } from "../utils/getJobPostedDateCount"
 
 
-const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategory[] 
+const categories = ["All", ...JOB_CATEGORIES] satisfies JobCategoryFilter[] 
 
 const SideBarFilters = () =>{
     const {

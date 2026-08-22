@@ -4,7 +4,7 @@ import { JobListing } from "../types"
 interface FilterCountProps<K extends keyof JobListing>{
     jobs: JobListing[]
     field: K
-    value: JobListing[K]
+    value: JobListing[K] | "All"
 }
 
 export const getJobFilterCount = <K extends keyof JobListing> ({jobs, field, value}:FilterCountProps<K>) =>{
