@@ -8,6 +8,7 @@ import { Footer, Header, ScrollToTop, ScrollToTopOnRouteChange } from "../../com
 
 
 
+
 export default function RootLayout(){
     const [showFullTerms, setShowFullTerms] = useState(false);
     const [activeTab] = useState<'seeker' | 'employer'>('seeker');
@@ -46,6 +47,8 @@ export default function RootLayout(){
                 setShowFullTerms(true);
                 }}
             />
+            
+
             <ScrollToTop />
             <ScrollToTopOnRouteChange/>
         </div>

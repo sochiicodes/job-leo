@@ -34,17 +34,22 @@ app.use(logger)
 
 
 //routes
-app.get('/api/jobs', (req, res) =>{
+app.get('/', (req: Request, res: Response) =>{
+    res.json({message: "JobLeo API is running"})
+}) 
+
+app.get('/api/jobs', (req: Request, res: Response) =>{
       res.json(jobs)
 })
 
-app.get('/api/jobs/:id', (req, res) =>{
+app.get('/api/jobs/:id', (req: Request, res: Response) =>{
     const {id} = req.params
+    const job = 
     res.json({id, message: `Fetching job ${id}`})
 })
 
 
-app.post('/api/jobs', (req, res) =>{
+app.post('/api/jobs', (req: Request, res: Response) =>{
     const {title, company} = req.body
     res.status(201).json({title, company, id: Date.now()})
 })
