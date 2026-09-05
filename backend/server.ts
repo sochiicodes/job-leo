@@ -1,3 +1,8 @@
+
+// const express = require('express')
+// const cors = require('cors')
+// const jobs = require('./data/jobs')
+
 // const http = require('http')
 // const server = http.createServer((req, res)=>{
 //     res.writeHead(200, {'Content-Type': 'application/json'})
@@ -8,32 +13,39 @@
 //     console.log("Server running on Port 3000")
 // })
 
-const express = require('express')
-const cors = require('cors')
+
+import express, {Response, Request, NextFunction} from 'express'
+import cors from 'cors'
+import jobs from './data/jobs'
 
 const app = express()
 
 
 //middleware
 app.use(cors())
-app.use(express.json)
+app.use(express.json())
 
+const logger = (req: Request, res:Response, next:NextFunction) =>{
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.path}`)
+    next()
+}
+
+app.use(logger)
+
+
+//routes
 app.get('/api/jobs', (req, res) =>{
-    const jobs = [
-        { id: 1, title: 'Backend Engineer', company: 'Flutterwave' },
-        { id: 2, title: 'Frontend Dev', company: 'Paystack' },
-      ];
       res.json(jobs)
 })
 
-app,get('/api/jobs', (req, res) =>{
+app.get('/api/jobs/:id', (req, res) =>{
     const {id} = req.params
     res.json({id, message: `Fetching job ${id}`})
 })
 
 
 app.post('/api/jobs', (req, res) =>{
-    const {title, compay} = req.body
+    const {title, company} = req.body
     res.status(201).json({title, company, id: Date.now()})
 })
 
