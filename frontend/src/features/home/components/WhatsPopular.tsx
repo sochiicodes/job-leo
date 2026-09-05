@@ -6,7 +6,7 @@ import { WhatsPopularCard } from '../../jobs';
 import { hospitalityDescription, officeDescription, salesDescription } from '../../../constants/whatspopular';
 import { getJobFilterCount } from '../../jobs/utils/getJobFilterCount';
 import { useJobFilters } from '../../jobs/hooks/useJobFilters';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -133,6 +133,12 @@ const WhatsPopular = () => {
           </section>
           
         </section>
+        <Link to='/jobs' >
+              <button className="m-auto flex items-center gap-2 hover:text-brand-600 border border-slate-200 rounded-full py-2 px-6 text-sm cursor-pointer group transition-all">
+                See All Jobs 
+                <ArrowRight size={14} className="text-slate-500 duration-200 group-hover:text-brand-600 group-hover:translate-x-1 transition-colors "/>
+              </button>
+        </Link>
       </div>
     </section>
   );
