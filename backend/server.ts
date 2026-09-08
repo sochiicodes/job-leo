@@ -3,6 +3,8 @@
 
 import express, {Response, Request, NextFunction} from 'express'
 import cors from 'cors'
+import router from './src/routes/jobs'
+import jobRoutes from './src/routes/jobs'
 
 const app = express()
 
@@ -11,7 +13,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-
+app.use("/api/jobs", jobRoutes)
 
 
 
