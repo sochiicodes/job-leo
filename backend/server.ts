@@ -19,6 +19,6 @@ app.use("/api/jobs", jobRoutes)
 
 
 
-app.listen(3000, () => console.log("Serve running on port 3000"))
+app.listen(5432, () => console.log("Server running on port 5432"))
 
 console.log("Server file finished loading")
