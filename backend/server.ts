@@ -1,9 +1,8 @@
 
 
 
-import express, {Response, Request, NextFunction} from 'express'
+import express, {Response, Request} from 'express'
 import cors from 'cors'
-import router from './src/routes/jobs'
 import jobRoutes from './src/routes/jobs'
 
 const app = express()
@@ -13,6 +12,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+app.get("/", (req: Request, res: Response)=>{
+    res.send("JobLeo API is running 😊")
+})
 app.use("/api/jobs", jobRoutes)
 
 

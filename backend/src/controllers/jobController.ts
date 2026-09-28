@@ -1,3 +1,5 @@
+// ├── controllers/   → Request handling logic
+
 import express,{Response, Request, NextFunction} from 'express'
 import jobs from '../data/jobs'
 import { JobListing } from '../data/jobs'
@@ -11,11 +13,6 @@ const logger = (req: Request, res:Response, next:NextFunction) =>{
 
 app.use(logger)
 
-
-//routes
-// export const getJobs = (req: Request, res: Response) =>{
-//     res.json({message: "JobLeo API is running"})
-// }
 
 export const getJobs = (req: Request, res: Response) =>{
       res.json(jobs)
