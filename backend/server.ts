@@ -1,4 +1,4 @@
-
+// psql -U postgres -d jobleo
 
 
 import express, {Response, Request} from 'express'
@@ -19,6 +19,7 @@ app.use("/api/jobs", jobRoutes)
 
 
 
-app.listen(5432, () => console.log("Server running on port 5432"))
+app.listen(3000, () => console.log("Server running on port 3000"))
 
 console.log("Server file finished loading")
+

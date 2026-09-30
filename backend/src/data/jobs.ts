@@ -110,8 +110,8 @@ export const JOBS_PER_PAGE = 9;
 
 
 export const jobs: JobListing[] = [
-  {
-    id: crypto.randomUUID(),
+  { 
+    id: "1",
     title: "Waitress",
     category: "Hospitality",
     type: "Part-time",
@@ -126,7 +126,7 @@ export const jobs: JobListing[] = [
     tags: ["Waitress", "Cashier", "Sales Rep"],
   },
   {
-    id: crypto.randomUUID(),
+    id: "1",
     title: "Bar Man/Woman",
     category: "Hospitality",
     type: "Full-time",
@@ -140,9 +140,8 @@ export const jobs: JobListing[] = [
     featured: true,
     tags: ["Bar Man", "Bar Lady", "Sales Rep"],
   },
-
   {
-    id: crypto.randomUUID(),
+    id: "1",
     title: "POS Attendant",
     category: "Sales",
     type: "Full-time",

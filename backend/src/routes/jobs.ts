@@ -16,6 +16,6 @@ jobRoutes.get("/", getJobs)
 jobRoutes.get("/:id", getJobById)
 jobRoutes.post("/", createJob)
 jobRoutes.patch("/:id", updateJob)
-jobRoutes.get("/:id", deleteJob)
+jobRoutes.delete("/:id", deleteJob)
 
 export default jobRoutes
