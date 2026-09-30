@@ -3,14 +3,27 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE jobs(
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+
     title TEXT NOT NULL,
-    company TEXT NOT NULL,
-    description TEXT NOT NULL,
     category TEXT NOT NULL,
     job_type TEXT NOT NULL,
-    experience_level TEXT NOT NULL,
-    salary_min INTEGER,
-    salary_max INTEGER,
+    level TEXT NOT NULL,
+
+    city TEXT NOT NULL,
+    state TEXT NOT NULL,
+    area TEXT NOT NULL,
+
+    salary INTEGER,
+
+    posted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
     status TEXT NOT NULL DEFAULT 'open',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    featured BOOLEAN DEFAULT FALSE,
+    
+    tags TEXT[]
 );
+
+--rename a table column
+ALTER TABLE jobs
+RENAME COLUMN job_type TO type;
+SELECT * FROM jobs;
