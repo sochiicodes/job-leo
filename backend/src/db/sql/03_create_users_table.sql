@@ -4,8 +4,12 @@ CREATE TABLE users(
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name TEXT NOT NULL,
     email TEXT NOT NULL UNIQUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    password_hash TEXT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users(name, email)
-VALUES ('sochima', 'sochima@gmail.com')
+INSERT INTO users(name, email, password_hash)
+VALUES 
+('admin', 'admin@jobleo.com', 'admin'),
+('sochima', 'sochima@gmail.com', 'sochima'),
+('jeccy', 'jeccy@gmail.com', 'jeccy');

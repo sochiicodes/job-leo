@@ -12,7 +12,8 @@ INSERT INTO jobs (
   salary,
   status,
   featured,
-  tags
+  tags,
+  posted_by
 )
 VALUES
 (
@@ -26,7 +27,8 @@ VALUES
   25000,
   'unavailable',
   TRUE,
-  ARRAY['Waitress', 'Cashier', 'Sales Rep']
+  ARRAY['Waitress', 'Cashier', 'Sales Rep'],
+  'd78207c4-5a5a-4360-81bd-d106e54a216a'
 ),
 (
   'Bar Man/Woman',
@@ -39,7 +41,8 @@ VALUES
   35000,
   'open',
   TRUE,
-  ARRAY['Bar Man', 'Bar Lady', 'Sales Rep']
+  ARRAY['Bar Man', 'Bar Lady', 'Sales Rep'],
+  'd78207c4-5a5a-4360-81bd-d106e54a216a'
 ),
 (
   'POS Attendant',
@@ -52,5 +55,6 @@ VALUES
   30000,
   'open',
   FALSE,
-  ARRAY['POS Attendant', 'Cashier', 'Sales']
+  ARRAY['POS Attendant', 'Cashier', 'Sales'],
+  'd78207c4-5a5a-4360-81bd-d106e54a216a'
 );

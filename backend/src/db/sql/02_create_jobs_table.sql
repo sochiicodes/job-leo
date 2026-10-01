@@ -20,7 +20,8 @@ CREATE TABLE jobs(
     status TEXT NOT NULL DEFAULT 'open',
     featured BOOLEAN DEFAULT FALSE,
     
-    tags TEXT[]
+    tags TEXT[],
+    posted_by UUID REFERENCES users(id)
 );
 
 --rename a table column

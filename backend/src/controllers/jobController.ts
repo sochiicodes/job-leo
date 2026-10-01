@@ -16,7 +16,7 @@ const app = express()
 export const getJobs = async (req: Request, res: Response) =>{
     const result = await pool.query(`
         SELECT 
-            job.*, 
+            jobs.*, 
             users.name AS poster_name
         FROM jobs JOIN users
             ON jobs.posted_by = users.id
@@ -34,7 +34,7 @@ export const getJobById = async (req: Request, res: Response) =>{
             users.name AS poster_name
         FROM jobs JOIN users
             ON jobs.posted_by = users.id
-        WHERE id = $1`, [id]
+        WHERE jobs.id = $1`, [id]
     )
     // const job = jobs.find((job) => job.id === id)
     if(!result.rows[0]){
@@ -58,7 +58,8 @@ export const createJob = async (req: Request, res: Response) =>{
                 posted_at,
                 status,
                 featured,
-                tags
+                tags,
+                posted_by
             } = req.body
 
             const result = await pool.query(
@@ -74,10 +75,12 @@ export const createJob = async (req: Request, res: Response) =>{
                     posted_at,
                     status,
                     featured,
-                    tags)
+                    tags,
+                    posted_by
+                )
                 VALUES (
                     $1, $2, $3, $4, $5, $6,
-                    $7, $8, $9, $10, $11, $12
+                    $7, $8, $9, $10, $11, $12, $13
                 )
                 RETURNING *`,[
                         title,
@@ -91,7 +94,8 @@ export const createJob = async (req: Request, res: Response) =>{
                         posted_at,
                         status,
                         featured,
-                        tags
+                        tags,
+                        posted_by
                       ]
             );
             res.status(201).json({jobs: result.rows[0]})
