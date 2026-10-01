@@ -1,3 +1,6 @@
+--Refresh table data afresh
+TRUNCATE TABLE jobs RESTART IDENTITY;
+
 INSERT INTO jobs (
   title,
   category,
@@ -7,7 +10,6 @@ INSERT INTO jobs (
   state,
   area,
   salary,
-  posted_at,
   status,
   featured,
   tags
@@ -22,8 +24,7 @@ VALUES
   'Enugu',
   'Total Roundabout',
   25000,
-  '2026-08-17',
-  'Unavailable',
+  'unavailable',
   TRUE,
   ARRAY['Waitress', 'Cashier', 'Sales Rep']
 ),
@@ -36,8 +37,7 @@ VALUES
   'Enugu',
   'Total Roundabout',
   35000,
-  '2026-08-16',
-  'Available',
+  'open',
   TRUE,
   ARRAY['Bar Man', 'Bar Lady', 'Sales Rep']
 ),
@@ -50,8 +50,7 @@ VALUES
   'Enugu',
   'Nsukka Town',
   30000,
-  '2026-08-14',
-  'Available',
+  'open',
   FALSE,
   ARRAY['POS Attendant', 'Cashier', 'Sales']
 );
