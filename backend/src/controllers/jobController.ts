@@ -14,9 +14,13 @@ const app = express()
 
 
 export const getJobs = async (req: Request, res: Response) =>{
-    const result = await pool.query(
-        "SELECT * FROM jobs"
-    )
+    const result = await pool.query(`
+        SELECT 
+            job.*, 
+            users.name AS poster_name
+        FROM jobs JOIN users
+            ON jobs.posted_by = users.id
+    `)
       res.json({jobs: result.rows})
 }
 
@@ -25,7 +29,11 @@ export const getJobById = async (req: Request, res: Response) =>{
 
     console.log("Requested ID:", id)
     const result = await pool.query(
-        `SELECT * FROM jobs
+        `SELECT 
+            jobs.*, 
+            users.name AS poster_name
+        FROM jobs JOIN users
+            ON jobs.posted_by = users.id
         WHERE id = $1`, [id]
     )
     // const job = jobs.find((job) => job.id === id)
