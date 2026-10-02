@@ -28,3 +28,4 @@ CREATE TABLE jobs(
 ALTER TABLE jobs
 RENAME COLUMN job_type TO type;
 SELECT * FROM jobs;
+

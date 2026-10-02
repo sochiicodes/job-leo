@@ -13,3 +13,16 @@ VALUES
 ('admin', 'admin@jobleo.com', 'admin'),
 ('sochima', 'sochima@gmail.com', 'sochima'),
 ('jeccy', 'jeccy@gmail.com', 'jeccy');
+
+
+-- -- Add a column
+-- ALTER TABLE users
+-- ADD COLUMN password_hash TEXT;
+
+-- -- Rename a column
+-- ALTER TABLE users
+-- RENAME COLUMN name TO full_name;
+
+-- -- Change a column
+-- ALTER TABLE users
+-- ALTER COLUMN email SET NOT NULL;
