@@ -1,5 +1,5 @@
 --08_application_job_user.sql
-
+--show applications with the user's name and job title.
 SELECT 
     applications.id,
     users.name AS applicant_name,
