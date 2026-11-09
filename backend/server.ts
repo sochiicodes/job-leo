@@ -3,6 +3,7 @@
 
 import express, {Response, Request} from 'express'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
 import jobRoutes from './src/routes/jobs'
 
 const app = express()
@@ -11,6 +12,7 @@ const app = express()
 //middleware
 app.use(cors())
 app.use(express.json())
+app.use(cookieParser())
 
 app.get("/", (req: Request, res: Response)=>{
     res.send("JobLeo API is running 😊")

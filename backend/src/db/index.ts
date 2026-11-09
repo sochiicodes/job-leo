@@ -9,6 +9,13 @@ export const pool = new Pool({
     connectionString: process.env.DATABASE_URL
 })
 
+pool.on("connect", () =>{
+    console.log("Database connected")
+})
+pool.on("error", (err) =>{
+    console.log("Database connection error", err)
+})
+
 pool.query("SELECT NOW()")
     .then(result =>{
         console.log("Database connected:", result.rows[0])
