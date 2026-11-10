@@ -5,7 +5,6 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import {pool} from '../db'
 
-const router = express.Router()
 
 //set cookie options for secure cookies
 const cookieOptions ={
@@ -29,10 +28,10 @@ const generateToken = (id: string) =>{
 }
 
 //Register a new user
-router.post("/register", async(req: Request, res: Response) =>{
-    const {username, email, password} = req.body
+export const register =  async(req: Request, res: Response) =>{
+    const {name, email, password} = req.body
 
-    if(!username || !email || !password){
+    if(!name || !email || !password){
         return res.status(400).json({message: 'Please provide all required fields'})
     }
 
@@ -47,10 +46,10 @@ router.post("/register", async(req: Request, res: Response) =>{
 
     const newUser = await pool.query(
         `INSERT INTO users
-        (username, email, password)
+        (name, email, password)
         VALUES ($1, $2, $3) 
         RETURNING id, name, email
-        `,[username, email, hashedPassword]
+        `,[name, email, hashedPassword]
         
     )
 
@@ -58,11 +57,11 @@ router.post("/register", async(req: Request, res: Response) =>{
     res.cookie('token', token, cookieOptions)
 
     return res.status(201).json({user: newUser.rows[0]})
-})
+}
 
 
 //Login a user
-router.post('/login', async(req: Request, res: Response) =>{
+export const login = async(req: Request, res: Response) =>{
     const {email, password} = req.body
     if(!email || !password){
         return res.status(400).json({message: 'Please provide all required fields'})
@@ -85,19 +84,17 @@ router.post('/login', async(req: Request, res: Response) =>{
     //if users password matches, we give him a token
     const token = generateToken(userData.id)
     res.cookie('token', token, cookieOptions)
-    res.json({user: {id: userData.id, username: userData.username, email: userData.email}})
-})  
+    res.json({user: {id: userData.id, name: userData.name, email: userData.email}})
+}
 
 //Me
-router.get('/me', async(req: Request, res: Response) =>{
+export const getMe = async(req: Request, res: Response) =>{
     res.json(req.body)
     //return info of the logged in user from protect middleware
-})
+}
 
 //logout
-router.post('/logout', (res: Response, req: Request) =>{
+export const logout = (res: Response, req: Request) =>{
     res.cookie('token', '', {...cookieOptions, maxAge: 1})
     res.json({message: 'Logged out successfully'})
-})
-
-export default router;
+}
