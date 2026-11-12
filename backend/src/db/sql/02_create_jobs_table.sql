@@ -2,6 +2,7 @@
 CREATE EXTENSION IF NOT EXISTS pgcrypto;
 
 CREATE TABLE jobs(
+    -- we define the kind of fields that we want to store in the database
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 
     title TEXT NOT NULL,
