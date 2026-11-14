@@ -7,6 +7,7 @@ import {
   Eye,
   EyeOff,
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 
 
@@ -79,9 +80,12 @@ const Login = () => {
         <div className="bg-white rounded-2xl border border-[#E2E8F0] p-6 sm:p-8">
           {/* Heading */}
               <div className="mb-6">
-                <h1 className="text-2xl font-bold text-[#0B1220] tracking-tight">
-                  Welcome back
-                </h1>
+                <header className="flex justify-between items-center">
+                  <h1 className="text-2xl font-bold text-[#0B1220] tracking-tight"> Welcome back</h1>
+                  <p className="text-brand-500 cursor-pointer hover:text-brand-600 transition-colors">
+                    <Link to='/register'> <span className="text-xs">or</span> Register</Link>
+                  </p>
+                </header>
                 <p className="text-sm text-[#64748B] mt-1">Sign in to continue to JobLeo.</p>
               </div>
 
