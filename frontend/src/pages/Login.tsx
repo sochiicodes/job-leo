@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import {
   ArrowLeft,
   CheckCircle2,
@@ -7,7 +8,7 @@ import {
   Eye,
   EyeOff,
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -34,27 +35,34 @@ const GoogleIcon = () => (
 
 const Login = () => {
   // Credentials
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+  });
   const [showPassword, setShowPassword] = useState(false);
+  const [localError, setLocalError] = useState<string | null>(null);
+  const [user, setUser] = useState(null)
+  const navigate = useNavigate()
+
+  
+
   const [resetSent, setResetSent] = useState(false);
 
   // Profile fields
   const [displayName, setDisplayName] = useState('');
   const [phone, setPhone] = useState('');
   const [location, setLocation] = useState('');
-  const [localError, setLocalError] = useState<string | null>(null);
 
 
 
   const validateEmailCredentials = (): boolean => {
-    const trimmedEmail = email.trim();
+    const trimmedEmail = form.email.trim();
     if (!trimmedEmail || !trimmedEmail.includes('@')) {
       setLocalError('Please enter a valid email address.');
       return false;
     }
-    if (password.length < 6) {
-      setLocalError('Password must be at least 6 characters.');
+    if (form.password.length < 5) {
+      setLocalError('Password must be at least 5 characters.');
       return false;
     }
     return true;
@@ -62,14 +70,19 @@ const Login = () => {
 
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLocalError(null);
-    setResetSent(false);
+    try{
+        const res = await axios.post(
+            "http://localhost:3000/api/auth/login", 
+            form
+        )
+        setUser(res.data)
+        navigate("/")
+    }catch(err){
+        setLocalError("Invalid email or password")
+    }
 
 
     if (!validateEmailCredentials()) return;
-
-
-
     }
   
   return (
@@ -89,28 +102,7 @@ const Login = () => {
                 <p className="text-sm text-[#64748B] mt-1">Sign in to continue to JobLeo.</p>
               </div>
 
-          {/* Error Alert */}
-          {/* {displayedError && step !== 'success' && (
-            <div className="mb-5 bg-red-50 border border-red-200 rounded-xl p-3 flex items-start gap-2.5 text-xs text-red-700">
-              <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
-              <span>{displayedError}</span>
-            </div>
-          )} */}
 
-          {/* Password Reset Notice */}
-          {/* {resetSent && step === 'auth' && activeTab === 'login' && (
-            <div className="mb-5 bg-[#F0FDF4] border border-[#BBF7D0] rounded-xl p-3 flex items-start gap-2.5 text-xs text-[#15803D]">
-              <CheckCircle2 className="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" />
-              <span>
-                Password reset email sent to <strong>{email.trim()}</strong>.
-              </span>
-            </div>
-          )} */}
-
-          {/* ALREADY SIGNED IN OR SUCCESS */}
-
-          {/* STEP: COMPLETE PROFILE (New Google Sign-In User) */}
-  
 
           {/* STEP: AUTH -> LOGIN TAB */}
            <div className="space-y-4">
@@ -138,8 +130,8 @@ const Login = () => {
                     type="email"
                     required
                     maxLength={150}
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={form.email}
+                    onChange={(e) => setForm({...form, email: e.target.value})}
                     placeholder="you@example.com"
                     className="w-full px-3.5 py-2.5 rounded-xl border border-[#E2E8F0] focus:border-[#22C55E] focus:ring-2 focus:ring-[#22C55E]/15 outline-none text-sm transition-colors"
                   />
@@ -162,9 +154,9 @@ const Login = () => {
                     <input
                       type={showPassword ? 'text' : 'password'}
                       required
-                      minLength={6}
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      minLength={5}
+                      value={form.password}
+                      onChange={(e) => setForm({...form, password: e.target.value})}
                       placeholder="Enter your password"
                       className="w-full pl-3.5 pr-10 py-2.5 rounded-xl border border-[#E2E8F0] focus:border-[#22C55E] focus:ring-2 focus:ring-[#22C55E]/15 outline-none text-sm transition-colors"
                     />
