@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
+    "axios": "^1.21.1",
     "immer": "^11.1.16",
     "lucide-react": "^0.463.0",
     "react": "^19.0.0",
