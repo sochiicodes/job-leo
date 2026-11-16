@@ -4,11 +4,14 @@
 import express, {Response, Request} from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import dotenv from 'dotenv';
+
 import jobRoutes from './src/routes/jobs'
 import authRoutes from './src/routes/auth'
 
-const app = express()
 
+dotenv.config();
+const app = express()
 
 //middleware
 app.use(cors({
