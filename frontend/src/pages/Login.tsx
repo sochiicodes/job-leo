@@ -33,6 +33,8 @@ const GoogleIcon = () => (
   </svg>
 );
 
+axios.defaults.withCredentials = true
+
 const Login = () => {
   // Credentials
   const [form, setForm] = useState({
