@@ -8,6 +8,7 @@ import { Footer, Header, ScrollToHash, ScrollToTop, ScrollToTopOnRouteChange } f
 
 
 
+
 export default function RootLayout(){
     const [showFullTerms, setShowFullTerms] = useState(false);
     const [activeTab] = useState<'seeker' | 'employer'>('seeker');
@@ -45,10 +46,10 @@ export default function RootLayout(){
                 handleNavClick("terms", navigate, pathname);
                 setShowFullTerms(true);
                 }}
-            />
+            />            
             <ScrollToHash />
             <ScrollToTop />
-            <ScrollToTopOnRouteChange/>
+            <ScrollToTopOnRouteChange />
         </div>
     )
 }
